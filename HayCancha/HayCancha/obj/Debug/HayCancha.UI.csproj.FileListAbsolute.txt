@@ -1,0 +1,9 @@
+C:\Proyecto\HayCancha\HayCancha\bin\Debug\HayCancha.exe.config
+C:\Proyecto\HayCancha\HayCancha\bin\Debug\HayCancha.exe
+C:\Proyecto\HayCancha\HayCancha\bin\Debug\HayCancha.pdb
+C:\Proyecto\HayCancha\HayCancha\obj\Debug\HayCancha.UI.csprojAssemblyReference.cache
+C:\Proyecto\HayCancha\HayCancha\obj\Debug\HayCancha.Properties.Resources.resources
+C:\Proyecto\HayCancha\HayCancha\obj\Debug\HayCancha.UI.csproj.GenerateResource.cache
+C:\Proyecto\HayCancha\HayCancha\obj\Debug\HayCancha.UI.csproj.CoreCompileInputs.cache
+C:\Proyecto\HayCancha\HayCancha\obj\Debug\HayCancha.exe
+C:\Proyecto\HayCancha\HayCancha\obj\Debug\HayCancha.pdb

@@ -1,0 +1,6 @@
+C:\Proyecto\HayCancha\HayCancha.BE\bin\Debug\HayCancha.BE.dll
+C:\Proyecto\HayCancha\HayCancha.BE\bin\Debug\HayCancha.BE.pdb
+C:\Proyecto\HayCancha\HayCancha.BE\obj\Debug\HayCancha.BE.csprojAssemblyReference.cache
+C:\Proyecto\HayCancha\HayCancha.BE\obj\Debug\HayCancha.BE.csproj.CoreCompileInputs.cache
+C:\Proyecto\HayCancha\HayCancha.BE\obj\Debug\HayCancha.BE.dll
+C:\Proyecto\HayCancha\HayCancha.BE\obj\Debug\HayCancha.BE.pdb

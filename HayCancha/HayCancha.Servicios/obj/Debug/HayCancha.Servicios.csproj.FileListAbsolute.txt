@@ -1,0 +1,5 @@
+C:\Proyecto\HayCancha\HayCancha.Servicios\bin\Debug\HayCancha.Servicios.dll
+C:\Proyecto\HayCancha\HayCancha.Servicios\bin\Debug\HayCancha.Servicios.pdb
+C:\Proyecto\HayCancha\HayCancha.Servicios\obj\Debug\HayCancha.Servicios.csproj.CoreCompileInputs.cache
+C:\Proyecto\HayCancha\HayCancha.Servicios\obj\Debug\HayCancha.Servicios.dll
+C:\Proyecto\HayCancha\HayCancha.Servicios\obj\Debug\HayCancha.Servicios.pdb
