@@ -42,6 +42,21 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UsuarioBLL.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HayCancha.BE\HayCancha.BE.csproj">
+      <Project>{ff5fd384-7f15-4f3e-9d85-16029fcf4dbf}</Project>
+      <Name>HayCancha.BE</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HayCancha.DAL\HayCancha.DAL.csproj">
+      <Project>{14b4d225-db9a-45fb-a314-bb0c77e9823e}</Project>
+      <Name>HayCancha.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HayCancha.Servicios\HayCancha.Servicios.csproj">
+      <Project>{25a5b677-db5f-4f87-a094-322491fefe69}</Project>
+      <Name>HayCancha.Servicios</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

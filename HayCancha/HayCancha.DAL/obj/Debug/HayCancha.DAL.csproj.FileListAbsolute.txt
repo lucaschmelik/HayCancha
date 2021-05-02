@@ -1,5 +1,9 @@
 C:\Proyecto\HayCancha\HayCancha.DAL\bin\Debug\HayCancha.DAL.dll
 C:\Proyecto\HayCancha\HayCancha.DAL\bin\Debug\HayCancha.DAL.pdb
+C:\Proyecto\HayCancha\HayCancha.DAL\obj\Debug\HayCancha.DAL.csprojAssemblyReference.cache
 C:\Proyecto\HayCancha\HayCancha.DAL\obj\Debug\HayCancha.DAL.csproj.CoreCompileInputs.cache
 C:\Proyecto\HayCancha\HayCancha.DAL\obj\Debug\HayCancha.DAL.dll
 C:\Proyecto\HayCancha\HayCancha.DAL\obj\Debug\HayCancha.DAL.pdb
+C:\Proyecto\HayCancha\HayCancha.DAL\bin\Debug\HayCancha.BE.dll
+C:\Proyecto\HayCancha\HayCancha.DAL\bin\Debug\HayCancha.BE.pdb
+C:\Proyecto\HayCancha\HayCancha.DAL\obj\Debug\HayCancha.DAL.csproj.CopyComplete

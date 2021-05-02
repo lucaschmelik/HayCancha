@@ -1,5 +1,13 @@
 C:\Proyecto\HayCancha\HayCancha.BLL\bin\Debug\HayCancha.BLL.dll
 C:\Proyecto\HayCancha\HayCancha.BLL\bin\Debug\HayCancha.BLL.pdb
+C:\Proyecto\HayCancha\HayCancha.BLL\bin\Debug\HayCancha.BE.dll
+C:\Proyecto\HayCancha\HayCancha.BLL\bin\Debug\HayCancha.BE.pdb
+C:\Proyecto\HayCancha\HayCancha.BLL\obj\Debug\HayCancha.BLL.csprojAssemblyReference.cache
 C:\Proyecto\HayCancha\HayCancha.BLL\obj\Debug\HayCancha.BLL.csproj.CoreCompileInputs.cache
+C:\Proyecto\HayCancha\HayCancha.BLL\obj\Debug\HayCancha.BLL.csproj.CopyComplete
 C:\Proyecto\HayCancha\HayCancha.BLL\obj\Debug\HayCancha.BLL.dll
 C:\Proyecto\HayCancha\HayCancha.BLL\obj\Debug\HayCancha.BLL.pdb
+C:\Proyecto\HayCancha\HayCancha.BLL\bin\Debug\HayCancha.DAL.dll
+C:\Proyecto\HayCancha\HayCancha.BLL\bin\Debug\HayCancha.Servicios.dll
+C:\Proyecto\HayCancha\HayCancha.BLL\bin\Debug\HayCancha.DAL.pdb
+C:\Proyecto\HayCancha\HayCancha.BLL\bin\Debug\HayCancha.Servicios.pdb
