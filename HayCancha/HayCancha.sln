@@ -13,6 +13,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HayCancha.DAL", "HayCancha.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HayCancha.Servicios", "HayCancha.Servicios\HayCancha.Servicios.csproj", "{25A5B677-DB5F-4F87-A094-322491FEFE69}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Recursos", "Recursos", "{7548A3F9-E340-492C-8F00-829312592EED}"
+	ProjectSection(SolutionItems) = preProject
+		Recursos\barra.png = Recursos\barra.png
+		Recursos\exit.png = Recursos\exit.png
+		Recursos\pelota.png = Recursos\pelota.png
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
