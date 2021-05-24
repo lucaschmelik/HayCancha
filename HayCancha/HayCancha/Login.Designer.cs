@@ -41,6 +41,7 @@ namespace HayCancha
             this.lblUsuario = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.imgSalir = new System.Windows.Forms.PictureBox();
+            this.btnRegistrar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgPelota)).BeginInit();
@@ -60,6 +61,7 @@ namespace HayCancha
             this.txtContraseña.BackColor = System.Drawing.SystemColors.HighlightText;
             this.txtContraseña.Location = new System.Drawing.Point(320, 259);
             this.txtContraseña.Name = "txtContraseña";
+            this.txtContraseña.PasswordChar = '*';
             this.txtContraseña.Size = new System.Drawing.Size(137, 20);
             this.txtContraseña.TabIndex = 1;
             // 
@@ -112,7 +114,7 @@ namespace HayCancha
             this.btnIngresar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIngresar.Location = new System.Drawing.Point(335, 297);
             this.btnIngresar.Name = "btnIngresar";
-            this.btnIngresar.Size = new System.Drawing.Size(107, 43);
+            this.btnIngresar.Size = new System.Drawing.Size(107, 33);
             this.btnIngresar.TabIndex = 3;
             this.btnIngresar.Text = "INGRESAR";
             this.btnIngresar.UseVisualStyleBackColor = false;
@@ -123,7 +125,7 @@ namespace HayCancha
             this.imgPelota.Image = ((System.Drawing.Image)(resources.GetObject("imgPelota.Image")));
             this.imgPelota.Location = new System.Drawing.Point(327, 49);
             this.imgPelota.Name = "imgPelota";
-            this.imgPelota.Size = new System.Drawing.Size(120, 112);
+            this.imgPelota.Size = new System.Drawing.Size(120, 117);
             this.imgPelota.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.imgPelota.TabIndex = 4;
             this.imgPelota.TabStop = false;
@@ -159,12 +161,25 @@ namespace HayCancha
             this.imgSalir.TabStop = false;
             this.imgSalir.Click += new System.EventHandler(this.imgSalir_Click);
             // 
+            // btnRegistrar
+            // 
+            this.btnRegistrar.BackColor = System.Drawing.Color.Silver;
+            this.btnRegistrar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegistrar.Location = new System.Drawing.Point(335, 346);
+            this.btnRegistrar.Name = "btnRegistrar";
+            this.btnRegistrar.Size = new System.Drawing.Size(107, 33);
+            this.btnRegistrar.TabIndex = 8;
+            this.btnRegistrar.Text = "REGISTRAR";
+            this.btnRegistrar.UseVisualStyleBackColor = false;
+            this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.ForestGreen;
             this.ClientSize = new System.Drawing.Size(549, 408);
+            this.Controls.Add(this.btnRegistrar);
             this.Controls.Add(this.imgSalir);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lblUsuario);
@@ -203,5 +218,6 @@ namespace HayCancha
         private System.Windows.Forms.Label lblUsuario;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox imgSalir;
+        private System.Windows.Forms.Button btnRegistrar;
     }
 }

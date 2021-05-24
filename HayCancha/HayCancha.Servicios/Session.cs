@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using System.Runtime.Remoting.Messaging;
+using System.Security.Cryptography;
+using System.Text;
 using HayCancha.BE;
 
 namespace HayCancha.Servicios

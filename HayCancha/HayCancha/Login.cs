@@ -21,7 +21,7 @@ namespace HayCancha
         }
 
         private UsuarioBLL _oUsuarioBLL;
-        private Menu _oForm;
+        private Menu _frmMenu;
 
         private int iMov;
         private int iMovX;
@@ -30,7 +30,6 @@ namespace HayCancha
         private void Login_Load(object sender, EventArgs e)
         {
             this.CenterToScreen();
-            _oForm = new Menu();
         }
 
         private void Login_MouseUp(object sender, MouseEventArgs e)
@@ -52,26 +51,57 @@ namespace HayCancha
 
         private void imgSalir_Click(object sender, EventArgs e)
         {
-            Close();
+            Application.Exit();
         }
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
             try
             {
+                ValidarNombreContraseña();
+
                 _oUsuarioBLL = new UsuarioBLL(txtUsuario.Text, txtContraseña.Text);
 
                 _oUsuarioBLL.Login();
 
                 this.Hide();
 
-                _oForm.Show();
+                _frmMenu = new Menu(this);
+
+                _frmMenu.Show();
 
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message, "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void btnRegistrar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ValidarNombreContraseña();
+
+                _oUsuarioBLL = new UsuarioBLL(txtUsuario.Text, txtContraseña.Text);
+
+                _oUsuarioBLL.RegistrarUsuario();
+
+                MessageBox.Show("El usuario se registro correctamente");
+
+                btnIngresar_Click(null, null);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message,"Alerta",MessageBoxButtons.OK,MessageBoxIcon.Error);
+            }
+        }
+
+        private void ValidarNombreContraseña()
+        {
+            if(txtUsuario.Text == string.Empty) throw new Exception("Debe ingresar un nombre de usuario!");
+            if (txtContraseña.Text == string.Empty) throw new Exception("Debe ingresar una contraseña!");
+
         }
     }
 }

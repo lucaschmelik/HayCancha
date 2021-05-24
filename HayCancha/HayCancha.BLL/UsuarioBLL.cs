@@ -20,21 +20,42 @@ namespace HayCancha.BLL
             _oUsuario = new Usuario
             {
                 Nombre = sNombre,
-                Contraseña = sContraseña
+                Contraseña = SessionManager.AplicarHash(sContraseña)
             };
         }
 
         public void Login()
         {
-            _oUsuarioDAL = new UsuarioDAL();
+            _oUsuarioDAL = new UsuarioDAL()
+            {
+                oUsuario = _oUsuario
+            };
 
             if (SessionManager.Session.IsLogged()) throw new Exception("Existe una sesión iniciada");
 
-            if (_oUsuarioDAL.GetOne().Nombre != _oUsuario.Nombre) throw new Exception("Ingreso un usuario incorrecto");
+            var oUsuarioEncontrado = _oUsuarioDAL.ObtenerUsuarioPorNombre();
 
-            if (_oUsuarioDAL.GetOne().Contraseña != _oUsuario.Contraseña) throw new Exception("Ingreso la contraseña incorrecta");
+            if(oUsuarioEncontrado == null) throw new Exception("Ingreso un usuario que no existe");
+
+            oUsuarioEncontrado = _oUsuarioDAL.ObtenerUsuarioPorNombreContraseña();
+
+            if (oUsuarioEncontrado == null) throw new Exception("Ingreso una contraseña incorrecta");
+
+            if (oUsuarioEncontrado.Nombre != _oUsuario.Nombre || oUsuarioEncontrado.Contraseña != _oUsuario.Contraseña) throw new Exception("Ingreso usuario incorrecto");
 
             SessionManager.Session.Login(_oUsuario);
+        }
+
+        public void RegistrarUsuario()
+        {
+            _oUsuarioDAL = new UsuarioDAL()
+            {
+                oUsuario = _oUsuario
+            };
+            
+            if(_oUsuarioDAL.ObtenerUsuarioPorNombre() != null) throw new Exception("El usuario ingresado ya existe");
+
+            _oUsuarioDAL.RegistrarUsuario();
         }
 
     }
