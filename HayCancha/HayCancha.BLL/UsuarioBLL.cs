@@ -20,7 +20,7 @@ namespace HayCancha.BLL
             _oUsuario = new Usuario
             {
                 Nombre = sNombre,
-                Contraseña = SessionManager.AplicarHash(sContraseña)
+                Contraseña = EncriptadorService.AplicarHash(sContraseña)
             };
         }
 
@@ -31,7 +31,7 @@ namespace HayCancha.BLL
                 oUsuario = _oUsuario
             };
 
-            if (SessionManager.Session.IsLogged()) throw new Exception("Existe una sesión iniciada");
+            if (SessionService.Session.IsLogged()) throw new Exception("Existe una sesión iniciada");
 
             var oUsuarioEncontrado = _oUsuarioDAL.ObtenerUsuarioPorNombre();
 
@@ -43,7 +43,7 @@ namespace HayCancha.BLL
 
             if (oUsuarioEncontrado.Nombre != _oUsuario.Nombre || oUsuarioEncontrado.Contraseña != _oUsuario.Contraseña) throw new Exception("Ingreso usuario incorrecto");
 
-            SessionManager.Session.Login(_oUsuario);
+            SessionService.Session.Login(_oUsuario);
         }
 
         public void RegistrarUsuario()

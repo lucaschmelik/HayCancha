@@ -4,7 +4,6 @@ using System.Data;
 using System.Data.Odbc;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using HayCancha.BE;
 
 namespace HayCancha.DAL

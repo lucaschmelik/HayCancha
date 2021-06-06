@@ -1,19 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using HayCancha.BE;
+using HayCancha.BE.Enumerables;
+using HayCancha.BE.Interfaces;
 using HayCancha.BLL;
 using HayCancha.Servicios;
 
 namespace HayCancha
 {
-    public partial class Login : Form
+    public partial class Login : Form, IOdiomable
     {
         public Login()
         {
@@ -27,8 +23,11 @@ namespace HayCancha
         private int iMovX;
         private int iMovY;
 
+        public IdiomaEnum IdiomaControl { get; set; }
+
         private void Login_Load(object sender, EventArgs e)
         {
+            SessionService.Session.Suscribir(this);
             this.CenterToScreen();
         }
 
@@ -102,6 +101,40 @@ namespace HayCancha
             if(txtUsuario.Text == string.Empty) throw new Exception("Debe ingresar un nombre de usuario!");
             if (txtContraseña.Text == string.Empty) throw new Exception("Debe ingresar una contraseña!");
 
+        }
+
+        private void imgIdiomaEspañol_Click(object sender, EventArgs e)
+        {
+            if (SessionService.Session.Idioma != IdiomaEnum.Español) 
+                SessionService.Session.Idioma = IdiomaEnum.Español;
+        }
+
+        private void imgIdiomaIngles_Click(object sender, EventArgs e)
+        {
+            if (SessionService.Session.Idioma != IdiomaEnum.Ingles) 
+                SessionService.Session.Idioma = IdiomaEnum.Ingles;
+        }
+
+        private void imgIdiomaChino_Click(object sender, EventArgs e)
+        {
+            if (SessionService.Session.Idioma != IdiomaEnum.Chino)
+                SessionService.Session.Idioma = IdiomaEnum.Chino;
+        }
+
+        public void Update()
+        {
+            foreach (Control oComponente in this.Controls)
+            {
+                if (oComponente.GetType() == typeof(Panel))
+                {
+                    foreach (Control oComponentePanel in oComponente.Controls)
+                    {
+                        oComponentePanel.Text = TraductorService.RetornaTraduccion(oComponentePanel.Name);
+                    }
+                }
+                oComponente.Text = TraductorService.RetornaTraduccion(oComponente.Name);
+            }
+            IdiomaControl = SessionService.Session.Idioma;
         }
     }
 }
