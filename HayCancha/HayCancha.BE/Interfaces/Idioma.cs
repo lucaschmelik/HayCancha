@@ -1,29 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using HayCancha.BE.Enumerables;
+﻿using System.Collections.Generic;
 
 namespace HayCancha.BE.Interfaces
 {
     public abstract class Idioma
     {
-        List<IOdiomable> _lstComponentes = new List<IOdiomable>();
+        List<IOdiomable> _lstControles = new List<IOdiomable>();
 
         public void Suscribir(IOdiomable oComponente)
         {
-            _lstComponentes.Add(oComponente);
+            _lstControles.Add(oComponente);
         }
 
         public void Desuscribir(IOdiomable oComponente)
         {
-            _lstComponentes.Remove(oComponente);
+            _lstControles.Remove(oComponente);
         }
 
         public void Notificar()
         {
-            foreach (var oComponente in _lstComponentes)
+            foreach (var oComponente in _lstControles)
             {
                 oComponente.Update();   
             }

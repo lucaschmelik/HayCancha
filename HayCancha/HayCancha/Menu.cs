@@ -20,32 +20,33 @@ namespace HayCancha
         {
             SessionService.Session.Suscribir(this);
             if(IdiomaControl != _frmLogin.IdiomaControl) Update();
+            VerificarPermisos();
         }
 
         private UsuarioBLL _oUsuarioBLL;
         private Login _frmLogin;
 
-        private int iMov;
-        private int iMovX;
-        private int iMovY;
+        private int _iMov;
+        private int _iMovX;
+        private int _iMovY;
 
         public IdiomaEnum IdiomaControl { get; set; }
 
         private void Menu_MouseDown(object sender, MouseEventArgs e)
         {
-            iMov = 1;
-            iMovX = e.X;
-            iMovY = e.Y;
+            _iMov = 1;
+            _iMovX = e.X;
+            _iMovY = e.Y;
         }
 
         private void Menu_MouseMove(object sender, MouseEventArgs e)
         {
-            if (iMov == 1) SetDesktopLocation(MousePosition.X - iMovX, MousePosition.Y - iMovY);
+            if (_iMov == 1) SetDesktopLocation(MousePosition.X - _iMovX, MousePosition.Y - _iMovY);
         }
 
         private void Menu_MouseUp(object sender, MouseEventArgs e)
         {
-            iMov = 0;
+            _iMov = 0;
         }
 
         private void imgSalir_Click(object sender, EventArgs e)
@@ -84,21 +85,32 @@ namespace HayCancha
             {
                 if (oComponente.GetType() == typeof(MenuStrip))
                 {
-                    foreach (ToolStripMenuItem oComponentePanel in (oComponente as MenuStrip).Items)
+                    foreach (ToolStripMenuItem oComponenteMenu in (oComponente as MenuStrip).Items)
                     {
-                        if (oComponentePanel.DropDownItems.Count > 0)
+                        if (oComponenteMenu.DropDownItems.Count > 0)
                         {
-                            foreach (ToolStripMenuItem oComponentePanelMenu in oComponentePanel.DropDownItems)
+                            foreach (ToolStripMenuItem oComponentePanelMenu in oComponenteMenu.DropDownItems)
                             {
                                 oComponentePanelMenu.Text = TraductorService.RetornaTraduccion(oComponentePanelMenu.Name);
                             }
                         }
-                        oComponentePanel.Text = TraductorService.RetornaTraduccion(oComponentePanel.Name);
+                        oComponenteMenu.Text = TraductorService.RetornaTraduccion(oComponenteMenu.Name);
                     }
                 }
                 oComponente.Text = TraductorService.RetornaTraduccion(oComponente.Name);
             }
             IdiomaControl = SessionService.Session.Idioma;
+        }
+
+        public void VerificarPermisos()
+        {
+            foreach (ToolStripMenuItem oComponenteMenu in msMenu.Items)
+            {
+                if (oComponenteMenu.Tag != null)
+                {
+                    oComponenteMenu.Visible = SessionService.Session.TienePermiso((PermisoEnum) Enum.GetValues(typeof(PermisoEnum)).GetValue(int.Parse(oComponenteMenu.Tag.ToString()) - 1), SessionService.Session.ObtenerListaPermisos());
+                }
+            }
         }
     }
 }

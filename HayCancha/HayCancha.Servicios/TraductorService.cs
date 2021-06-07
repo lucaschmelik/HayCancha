@@ -10,10 +10,9 @@ namespace HayCancha.Servicios
 {
     public class TraductorService
     {
-        private static IdiomaDAL _oUsuarioDal = new IdiomaDAL();
         public static string RetornaTraduccion(string sNombreComponente)
         {
-            return _oUsuarioDal.RetornaTraduccion(sNombreComponente, (int) SessionService.Session.Idioma);
+            return IdiomaDAL.Instancia.RetornaTraduccion(sNombreComponente, (int) SessionService.Session.Idioma);
         }
     }
 }

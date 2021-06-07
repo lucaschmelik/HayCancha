@@ -72,6 +72,7 @@ namespace HayCancha
             }
             catch (Exception ex)
             {
+                SessionService.Session.Logout();
                 MessageBox.Show(ex.Message, "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }

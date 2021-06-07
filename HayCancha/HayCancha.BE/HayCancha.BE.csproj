@@ -41,10 +41,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstractas\AbstractComponent.cs" />
     <Compile Include="Abstractas\AbstractDAL.cs" />
     <Compile Include="Abstractas\AbstractEntidad.cs" />
+    <Compile Include="Clases\Familia.cs" />
+    <Compile Include="Clases\Patente.cs" />
     <Compile Include="Clases\Session.cs" />
     <Compile Include="Enumerables\IdiomaEnum.cs" />
+    <Compile Include="Enumerables\PermisoEnum.cs" />
     <Compile Include="Interfaces\Idioma.cs" />
     <Compile Include="Interfaces\IOdiomable.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

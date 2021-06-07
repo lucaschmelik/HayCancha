@@ -5,6 +5,7 @@ using System.Data.Odbc;
 using System.Linq;
 using System.Text;
 using HayCancha.BE;
+using HayCancha.BE.Enumerables;
 
 namespace HayCancha.DAL
 {
@@ -44,7 +45,7 @@ namespace HayCancha.DAL
 
         public void RegistrarUsuario()
         {
-            EjecutaStp("stpAlta" + oUsuario.Tabla, new Dictionary<string, object>() { { "Nombre", oUsuario.Nombre }, { "Contraseña", oUsuario.Contraseña } }, new DataTable());
+            EjecutaStp("stpAlta" + oUsuario.Tabla, new Dictionary<string, object>() { { "Nombre", oUsuario.Nombre }, { "Contraseña", oUsuario.Contraseña }, { "Permiso", (int)PermisoEnum.Jugador } }, new DataTable());
         }
 
         public DataTable RetornaTabla()

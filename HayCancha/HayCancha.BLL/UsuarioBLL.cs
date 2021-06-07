@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics.Eventing.Reader;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using HayCancha.BE;
+using HayCancha.BE.Clases;
 using HayCancha.DAL;
 using HayCancha.Servicios;
 
@@ -44,6 +40,8 @@ namespace HayCancha.BLL
             if (oUsuarioEncontrado.Nombre != _oUsuario.Nombre || oUsuarioEncontrado.Contraseña != _oUsuario.Contraseña) throw new Exception("Ingreso usuario incorrecto");
 
             SessionService.Session.Login(_oUsuario);
+
+            SessionService.CargarPermisos(_oUsuario);
         }
 
         public void RegistrarUsuario()

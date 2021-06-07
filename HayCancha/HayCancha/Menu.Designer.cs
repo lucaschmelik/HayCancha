@@ -30,7 +30,7 @@ namespace HayCancha
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menu));
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.msMenu = new System.Windows.Forms.MenuStrip();
             this.tsmUsuarios = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmUsuariosAlta = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmUsuariosBaja = new System.Windows.Forms.ToolStripMenuItem();
@@ -42,18 +42,18 @@ namespace HayCancha
             this.tsmReportes = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmOpciones = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmIdioma = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmSalir = new System.Windows.Forms.ToolStripMenuItem();
-            this.imgSalir = new System.Windows.Forms.PictureBox();
             this.tsmIdiomaEspañol = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmIdiomaIngles = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmIdiomaChino = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuStrip1.SuspendLayout();
+            this.tsmSalir = new System.Windows.Forms.ToolStripMenuItem();
+            this.imgSalir = new System.Windows.Forms.PictureBox();
+            this.msMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgSalir)).BeginInit();
             this.SuspendLayout();
             // 
-            // menuStrip1
+            // msMenu
             // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.msMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmUsuarios,
             this.tsmAlquiler,
             this.tsmEquipos,
@@ -62,11 +62,11 @@ namespace HayCancha
             this.tsmOpciones,
             this.tsmIdioma,
             this.tsmSalir});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
-            this.menuStrip1.TabIndex = 9;
-            this.menuStrip1.Text = "menuStrip1";
+            this.msMenu.Location = new System.Drawing.Point(0, 0);
+            this.msMenu.Name = "msMenu";
+            this.msMenu.Size = new System.Drawing.Size(800, 24);
+            this.msMenu.TabIndex = 9;
+            this.msMenu.Text = "menuStrip1";
             // 
             // tsmUsuarios
             // 
@@ -77,60 +77,66 @@ namespace HayCancha
             this.tsmUsuariosConsulta});
             this.tsmUsuarios.Name = "tsmUsuarios";
             this.tsmUsuarios.Size = new System.Drawing.Size(74, 20);
+            this.tsmUsuarios.Tag = "5";
             this.tsmUsuarios.Text = "USUARIOS";
             // 
             // tsmUsuariosAlta
             // 
             this.tsmUsuariosAlta.Name = "tsmUsuariosAlta";
-            this.tsmUsuariosAlta.Size = new System.Drawing.Size(159, 22);
+            this.tsmUsuariosAlta.Size = new System.Drawing.Size(180, 22);
             this.tsmUsuariosAlta.Text = "ALTA";
             // 
             // tsmUsuariosBaja
             // 
             this.tsmUsuariosBaja.Name = "tsmUsuariosBaja";
-            this.tsmUsuariosBaja.Size = new System.Drawing.Size(159, 22);
+            this.tsmUsuariosBaja.Size = new System.Drawing.Size(180, 22);
             this.tsmUsuariosBaja.Text = "BAJA";
             // 
             // tsmUsuariosModificacion
             // 
             this.tsmUsuariosModificacion.Name = "tsmUsuariosModificacion";
-            this.tsmUsuariosModificacion.Size = new System.Drawing.Size(159, 22);
+            this.tsmUsuariosModificacion.Size = new System.Drawing.Size(180, 22);
             this.tsmUsuariosModificacion.Text = "MODIFICACION";
             // 
             // tsmUsuariosConsulta
             // 
             this.tsmUsuariosConsulta.Name = "tsmUsuariosConsulta";
-            this.tsmUsuariosConsulta.Size = new System.Drawing.Size(159, 22);
+            this.tsmUsuariosConsulta.Size = new System.Drawing.Size(180, 22);
             this.tsmUsuariosConsulta.Text = "CONSULTA";
             // 
             // tsmAlquiler
             // 
             this.tsmAlquiler.Name = "tsmAlquiler";
             this.tsmAlquiler.Size = new System.Drawing.Size(72, 20);
+            this.tsmAlquiler.Tag = "6";
             this.tsmAlquiler.Text = "ALQUILER";
             // 
             // tsmEquipos
             // 
             this.tsmEquipos.Name = "tsmEquipos";
             this.tsmEquipos.Size = new System.Drawing.Size(67, 20);
+            this.tsmEquipos.Tag = "7";
             this.tsmEquipos.Text = "EQUIPOS";
             // 
             // tsmEstadisticas
             // 
             this.tsmEstadisticas.Name = "tsmEstadisticas";
             this.tsmEstadisticas.Size = new System.Drawing.Size(92, 20);
+            this.tsmEstadisticas.Tag = "8";
             this.tsmEstadisticas.Text = "ESTADISTICAS";
             // 
             // tsmReportes
             // 
             this.tsmReportes.Name = "tsmReportes";
             this.tsmReportes.Size = new System.Drawing.Size(72, 20);
+            this.tsmReportes.Tag = "9";
             this.tsmReportes.Text = "REPORTES";
             // 
             // tsmOpciones
             // 
             this.tsmOpciones.Name = "tsmOpciones";
             this.tsmOpciones.Size = new System.Drawing.Size(76, 20);
+            this.tsmOpciones.Tag = "10";
             this.tsmOpciones.Text = "OPCIONES";
             // 
             // tsmIdioma
@@ -141,26 +147,8 @@ namespace HayCancha
             this.tsmIdiomaChino});
             this.tsmIdioma.Name = "tsmIdioma";
             this.tsmIdioma.Size = new System.Drawing.Size(61, 20);
+            this.tsmIdioma.Tag = "11";
             this.tsmIdioma.Text = "IDIOMA";
-            // 
-            // tsmSalir
-            // 
-            this.tsmSalir.Name = "tsmSalir";
-            this.tsmSalir.Size = new System.Drawing.Size(49, 20);
-            this.tsmSalir.Text = "SALIR";
-            this.tsmSalir.Click += new System.EventHandler(this.btnMenuSalir_Click);
-            // 
-            // imgSalir
-            // 
-            this.imgSalir.BackColor = System.Drawing.Color.White;
-            this.imgSalir.Image = ((System.Drawing.Image)(resources.GetObject("imgSalir.Image")));
-            this.imgSalir.Location = new System.Drawing.Point(770, 0);
-            this.imgSalir.Name = "imgSalir";
-            this.imgSalir.Size = new System.Drawing.Size(21, 24);
-            this.imgSalir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.imgSalir.TabIndex = 8;
-            this.imgSalir.TabStop = false;
-            this.imgSalir.Click += new System.EventHandler(this.imgSalir_Click);
             // 
             // tsmIdiomaEspañol
             // 
@@ -186,6 +174,25 @@ namespace HayCancha
             this.tsmIdiomaChino.Text = "CHINO";
             this.tsmIdiomaChino.Click += new System.EventHandler(this.tsmIdiomaChino_Click);
             // 
+            // tsmSalir
+            // 
+            this.tsmSalir.Name = "tsmSalir";
+            this.tsmSalir.Size = new System.Drawing.Size(49, 20);
+            this.tsmSalir.Text = "SALIR";
+            this.tsmSalir.Click += new System.EventHandler(this.btnMenuSalir_Click);
+            // 
+            // imgSalir
+            // 
+            this.imgSalir.BackColor = System.Drawing.Color.White;
+            this.imgSalir.Image = ((System.Drawing.Image)(resources.GetObject("imgSalir.Image")));
+            this.imgSalir.Location = new System.Drawing.Point(770, 0);
+            this.imgSalir.Name = "imgSalir";
+            this.imgSalir.Size = new System.Drawing.Size(21, 24);
+            this.imgSalir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.imgSalir.TabIndex = 8;
+            this.imgSalir.TabStop = false;
+            this.imgSalir.Click += new System.EventHandler(this.imgSalir_Click);
+            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -193,7 +200,7 @@ namespace HayCancha
             this.BackColor = System.Drawing.Color.ForestGreen;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.imgSalir);
-            this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.msMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Menu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -202,8 +209,8 @@ namespace HayCancha
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Menu_MouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Menu_MouseMove);
             this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Menu_MouseUp);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.msMenu.ResumeLayout(false);
+            this.msMenu.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgSalir)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -212,7 +219,7 @@ namespace HayCancha
 
         #endregion
         private System.Windows.Forms.PictureBox imgSalir;
-        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.MenuStrip msMenu;
         private System.Windows.Forms.ToolStripMenuItem tsmUsuarios;
         private System.Windows.Forms.ToolStripMenuItem tsmAlquiler;
         private System.Windows.Forms.ToolStripMenuItem tsmEquipos;
