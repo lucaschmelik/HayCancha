@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Drawing;
 using HayCancha.BE.Abstractas;
 using HayCancha.BE.Enumerables;
 using HayCancha.BE.Interfaces;
@@ -41,6 +42,11 @@ namespace HayCancha.BE.Clases
             _oUsuario.lstPermisos.Add(oComponente);
         }
 
+        public void AgregarImagenPerfil(Image imgPerfil)
+        {
+            _oUsuario.Imagen = imgPerfil;
+        }
+
         public bool TienePermiso(PermisoEnum oPermiso, IList<AbstractComponent> lstPermisos)
         {
             foreach (var oComponente in lstPermisos)
@@ -61,9 +67,19 @@ namespace HayCancha.BE.Clases
             return _oUsuario.Nombre;
         }
 
+        public string ObtenerContraseñaUsuario()
+        {
+            return _oUsuario.Contraseña;
+        }
+
         public List<AbstractComponent> ObtenerListaPermisos()
         {
             return _oUsuario.lstPermisos;
+        }
+
+        public Image ObtenerImagenPerfil()
+        {
+            return _oUsuario.Imagen;
         }
     }
 }

@@ -19,9 +19,9 @@ namespace HayCancha
         private UsuarioBLL _oUsuarioBLL;
         private Menu _frmMenu;
 
-        private int iMov;
-        private int iMovX;
-        private int iMovY;
+        private int _iMov;
+        private int _iMovX;
+        private int _iMovY;
 
         public IdiomaEnum IdiomaControl { get; set; }
 
@@ -33,19 +33,19 @@ namespace HayCancha
 
         private void Login_MouseUp(object sender, MouseEventArgs e)
         {
-            iMov = 0;
+            _iMov = 0;
         }
 
         private void Login_MouseDown(object sender, MouseEventArgs e)
         {
-            iMov = 1;
-            iMovX = e.X;
-            iMovY = e.Y;
+            _iMov = 1;
+            _iMovX = e.X;
+            _iMovY = e.Y;
         }
 
         private void Login_MouseMove(object sender, MouseEventArgs e)
         {
-            if (iMov == 1 ) SetDesktopLocation(MousePosition.X - iMovX, MousePosition.Y - iMovY);
+            if (_iMov == 1 ) SetDesktopLocation(MousePosition.X - _iMovX, MousePosition.Y - _iMovY);
         }
 
         private void imgSalir_Click(object sender, EventArgs e)
@@ -124,17 +124,8 @@ namespace HayCancha
 
         public void Update()
         {
-            foreach (Control oComponente in this.Controls)
-            {
-                if (oComponente.GetType() == typeof(Panel))
-                {
-                    foreach (Control oComponentePanel in oComponente.Controls)
-                    {
-                        oComponentePanel.Text = TraductorService.RetornaTraduccion(oComponentePanel.Name);
-                    }
-                }
-                oComponente.Text = TraductorService.RetornaTraduccion(oComponente.Name);
-            }
+            TraductorBLL.Instancia.ActualizarControles(this.Controls);
+
             IdiomaControl = SessionService.Session.Idioma;
         }
     }

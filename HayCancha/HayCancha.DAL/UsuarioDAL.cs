@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Data;
-using System.Data.Odbc;
 using System.Linq;
-using System.Text;
 using HayCancha.BE;
 using HayCancha.BE.Enumerables;
 
@@ -43,9 +40,36 @@ namespace HayCancha.DAL
             return oDrUsuario == null ? null : new Usuario { Nombre = oDrUsuario["Nombre"].ToString() };
         }
 
-        public void RegistrarUsuario()
+        public void RegistrarUsuario(PermisoEnum oRol, byte[] btImagen)
         {
-            EjecutaStp("stpAlta" + oUsuario.Tabla, new Dictionary<string, object>() { { "Nombre", oUsuario.Nombre }, { "Contraseña", oUsuario.Contraseña }, { "Permiso", (int)PermisoEnum.Jugador } }, new DataTable());
+            EjecutaStp("stpAlta" + oUsuario.Tabla, new Dictionary<string, object>() { { "Nombre", oUsuario.Nombre }, { "Contraseña", oUsuario.Contraseña }, { "Permiso", (int)oRol }, { "Imagen", btImagen} }, new DataTable());
+        }
+
+        public byte[] ObtenerImagenDefault()
+        {
+            var oDt = new DataTable();
+
+            oDt.Columns.Add("Imagen", typeof(byte[]));
+
+            var oDrImagen = EjecutaStp("stpObtenerImagenDefaultUsuario", new Dictionary<string, object>(), oDt).AsEnumerable().FirstOrDefault();
+
+            return (byte[]) oDrImagen["Imagen"];
+        }
+
+        public void GuardarImagenPerfil(byte[] btImagen)
+        {
+            EjecutaStp("stpGuardarImagenUsuario", new Dictionary<string, object>() {{"Nombre", oUsuario.Nombre}, {"Imagen", btImagen}}, new DataTable());
+        }
+
+        public byte[] ObtenerImagenPerfil()
+        {
+            var oDt = new DataTable();
+
+            oDt.Columns.Add("Imagen", typeof(byte[]));
+
+            var oDrImagen = EjecutaStp("stpObtenerImagenPerfilUsuario", new Dictionary<string, object>() {{"Nombre", oUsuario.Nombre}}, oDt).AsEnumerable().FirstOrDefault(); ;
+
+            return (byte[])oDrImagen[0];
         }
 
         public DataTable RetornaTabla()

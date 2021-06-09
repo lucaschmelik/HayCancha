@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿
+using System.Collections.Generic;
 using HayCancha.BE.Abstractas;
+using System.Drawing;
 
 namespace HayCancha.BE
 {
@@ -12,6 +14,7 @@ namespace HayCancha.BE
         
         public string Nombre { get; set; }
         public string Contraseña { get; set; }
+        public Image Imagen { get; set; }
 
         public List<AbstractComponent> lstPermisos { get; }
     }

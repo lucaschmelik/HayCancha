@@ -47,8 +47,12 @@ namespace HayCancha
             this.tsmIdiomaChino = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmSalir = new System.Windows.Forms.ToolStripMenuItem();
             this.imgSalir = new System.Windows.Forms.PictureBox();
+            this.imgPerfil = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.msMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgSalir)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgPerfil)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // msMenu
@@ -83,25 +87,25 @@ namespace HayCancha
             // tsmUsuariosAlta
             // 
             this.tsmUsuariosAlta.Name = "tsmUsuariosAlta";
-            this.tsmUsuariosAlta.Size = new System.Drawing.Size(180, 22);
+            this.tsmUsuariosAlta.Size = new System.Drawing.Size(159, 22);
             this.tsmUsuariosAlta.Text = "ALTA";
             // 
             // tsmUsuariosBaja
             // 
             this.tsmUsuariosBaja.Name = "tsmUsuariosBaja";
-            this.tsmUsuariosBaja.Size = new System.Drawing.Size(180, 22);
+            this.tsmUsuariosBaja.Size = new System.Drawing.Size(159, 22);
             this.tsmUsuariosBaja.Text = "BAJA";
             // 
             // tsmUsuariosModificacion
             // 
             this.tsmUsuariosModificacion.Name = "tsmUsuariosModificacion";
-            this.tsmUsuariosModificacion.Size = new System.Drawing.Size(180, 22);
+            this.tsmUsuariosModificacion.Size = new System.Drawing.Size(159, 22);
             this.tsmUsuariosModificacion.Text = "MODIFICACION";
             // 
             // tsmUsuariosConsulta
             // 
             this.tsmUsuariosConsulta.Name = "tsmUsuariosConsulta";
-            this.tsmUsuariosConsulta.Size = new System.Drawing.Size(180, 22);
+            this.tsmUsuariosConsulta.Size = new System.Drawing.Size(159, 22);
             this.tsmUsuariosConsulta.Text = "CONSULTA";
             // 
             // tsmAlquiler
@@ -154,7 +158,7 @@ namespace HayCancha
             // 
             this.tsmIdiomaEspañol.Image = global::HayCancha.Properties.Resources.IdiomaEspañol;
             this.tsmIdiomaEspañol.Name = "tsmIdiomaEspañol";
-            this.tsmIdiomaEspañol.Size = new System.Drawing.Size(180, 22);
+            this.tsmIdiomaEspañol.Size = new System.Drawing.Size(124, 22);
             this.tsmIdiomaEspañol.Text = "ESPAÑOL";
             this.tsmIdiomaEspañol.Click += new System.EventHandler(this.tsmIdiomaEspañol_Click);
             // 
@@ -162,7 +166,7 @@ namespace HayCancha
             // 
             this.tsmIdiomaIngles.Image = global::HayCancha.Properties.Resources.IdiomaIngles;
             this.tsmIdiomaIngles.Name = "tsmIdiomaIngles";
-            this.tsmIdiomaIngles.Size = new System.Drawing.Size(180, 22);
+            this.tsmIdiomaIngles.Size = new System.Drawing.Size(124, 22);
             this.tsmIdiomaIngles.Text = "INGLES";
             this.tsmIdiomaIngles.Click += new System.EventHandler(this.tsmIdiomaIngles_Click);
             // 
@@ -170,7 +174,7 @@ namespace HayCancha
             // 
             this.tsmIdiomaChino.Image = global::HayCancha.Properties.Resources.IdiomaChino;
             this.tsmIdiomaChino.Name = "tsmIdiomaChino";
-            this.tsmIdiomaChino.Size = new System.Drawing.Size(180, 22);
+            this.tsmIdiomaChino.Size = new System.Drawing.Size(124, 22);
             this.tsmIdiomaChino.Text = "CHINO";
             this.tsmIdiomaChino.Click += new System.EventHandler(this.tsmIdiomaChino_Click);
             // 
@@ -193,12 +197,32 @@ namespace HayCancha
             this.imgSalir.TabStop = false;
             this.imgSalir.Click += new System.EventHandler(this.imgSalir_Click);
             // 
+            // imgPerfil
+            // 
+            this.imgPerfil.Location = new System.Drawing.Point(41, 42);
+            this.imgPerfil.Name = "imgPerfil";
+            this.imgPerfil.Size = new System.Drawing.Size(154, 145);
+            this.imgPerfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.imgPerfil.TabIndex = 10;
+            this.imgPerfil.TabStop = false;
+            this.imgPerfil.Click += new System.EventHandler(this.imgPerfil_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.Info;
+            this.panel1.Controls.Add(this.imgPerfil);
+            this.panel1.Location = new System.Drawing.Point(575, 23);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(225, 429);
+            this.panel1.TabIndex = 11;
+            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.ForestGreen;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.imgSalir);
             this.Controls.Add(this.msMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -212,6 +236,8 @@ namespace HayCancha
             this.msMenu.ResumeLayout(false);
             this.msMenu.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgSalir)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgPerfil)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -235,5 +261,7 @@ namespace HayCancha
         private System.Windows.Forms.ToolStripMenuItem tsmIdiomaEspañol;
         private System.Windows.Forms.ToolStripMenuItem tsmIdiomaIngles;
         private System.Windows.Forms.ToolStripMenuItem tsmIdiomaChino;
+        private System.Windows.Forms.PictureBox imgPerfil;
+        private System.Windows.Forms.Panel panel1;
     }
 }

@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Data;
-using System.Security;
+using System.Windows.Forms;
 using HayCancha.BE;
 using HayCancha.BE.Abstractas;
 using HayCancha.BE.Clases;
@@ -11,11 +11,13 @@ namespace HayCancha.Servicios
 {
     public class SessionService
     {
-        private static Session _oInstancia;
+        private static Session _oSession;
+        public static Session Session => _oSession ?? (_oSession = new Session());
 
-        public static Session Session => _oInstancia ?? (_oInstancia = new Session());
+        private static SessionService _oInstancia;
+        public static SessionService Instancia => _oInstancia ?? (_oInstancia = new SessionService());
 
-        public static void CargarPermisos(Usuario oUsuario)
+        public void CargarPermisos(Usuario oUsuario)
         {
             var oFamilia = new Familia()
             {
@@ -47,5 +49,15 @@ namespace HayCancha.Servicios
             }
         }
 
+        public void VerificarPermisos(MenuStrip oMenuStrip)
+        {
+            foreach (ToolStripMenuItem oComponenteMenu in oMenuStrip.Items)
+            {
+                if (oComponenteMenu.Tag != null)
+                {
+                    oComponenteMenu.Visible = Session.TienePermiso((PermisoEnum)Enum.GetValues(typeof(PermisoEnum)).GetValue(int.Parse(oComponenteMenu.Tag.ToString()) - 1), Session.ObtenerListaPermisos());
+                }
+            }
+        }
     }
 }

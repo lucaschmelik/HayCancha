@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 using HayCancha.BE.Enumerables;
 using HayCancha.BE.Interfaces;
@@ -20,11 +22,14 @@ namespace HayCancha
         {
             SessionService.Session.Suscribir(this);
             if(IdiomaControl != _frmLogin.IdiomaControl) Update();
-            VerificarPermisos();
+            SessionService.Instancia.VerificarPermisos(msMenu);
+            imgPerfil.Image = SessionService.Session.ObtenerImagenPerfil();
+            _UsuarioBLL = new UsuarioBLL(SessionService.Session.ObtenerNombreUsuario(), SessionService.Session.ObtenerContraseñaUsuario());
+            RedondearPictureBox();
         }
 
-        private UsuarioBLL _oUsuarioBLL;
         private Login _frmLogin;
+        private UsuarioBLL _UsuarioBLL;
 
         private int _iMov;
         private int _iMovX;
@@ -47,6 +52,14 @@ namespace HayCancha
         private void Menu_MouseUp(object sender, MouseEventArgs e)
         {
             _iMov = 0;
+        }
+
+        private void RedondearPictureBox()
+        {
+            var graphicsPath = new System.Drawing.Drawing2D.GraphicsPath();
+            graphicsPath.AddEllipse(10, 0, imgPerfil.Width - 20, imgPerfil.Height - 1);
+            var imgPerfilRegion = new Region(graphicsPath);
+            imgPerfil.Region = imgPerfilRegion;
         }
 
         private void imgSalir_Click(object sender, EventArgs e)
@@ -81,36 +94,22 @@ namespace HayCancha
 
         public void Update()
         {
-            foreach (Control oComponente in this.Controls)
-            {
-                if (oComponente.GetType() == typeof(MenuStrip))
-                {
-                    foreach (ToolStripMenuItem oComponenteMenu in (oComponente as MenuStrip).Items)
-                    {
-                        if (oComponenteMenu.DropDownItems.Count > 0)
-                        {
-                            foreach (ToolStripMenuItem oComponentePanelMenu in oComponenteMenu.DropDownItems)
-                            {
-                                oComponentePanelMenu.Text = TraductorService.RetornaTraduccion(oComponentePanelMenu.Name);
-                            }
-                        }
-                        oComponenteMenu.Text = TraductorService.RetornaTraduccion(oComponenteMenu.Name);
-                    }
-                }
-                oComponente.Text = TraductorService.RetornaTraduccion(oComponente.Name);
-            }
+            TraductorBLL.Instancia.ActualizarControles(this.Controls);
+
             IdiomaControl = SessionService.Session.Idioma;
         }
 
-        public void VerificarPermisos()
+        private void imgPerfil_Click(object sender, EventArgs e)
         {
-            foreach (ToolStripMenuItem oComponenteMenu in msMenu.Items)
-            {
-                if (oComponenteMenu.Tag != null)
-                {
-                    oComponenteMenu.Visible = SessionService.Session.TienePermiso((PermisoEnum) Enum.GetValues(typeof(PermisoEnum)).GetValue(int.Parse(oComponenteMenu.Tag.ToString()) - 1), SessionService.Session.ObtenerListaPermisos());
-                }
-            }
+            OpenFileDialog ofdImagen = new OpenFileDialog();
+
+            DialogResult drImagen = ofdImagen.ShowDialog();
+
+            if (drImagen != DialogResult.OK) return;
+
+            _UsuarioBLL.CambiarImagenPerfil(File.ReadAllBytes(ofdImagen.FileName));
+
+            imgPerfil.Load(ofdImagen.FileName);
         }
     }
 }

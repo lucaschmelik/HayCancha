@@ -1,6 +1,7 @@
 ﻿using System;
+using System.Drawing;
 using HayCancha.BE;
-using HayCancha.BE.Clases;
+using HayCancha.BE.Enumerables;
 using HayCancha.DAL;
 using HayCancha.Servicios;
 
@@ -18,14 +19,15 @@ namespace HayCancha.BLL
                 Nombre = sNombre,
                 Contraseña = EncriptadorService.AplicarHash(sContraseña)
             };
-        }
 
-        public void Login()
-        {
             _oUsuarioDAL = new UsuarioDAL()
             {
                 oUsuario = _oUsuario
             };
+        }
+
+        public void Login()
+        {
 
             if (SessionService.Session.IsLogged()) throw new Exception("Existe una sesión iniciada");
 
@@ -40,8 +42,10 @@ namespace HayCancha.BLL
             if (oUsuarioEncontrado.Nombre != _oUsuario.Nombre || oUsuarioEncontrado.Contraseña != _oUsuario.Contraseña) throw new Exception("Ingreso usuario incorrecto");
 
             SessionService.Session.Login(_oUsuario);
+            
+            SessionService.Session.AgregarImagenPerfil(ConversorImagenService.ConvetirByteAImagen(_oUsuarioDAL.ObtenerImagenPerfil()));
 
-            SessionService.CargarPermisos(_oUsuario);
+            SessionService.Instancia.CargarPermisos(_oUsuario);
         }
 
         public void RegistrarUsuario()
@@ -50,10 +54,15 @@ namespace HayCancha.BLL
             {
                 oUsuario = _oUsuario
             };
-            
+
             if(_oUsuarioDAL.ObtenerUsuarioPorNombre() != null) throw new Exception("El usuario ingresado ya existe");
 
-            _oUsuarioDAL.RegistrarUsuario();
+            _oUsuarioDAL.RegistrarUsuario(PermisoEnum.Jugador, _oUsuarioDAL.ObtenerImagenDefault());
+        }
+
+        public void CambiarImagenPerfil(byte[] btPerfil)
+        {
+            _oUsuarioDAL.GuardarImagenPerfil(btPerfil);
         }
 
     }
