@@ -1,20 +1,26 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
+using HayCancha.BE.Enumerables;
+using HayCancha.BE.Interfaces;
+using HayCancha.BLL;
+using HayCancha.Servicios;
 
 namespace HayCancha
 {
-    public partial class NotificacionUC : UserControl
+    public partial class NotificacionUC : UserControl, IOdiomable
     {
         public NotificacionUC()
         {
             InitializeComponent();
+            SessionService.Session.Suscribir(this);
+        }
+
+        public IdiomaEnum IdiomaControl { get; set; }
+
+        public void Update()
+        {
+            TraductorBLL.Instancia.ActualizarControles(this.Controls);
+
+            IdiomaControl = SessionService.Session.Idioma;
         }
     }
 }

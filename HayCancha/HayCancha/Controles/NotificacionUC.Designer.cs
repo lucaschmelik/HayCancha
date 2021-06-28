@@ -31,7 +31,7 @@ namespace HayCancha
         {
             this.components = new System.ComponentModel.Container();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.bntLeido = new System.Windows.Forms.Button();
+            this.btnLeido = new System.Windows.Forms.Button();
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblNotificaciones = new System.Windows.Forms.Label();
@@ -43,15 +43,15 @@ namespace HayCancha
             this.bunifuElipse1.ElipseRadius = 20;
             this.bunifuElipse1.TargetControl = this;
             // 
-            // bntLeido
+            // btnLeido
             // 
-            this.bntLeido.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bntLeido.Location = new System.Drawing.Point(150, 346);
-            this.bntLeido.Name = "bntLeido";
-            this.bntLeido.Size = new System.Drawing.Size(75, 23);
-            this.bntLeido.TabIndex = 5;
-            this.bntLeido.Text = "LEÍDO";
-            this.bntLeido.UseVisualStyleBackColor = true;
+            this.btnLeido.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLeido.Location = new System.Drawing.Point(150, 346);
+            this.btnLeido.Name = "btnLeido";
+            this.btnLeido.Size = new System.Drawing.Size(75, 23);
+            this.btnLeido.TabIndex = 5;
+            this.btnLeido.Text = "LEÍDO";
+            this.btnLeido.UseVisualStyleBackColor = true;
             // 
             // checkedListBox1
             // 
@@ -101,7 +101,7 @@ namespace HayCancha
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGreen;
-            this.Controls.Add(this.bntLeido);
+            this.Controls.Add(this.btnLeido);
             this.Controls.Add(this.checkedListBox1);
             this.Controls.Add(this.panel1);
             this.Name = "NotificacionUC";
@@ -115,7 +115,7 @@ namespace HayCancha
         #endregion
 
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
-        private System.Windows.Forms.Button bntLeido;
+        private System.Windows.Forms.Button btnLeido;
         private System.Windows.Forms.CheckedListBox checkedListBox1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblNotificaciones;
