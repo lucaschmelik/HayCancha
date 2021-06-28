@@ -108,6 +108,8 @@ namespace HayCancha
         {
             OpenFileDialog ofdImagen = new OpenFileDialog();
 
+            ofdImagen.Filter = "|*.jpg;*.png;";
+
             DialogResult drImagen = ofdImagen.ShowDialog();
 
             if (drImagen != DialogResult.OK) return;

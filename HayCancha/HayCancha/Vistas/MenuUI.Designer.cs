@@ -267,6 +267,7 @@ namespace HayCancha
             // ucNotificacion
             // 
             this.ucNotificacion.BackColor = System.Drawing.Color.DarkGreen;
+            this.ucNotificacion.IdiomaControl = HayCancha.BE.Enumerables.IdiomaEnum.Español;
             this.ucNotificacion.Location = new System.Drawing.Point(535, 64);
             this.ucNotificacion.Name = "ucNotificacion";
             this.ucNotificacion.Size = new System.Drawing.Size(236, 381);
@@ -282,9 +283,9 @@ namespace HayCancha
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.ucNotificacion);
             this.Controls.Add(this.panelMenus);
-            this.Controls.Add(this.panelPerfil);
             this.Controls.Add(this.imgSalir);
             this.Controls.Add(this.msMenu);
+            this.Controls.Add(this.panelPerfil);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MenuUI";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
