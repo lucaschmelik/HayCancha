@@ -1,7 +1,7 @@
 ﻿
 namespace HayCancha
 {
-    partial class Login
+    partial class LoginUI
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,8 @@ namespace HayCancha
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginUI));
             this.txtUsuario = new System.Windows.Forms.TextBox();
             this.txtContraseña = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -45,6 +46,7 @@ namespace HayCancha
             this.btnRegistrar = new System.Windows.Forms.Button();
             this.imgSalir = new System.Windows.Forms.PictureBox();
             this.imgPelota = new System.Windows.Forms.PictureBox();
+            this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgIdiomaChino)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgIdiomaIngles)).BeginInit();
@@ -169,16 +171,18 @@ namespace HayCancha
             this.lblUsuario.Size = new System.Drawing.Size(63, 13);
             this.lblUsuario.TabIndex = 5;
             this.lblUsuario.Text = "USUARIO";
+            this.lblUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblContraseña
             // 
             this.lblContraseña.AutoSize = true;
             this.lblContraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblContraseña.Location = new System.Drawing.Point(341, 242);
+            this.lblContraseña.Location = new System.Drawing.Point(342, 242);
             this.lblContraseña.Name = "lblContraseña";
             this.lblContraseña.Size = new System.Drawing.Size(91, 13);
             this.lblContraseña.TabIndex = 6;
             this.lblContraseña.Text = "CONTRASEÑA";
+            this.lblContraseña.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnRegistrar
             // 
@@ -213,7 +217,12 @@ namespace HayCancha
             this.imgPelota.TabIndex = 4;
             this.imgPelota.TabStop = false;
             // 
-            // Login
+            // bunifuElipse1
+            // 
+            this.bunifuElipse1.ElipseRadius = 10;
+            this.bunifuElipse1.TargetControl = this;
+            // 
+            // LoginUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -229,7 +238,7 @@ namespace HayCancha
             this.Controls.Add(this.txtContraseña);
             this.Controls.Add(this.txtUsuario);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Login";
+            this.Name = "LoginUI";
             this.Text = "Login";
             this.Load += new System.EventHandler(this.Login_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Login_MouseDown);
@@ -265,5 +274,6 @@ namespace HayCancha
         private System.Windows.Forms.PictureBox imgIdiomaEspañol;
         private System.Windows.Forms.PictureBox imgIdiomaIngles;
         private System.Windows.Forms.PictureBox imgIdiomaChino;
+        private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
     }
 }

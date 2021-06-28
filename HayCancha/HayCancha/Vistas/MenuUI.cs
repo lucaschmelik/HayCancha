@@ -2,6 +2,7 @@
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
+using HayCancha.BE.Clases;
 using HayCancha.BE.Enumerables;
 using HayCancha.BE.Interfaces;
 using HayCancha.BLL;
@@ -9,9 +10,9 @@ using HayCancha.Servicios;
 
 namespace HayCancha
 {
-    public partial class Menu : Form, IOdiomable
+    public partial class MenuUI : Form, IOdiomable
     {
-        public Menu(Login frmLogin)
+        public MenuUI(LoginUI frmLogin)
         {
             InitializeComponent();
 
@@ -26,10 +27,14 @@ namespace HayCancha
             imgPerfil.Image = SessionService.Session.ObtenerImagenPerfil();
             _UsuarioBLL = new UsuarioBLL(SessionService.Session.ObtenerNombreUsuario(), SessionService.Session.ObtenerContraseñaUsuario());
             RedondearPictureBox();
+            lblNombreMenu.Text = SessionService.Session.ObtenerNombreUsuario().ToUpper();
+            _fmAlquilerEtapaUno = new AlquilerEtapaUnoUI();
+            _fmAlquilerEtapaUno.EventoEnviar += AbrirFmAlquilerEtapaUnoEtapaDos;
         }
 
-        private Login _frmLogin;
+        private LoginUI _frmLogin;
         private UsuarioBLL _UsuarioBLL;
+        private AlquilerEtapaUnoUI _fmAlquilerEtapaUno;
 
         private int _iMov;
         private int _iMovX;
@@ -110,6 +115,45 @@ namespace HayCancha
             _UsuarioBLL.CambiarImagenPerfil(File.ReadAllBytes(ofdImagen.FileName));
 
             imgPerfil.Load(ofdImagen.FileName);
+        }
+
+        private void tsmAlquiler_Click(object sender, EventArgs e)
+        {
+            VistaService.Instancia.AbrirFormEnPanel(panelMenus, _fmAlquilerEtapaUno);
+            if (_fmAlquilerEtapaUno.IdiomaControl == this.IdiomaControl) return;
+            Update();
+            _fmAlquilerEtapaUno.IdiomaControl = SessionService.Session.Idioma;
+        }
+
+        private void tsmUsuarios_Click(object sender, EventArgs e)
+        {
+            VistaService.Instancia.AbrirFormEnPanel(panelMenus, new UsuariosUI());
+        }
+        
+        private void imgNotificacion_Click(object sender, EventArgs e)
+        {
+            if (ucNotificacion.Visible)
+            {
+                ucNotificacion.Visible = false;
+                return;
+            }
+
+            imgPuntoNotificacion.Visible = false;
+            ucNotificacion.Show();
+            ucNotificacion.Focus();
+
+        }
+
+        private void ucNotificacion_Leave(object sender, EventArgs e)
+        {
+            ucNotificacion.Visible = false;
+        }
+
+        private void AbrirFmAlquilerEtapaUnoEtapaDos(object senderReserva, EventArgs e)
+        {
+            var frmAlquilerEtapaDos = new AlquilerEtapaDosUI(senderReserva as Reserva);
+            VistaService.Instancia.AbrirFormEnPanel(panelMenus, frmAlquilerEtapaDos);
+            if(frmAlquilerEtapaDos.IdiomaControl != this.IdiomaControl) Update();
         }
     }
 }

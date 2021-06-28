@@ -7,7 +7,7 @@ namespace HayCancha.BE
 {
     public class Usuario : AbstractEntidad
     {
-        public Usuario() : base("Usuario")
+        public Usuario()
         {
             lstPermisos = new List<AbstractComponent>();
         }
@@ -15,7 +15,6 @@ namespace HayCancha.BE
         public string Nombre { get; set; }
         public string Contraseña { get; set; }
         public Image Imagen { get; set; }
-
         public List<AbstractComponent> lstPermisos { get; }
     }
 }

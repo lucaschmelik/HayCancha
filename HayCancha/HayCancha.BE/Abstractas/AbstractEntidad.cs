@@ -4,13 +4,11 @@ namespace HayCancha.BE.Abstractas
 {
     public abstract class AbstractEntidad
     {
-        public AbstractEntidad(string sTabla)
+        protected AbstractEntidad()
         {
             Id = new Guid();
-            Tabla = sTabla;
         }
 
-        public Guid Id { get; }
-        public string Tabla { get; }
+        public Guid Id { get; set; }
     }
 }

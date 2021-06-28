@@ -28,7 +28,6 @@ namespace HayCancha.BLL
 
         public void Login()
         {
-
             if (SessionService.Session.IsLogged()) throw new Exception("Existe una sesión iniciada");
 
             var oUsuarioEncontrado = _oUsuarioDAL.ObtenerUsuarioPorNombre();

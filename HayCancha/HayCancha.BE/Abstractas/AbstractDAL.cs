@@ -33,6 +33,8 @@ namespace HayCancha.BE
                 oDt.Rows.Add(arrObjetos);
             }
 
+            Connection.Close();
+
             return oDt;
         }
     }

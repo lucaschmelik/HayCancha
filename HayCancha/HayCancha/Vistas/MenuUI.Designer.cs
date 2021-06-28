@@ -1,7 +1,7 @@
 ﻿
 namespace HayCancha
 {
-    partial class Menu
+    partial class MenuUI
     {
         /// <summary>
         /// Required designer variable.
@@ -29,13 +29,10 @@ namespace HayCancha
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menu));
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuUI));
             this.msMenu = new System.Windows.Forms.MenuStrip();
             this.tsmUsuarios = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmUsuariosAlta = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmUsuariosBaja = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmUsuariosModificacion = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmUsuariosConsulta = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmAlquiler = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmEquipos = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmEstadisticas = new System.Windows.Forms.ToolStripMenuItem();
@@ -46,13 +43,24 @@ namespace HayCancha
             this.tsmIdiomaIngles = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmIdiomaChino = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmSalir = new System.Windows.Forms.ToolStripMenuItem();
-            this.imgSalir = new System.Windows.Forms.PictureBox();
+            this.panelPerfil = new System.Windows.Forms.Panel();
+            this.imgPuntoNotificacion = new System.Windows.Forms.PictureBox();
+            this.imgNotificacion = new System.Windows.Forms.PictureBox();
+            this.lblNombreMenu = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.imgPerfil = new System.Windows.Forms.PictureBox();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panelMenus = new System.Windows.Forms.Panel();
+            this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.imgSalir = new System.Windows.Forms.PictureBox();
+            this.bunifuElipse2 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.ucNotificacion = new HayCancha.NotificacionUC();
             this.msMenu.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.imgSalir)).BeginInit();
+            this.panelPerfil.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imgPuntoNotificacion)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgNotificacion)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgPerfil)).BeginInit();
-            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imgSalir)).BeginInit();
             this.SuspendLayout();
             // 
             // msMenu
@@ -74,39 +82,11 @@ namespace HayCancha
             // 
             // tsmUsuarios
             // 
-            this.tsmUsuarios.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmUsuariosAlta,
-            this.tsmUsuariosBaja,
-            this.tsmUsuariosModificacion,
-            this.tsmUsuariosConsulta});
             this.tsmUsuarios.Name = "tsmUsuarios";
             this.tsmUsuarios.Size = new System.Drawing.Size(74, 20);
             this.tsmUsuarios.Tag = "5";
             this.tsmUsuarios.Text = "USUARIOS";
-            // 
-            // tsmUsuariosAlta
-            // 
-            this.tsmUsuariosAlta.Name = "tsmUsuariosAlta";
-            this.tsmUsuariosAlta.Size = new System.Drawing.Size(159, 22);
-            this.tsmUsuariosAlta.Text = "ALTA";
-            // 
-            // tsmUsuariosBaja
-            // 
-            this.tsmUsuariosBaja.Name = "tsmUsuariosBaja";
-            this.tsmUsuariosBaja.Size = new System.Drawing.Size(159, 22);
-            this.tsmUsuariosBaja.Text = "BAJA";
-            // 
-            // tsmUsuariosModificacion
-            // 
-            this.tsmUsuariosModificacion.Name = "tsmUsuariosModificacion";
-            this.tsmUsuariosModificacion.Size = new System.Drawing.Size(159, 22);
-            this.tsmUsuariosModificacion.Text = "MODIFICACION";
-            // 
-            // tsmUsuariosConsulta
-            // 
-            this.tsmUsuariosConsulta.Name = "tsmUsuariosConsulta";
-            this.tsmUsuariosConsulta.Size = new System.Drawing.Size(159, 22);
-            this.tsmUsuariosConsulta.Text = "CONSULTA";
+            this.tsmUsuarios.Click += new System.EventHandler(this.tsmUsuarios_Click);
             // 
             // tsmAlquiler
             // 
@@ -114,6 +94,7 @@ namespace HayCancha
             this.tsmAlquiler.Size = new System.Drawing.Size(72, 20);
             this.tsmAlquiler.Tag = "6";
             this.tsmAlquiler.Text = "ALQUILER";
+            this.tsmAlquiler.Click += new System.EventHandler(this.tsmAlquiler_Click);
             // 
             // tsmEquipos
             // 
@@ -185,21 +166,68 @@ namespace HayCancha
             this.tsmSalir.Text = "SALIR";
             this.tsmSalir.Click += new System.EventHandler(this.btnMenuSalir_Click);
             // 
-            // imgSalir
+            // panelPerfil
             // 
-            this.imgSalir.BackColor = System.Drawing.Color.White;
-            this.imgSalir.Image = ((System.Drawing.Image)(resources.GetObject("imgSalir.Image")));
-            this.imgSalir.Location = new System.Drawing.Point(770, 0);
-            this.imgSalir.Name = "imgSalir";
-            this.imgSalir.Size = new System.Drawing.Size(21, 24);
-            this.imgSalir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.imgSalir.TabIndex = 8;
-            this.imgSalir.TabStop = false;
-            this.imgSalir.Click += new System.EventHandler(this.imgSalir_Click);
+            this.panelPerfil.BackColor = System.Drawing.SystemColors.Info;
+            this.panelPerfil.Controls.Add(this.imgPuntoNotificacion);
+            this.panelPerfil.Controls.Add(this.imgNotificacion);
+            this.panelPerfil.Controls.Add(this.lblNombreMenu);
+            this.panelPerfil.Controls.Add(this.pictureBox1);
+            this.panelPerfil.Controls.Add(this.imgPerfil);
+            this.panelPerfil.Location = new System.Drawing.Point(575, 23);
+            this.panelPerfil.Name = "panelPerfil";
+            this.panelPerfil.Size = new System.Drawing.Size(225, 429);
+            this.panelPerfil.TabIndex = 11;
+            // 
+            // imgPuntoNotificacion
+            // 
+            this.imgPuntoNotificacion.BackColor = System.Drawing.Color.Red;
+            this.imgPuntoNotificacion.Image = global::HayCancha.Properties.Resources.PuntoNotificacion;
+            this.imgPuntoNotificacion.Location = new System.Drawing.Point(209, 14);
+            this.imgPuntoNotificacion.Name = "imgPuntoNotificacion";
+            this.imgPuntoNotificacion.Size = new System.Drawing.Size(12, 13);
+            this.imgPuntoNotificacion.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.imgPuntoNotificacion.TabIndex = 2;
+            this.imgPuntoNotificacion.TabStop = false;
+            // 
+            // imgNotificacion
+            // 
+            this.imgNotificacion.Image = global::HayCancha.Properties.Resources.notification;
+            this.imgNotificacion.Location = new System.Drawing.Point(193, 18);
+            this.imgNotificacion.Name = "imgNotificacion";
+            this.imgNotificacion.Size = new System.Drawing.Size(31, 29);
+            this.imgNotificacion.TabIndex = 14;
+            this.imgNotificacion.TabStop = false;
+            this.imgNotificacion.Click += new System.EventHandler(this.imgNotificacion_Click);
+            // 
+            // lblNombreMenu
+            // 
+            this.lblNombreMenu.BackColor = System.Drawing.SystemColors.Info;
+            this.lblNombreMenu.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.lblNombreMenu.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.lblNombreMenu.Enabled = false;
+            this.lblNombreMenu.Font = new System.Drawing.Font("Impact", 22F);
+            this.lblNombreMenu.Location = new System.Drawing.Point(16, 261);
+            this.lblNombreMenu.Name = "lblNombreMenu";
+            this.lblNombreMenu.ReadOnly = true;
+            this.lblNombreMenu.Size = new System.Drawing.Size(196, 36);
+            this.lblNombreMenu.TabIndex = 13;
+            this.lblNombreMenu.Text = "Lucas";
+            this.lblNombreMenu.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(16, 213);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(196, 10);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.TabIndex = 12;
+            this.pictureBox1.TabStop = false;
             // 
             // imgPerfil
             // 
-            this.imgPerfil.Location = new System.Drawing.Point(41, 42);
+            this.imgPerfil.Location = new System.Drawing.Point(40, 42);
             this.imgPerfil.Name = "imgPerfil";
             this.imgPerfil.Size = new System.Drawing.Size(154, 145);
             this.imgPerfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -207,26 +235,58 @@ namespace HayCancha
             this.imgPerfil.TabStop = false;
             this.imgPerfil.Click += new System.EventHandler(this.imgPerfil_Click);
             // 
-            // panel1
+            // panelMenus
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.Info;
-            this.panel1.Controls.Add(this.imgPerfil);
-            this.panel1.Location = new System.Drawing.Point(575, 23);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(225, 429);
-            this.panel1.TabIndex = 11;
+            this.panelMenus.Location = new System.Drawing.Point(4, 26);
+            this.panelMenus.Name = "panelMenus";
+            this.panelMenus.Size = new System.Drawing.Size(569, 422);
+            this.panelMenus.TabIndex = 12;
             // 
-            // Menu
+            // bunifuElipse1
+            // 
+            this.bunifuElipse1.ElipseRadius = 10;
+            this.bunifuElipse1.TargetControl = this;
+            // 
+            // imgSalir
+            // 
+            this.imgSalir.BackColor = System.Drawing.Color.White;
+            this.imgSalir.Image = ((System.Drawing.Image)(resources.GetObject("imgSalir.Image")));
+            this.imgSalir.Location = new System.Drawing.Point(772, 3);
+            this.imgSalir.Name = "imgSalir";
+            this.imgSalir.Size = new System.Drawing.Size(18, 18);
+            this.imgSalir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.imgSalir.TabIndex = 8;
+            this.imgSalir.TabStop = false;
+            this.imgSalir.Click += new System.EventHandler(this.imgSalir_Click);
+            // 
+            // bunifuElipse2
+            // 
+            this.bunifuElipse2.ElipseRadius = 50;
+            this.bunifuElipse2.TargetControl = this.imgPuntoNotificacion;
+            // 
+            // ucNotificacion
+            // 
+            this.ucNotificacion.BackColor = System.Drawing.Color.DarkGreen;
+            this.ucNotificacion.Location = new System.Drawing.Point(535, 64);
+            this.ucNotificacion.Name = "ucNotificacion";
+            this.ucNotificacion.Size = new System.Drawing.Size(236, 381);
+            this.ucNotificacion.TabIndex = 0;
+            this.ucNotificacion.Visible = false;
+            this.ucNotificacion.Leave += new System.EventHandler(this.ucNotificacion_Leave);
+            // 
+            // MenuUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.ForestGreen;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.ucNotificacion);
+            this.Controls.Add(this.panelMenus);
+            this.Controls.Add(this.panelPerfil);
             this.Controls.Add(this.imgSalir);
             this.Controls.Add(this.msMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Menu";
+            this.Name = "MenuUI";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Menu_Load);
@@ -235,9 +295,13 @@ namespace HayCancha
             this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Menu_MouseUp);
             this.msMenu.ResumeLayout(false);
             this.msMenu.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.imgSalir)).EndInit();
+            this.panelPerfil.ResumeLayout(false);
+            this.panelPerfil.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imgPuntoNotificacion)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgNotificacion)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgPerfil)).EndInit();
-            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.imgSalir)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -251,10 +315,6 @@ namespace HayCancha
         private System.Windows.Forms.ToolStripMenuItem tsmEquipos;
         private System.Windows.Forms.ToolStripMenuItem tsmOpciones;
         private System.Windows.Forms.ToolStripMenuItem tsmSalir;
-        private System.Windows.Forms.ToolStripMenuItem tsmUsuariosAlta;
-        private System.Windows.Forms.ToolStripMenuItem tsmUsuariosBaja;
-        private System.Windows.Forms.ToolStripMenuItem tsmUsuariosModificacion;
-        private System.Windows.Forms.ToolStripMenuItem tsmUsuariosConsulta;
         private System.Windows.Forms.ToolStripMenuItem tsmEstadisticas;
         private System.Windows.Forms.ToolStripMenuItem tsmReportes;
         private System.Windows.Forms.ToolStripMenuItem tsmIdioma;
@@ -262,6 +322,14 @@ namespace HayCancha
         private System.Windows.Forms.ToolStripMenuItem tsmIdiomaIngles;
         private System.Windows.Forms.ToolStripMenuItem tsmIdiomaChino;
         private System.Windows.Forms.PictureBox imgPerfil;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panelPerfil;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TextBox lblNombreMenu;
+        private System.Windows.Forms.Panel panelMenus;
+        private System.Windows.Forms.PictureBox imgNotificacion;
+        private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
+        private NotificacionUC ucNotificacion;
+        private System.Windows.Forms.PictureBox imgPuntoNotificacion;
+        private Bunifu.Framework.UI.BunifuElipse bunifuElipse2;
     }
 }

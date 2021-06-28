@@ -32,8 +32,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -45,11 +47,15 @@
     <Compile Include="Abstractas\AbstractComponent.cs" />
     <Compile Include="Abstractas\AbstractDAL.cs" />
     <Compile Include="Abstractas\AbstractEntidad.cs" />
+    <Compile Include="Clases\Cancha.cs" />
     <Compile Include="Clases\Familia.cs" />
     <Compile Include="Clases\Patente.cs" />
+    <Compile Include="Clases\Reserva.cs" />
     <Compile Include="Clases\Session.cs" />
+    <Compile Include="Enumerables\EstadoReservaEnum.cs" />
     <Compile Include="Enumerables\IdiomaEnum.cs" />
     <Compile Include="Enumerables\PermisoEnum.cs" />
+    <Compile Include="Enumerables\TipoCanchaEnum.cs" />
     <Compile Include="Interfaces\Idioma.cs" />
     <Compile Include="Interfaces\IOdiomable.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -1,0 +1,25 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace HayCancha
+{
+    public partial class UsuariosUI : Form
+    {
+        public UsuariosUI()
+        {
+            InitializeComponent();
+        }
+
+        private void UsuariosUI_Load(object sender, EventArgs e)
+        {
+            cmbRoles.SelectedIndex = 2;
+        }
+    }
+}

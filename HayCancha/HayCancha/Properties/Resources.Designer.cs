@@ -63,6 +63,16 @@ namespace HayCancha.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Buscar {
+            get {
+                object obj = ResourceManager.GetObject("Buscar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap IdiomaChino {
             get {
                 object obj = ResourceManager.GetObject("IdiomaChino", resourceCulture);
@@ -86,6 +96,26 @@ namespace HayCancha.Properties {
         internal static System.Drawing.Bitmap IdiomaIngles {
             get {
                 object obj = ResourceManager.GetObject("IdiomaIngles", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap notification {
+            get {
+                object obj = ResourceManager.GetObject("notification", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PuntoNotificacion {
+            get {
+                object obj = ResourceManager.GetObject("PuntoNotificacion", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

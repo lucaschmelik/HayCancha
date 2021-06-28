@@ -9,15 +9,15 @@ using HayCancha.Servicios;
 
 namespace HayCancha
 {
-    public partial class Login : Form, IOdiomable
+    public partial class LoginUI : Form, IOdiomable
     {
-        public Login()
+        public LoginUI()
         {
             InitializeComponent();
         }
 
         private UsuarioBLL _oUsuarioBLL;
-        private Menu _frmMenu;
+        private MenuUI _frmMenu;
 
         private int _iMov;
         private int _iMovX;
@@ -65,7 +65,7 @@ namespace HayCancha
 
                 this.Hide();
 
-                _frmMenu = new Menu(this);
+                _frmMenu = new MenuUI(this);
 
                 _frmMenu.Show();
 

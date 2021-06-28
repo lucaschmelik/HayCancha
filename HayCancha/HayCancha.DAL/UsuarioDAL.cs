@@ -17,7 +17,7 @@ namespace HayCancha.DAL
 
         public Usuario GetOne()
         {
-            var oDrEncontrado = EjecutaStp("Obtener" + oUsuario.Tabla, new Dictionary<string, object>() { { "Id", oUsuario.Id } }, RetornaTabla()).AsEnumerable().FirstOrDefault();
+            var oDrEncontrado = EjecutaStp("ObtenerUsuario", new Dictionary<string, object>() { { "Id", oUsuario.Id } }, RetornaTabla()).AsEnumerable().FirstOrDefault();
 
             return new Usuario
             {
@@ -28,21 +28,21 @@ namespace HayCancha.DAL
 
         public Usuario ObtenerUsuarioPorNombreContraseña()
         {
-            var oDrUsuario = EjecutaStp("stpObtenerPorNombreContraseña" + oUsuario.Tabla, new Dictionary<string, object>() { { "Nombre", oUsuario.Nombre }, { "Contraseña", oUsuario.Contraseña } }, RetornaTabla()).AsEnumerable().FirstOrDefault();
+            var oDrUsuario = EjecutaStp("stpObtenerPorNombreContraseñaUsuario", new Dictionary<string, object>() { { "Nombre", oUsuario.Nombre }, { "Contraseña", oUsuario.Contraseña } }, RetornaTabla()).AsEnumerable().FirstOrDefault();
 
             return oDrUsuario == null? null : new Usuario { Nombre = oDrUsuario["Nombre"].ToString(), Contraseña = oDrUsuario["Contraseña"].ToString()};
         }
 
         public Usuario ObtenerUsuarioPorNombre()
         {
-            var oDrUsuario = EjecutaStp("stpObtenerPorNombre" + oUsuario.Tabla, new Dictionary<string, object>() { { "Nombre", oUsuario.Nombre } }, RetornaTabla()).AsEnumerable().FirstOrDefault();
+            var oDrUsuario = EjecutaStp("stpObtenerPorNombreUsuario", new Dictionary<string, object>() { { "Nombre", oUsuario.Nombre } }, RetornaTabla()).AsEnumerable().FirstOrDefault();
 
             return oDrUsuario == null ? null : new Usuario { Nombre = oDrUsuario["Nombre"].ToString() };
         }
 
         public void RegistrarUsuario(PermisoEnum oRol, byte[] btImagen)
         {
-            EjecutaStp("stpAlta" + oUsuario.Tabla, new Dictionary<string, object>() { { "Nombre", oUsuario.Nombre }, { "Contraseña", oUsuario.Contraseña }, { "Permiso", (int)oRol }, { "Imagen", btImagen} }, new DataTable());
+            EjecutaStp("stpAltaUsuario", new Dictionary<string, object>() { { "Nombre", oUsuario.Nombre }, { "Contraseña", oUsuario.Contraseña }, { "Permiso", (int)oRol }, { "Imagen", btImagen} }, new DataTable());
         }
 
         public byte[] ObtenerImagenDefault()
