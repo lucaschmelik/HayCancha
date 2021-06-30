@@ -41,7 +41,7 @@ namespace HayCancha.BLL
             if (oUsuarioEncontrado.Nombre != _oUsuario.Nombre || oUsuarioEncontrado.Contraseña != _oUsuario.Contraseña) throw new Exception("Ingreso usuario incorrecto");
 
             SessionService.Session.Login(_oUsuario);
-            
+
             SessionService.Session.AgregarImagenPerfil(ConversorImagenService.ConvetirByteAImagen(_oUsuarioDAL.ObtenerImagenPerfil()));
 
             SessionService.Instancia.CargarPermisos(_oUsuario);

@@ -101,7 +101,6 @@ namespace HayCancha
         {
             if(txtUsuario.Text == string.Empty) throw new Exception("Debe ingresar un nombre de usuario!");
             if (txtContraseña.Text == string.Empty) throw new Exception("Debe ingresar una contraseña!");
-
         }
 
         private void imgIdiomaEspañol_Click(object sender, EventArgs e)
