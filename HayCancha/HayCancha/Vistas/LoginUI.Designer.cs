@@ -136,7 +136,7 @@ namespace HayCancha
             this.lblMensaje.Name = "lblMensaje";
             this.lblMensaje.Size = new System.Drawing.Size(163, 38);
             this.lblMensaje.TabIndex = 1;
-            this.lblMensaje.Text = "Logueate para ingresar \r\na tu cuenta";
+            this.lblMensaje.Text = "Logueate para ingresar \na tu cuenta";
             this.lblMensaje.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblBienvenida
@@ -148,7 +148,7 @@ namespace HayCancha
             this.lblBienvenida.Name = "lblBienvenida";
             this.lblBienvenida.Size = new System.Drawing.Size(172, 74);
             this.lblBienvenida.TabIndex = 0;
-            this.lblBienvenida.Text = "BIENVENIDOS\r\nHAYCANCHA!";
+            this.lblBienvenida.Text = "BIENVENIDOS\nHAYCANCHA!";
             // 
             // btnIngresar
             // 

@@ -1,10 +1,11 @@
 ﻿
 namespace HayCancha.BE.Enumerables
 {
+    //TODO ELIMINAR CLASE
     public enum IdiomaEnum
     {
-        Español = 0,
-        Ingles = 1,
-        Chino = 2
+        Español = 1,
+        Ingles = 2,
+        Chino = 3
     }
 }

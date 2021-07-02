@@ -1,20 +1,23 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Windows.Forms;
 using HayCancha.BE.Clases;
 using HayCancha.BE.Enumerables;
-using System.ComponentModel;
 using System.Data;
 using System.Linq;
+using HayCancha.BE.Interfaces;
+using System.Collections;
+using HayCancha.Servicios;
 
 namespace HayCancha
 {
-    public partial class AlquilerEtapaUnoUI : Form
+    public partial class AlquilerEtapaUnoUI : Form, IOdiomable
     {
         public AlquilerEtapaUnoUI()
         {
             InitializeComponent();
             _oReserva = new Reserva();
+            SessionService.Session.Suscribir(this);
+            if (IdiomaControl != SessionService.Session.Idioma) Update();
         }
 
         private Reserva _oReserva;
@@ -77,6 +80,19 @@ namespace HayCancha
             }
 
             EventoEnviar?.Invoke(_oReserva, e);
+        }
+
+        public new void Update()
+        {
+            ActualizarControles(this.Controls);
+        }
+
+        public void ActualizarControles(IEnumerable Coleccion)
+        {
+            foreach (var oComponente in Coleccion)
+            {
+                ((Control)oComponente).Text = TraductorService.RetornaTraduccion(((Control)oComponente).Text) ?? ((Control)oComponente).Text;
+            }
         }
     }
 }

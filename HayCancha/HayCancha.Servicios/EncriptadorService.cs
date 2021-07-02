@@ -4,7 +4,7 @@ using System.Text;
 
 namespace HayCancha.Servicios
 {
-    public class EncriptadorService
+    public static class EncriptadorService
     {
         public static string AplicarHash(string sContraseña)//MD5 es el algoritmo implementado
         {

@@ -7,3 +7,14 @@ C:\Proyecto\HayCancha\HayCancha.Servicios\obj\Debug\HayCancha.Servicios.csprojAs
 C:\Proyecto\HayCancha\HayCancha.Servicios\obj\Debug\HayCancha.Servicios.csproj.CopyComplete
 C:\Proyecto\HayCancha\HayCancha.Servicios\obj\Debug\HayCancha.Servicios.dll
 C:\Proyecto\HayCancha\HayCancha.Servicios\obj\Debug\HayCancha.Servicios.pdb
+C:\Users\lucas\source\repos\Facultad\Proyecto\HayCancha\HayCancha.Servicios\bin\Debug\HayCancha.Servicios.dll
+C:\Users\lucas\source\repos\Facultad\Proyecto\HayCancha\HayCancha.Servicios\bin\Debug\HayCancha.Servicios.pdb
+C:\Users\lucas\source\repos\Facultad\Proyecto\HayCancha\HayCancha.Servicios\bin\Debug\HayCancha.BE.dll
+C:\Users\lucas\source\repos\Facultad\Proyecto\HayCancha\HayCancha.Servicios\bin\Debug\HayCancha.DAL.dll
+C:\Users\lucas\source\repos\Facultad\Proyecto\HayCancha\HayCancha.Servicios\bin\Debug\HayCancha.BE.pdb
+C:\Users\lucas\source\repos\Facultad\Proyecto\HayCancha\HayCancha.Servicios\bin\Debug\HayCancha.DAL.pdb
+C:\Users\lucas\source\repos\Facultad\Proyecto\HayCancha\HayCancha.Servicios\obj\Debug\HayCancha.Servicios.csprojAssemblyReference.cache
+C:\Users\lucas\source\repos\Facultad\Proyecto\HayCancha\HayCancha.Servicios\obj\Debug\HayCancha.Servicios.csproj.CoreCompileInputs.cache
+C:\Users\lucas\source\repos\Facultad\Proyecto\HayCancha\HayCancha.Servicios\obj\Debug\HayCancha.Servicios.csproj.CopyComplete
+C:\Users\lucas\source\repos\Facultad\Proyecto\HayCancha\HayCancha.Servicios\obj\Debug\HayCancha.Servicios.dll
+C:\Users\lucas\source\repos\Facultad\Proyecto\HayCancha\HayCancha.Servicios\obj\Debug\HayCancha.Servicios.pdb

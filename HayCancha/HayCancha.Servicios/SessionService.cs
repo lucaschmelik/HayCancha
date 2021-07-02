@@ -5,12 +5,14 @@ using HayCancha.BE;
 using HayCancha.BE.Abstractas;
 using HayCancha.BE.Clases;
 using HayCancha.BE.Enumerables;
+using HayCancha.BE.Interfaces;
 using HayCancha.DAL;
 
 namespace HayCancha.Servicios
 {
     public class SessionService
     {
+        //TODO => Arreglar el Singleton de Session y SessionManager debería ser statico, podría llamarse LoginService quizás o PermisoServices.
         private static Session _oSession;
         public static Session Session => _oSession ?? (_oSession = new Session());
 

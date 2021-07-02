@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Windows.Forms;
+using System.Windows.Forms.VisualStyles;
 using HayCancha.BE.Enumerables;
 using HayCancha.BE.Interfaces;
 using HayCancha.BLL;
@@ -121,11 +123,22 @@ namespace HayCancha
                 SessionService.Session.Idioma = IdiomaEnum.Chino;
         }
 
-        public void Update()
+        public new void Update()
         {
-            TraductorBLL.Instancia.ActualizarControles(this.Controls);
-
+            ActualizarControles(this.Controls);
             IdiomaControl = SessionService.Session.Idioma;
+        }
+
+        public void ActualizarControles(IEnumerable Coleccion)
+        {
+            foreach (var oComponente in Coleccion)
+            {
+                if (oComponente.GetType() == typeof(Panel))
+                {
+                    ActualizarControles(((Panel)oComponente).Controls);
+                }
+                ((Control)oComponente).Text = TraductorService.RetornaTraduccion(((Control)oComponente).Text);
+            }
         }
     }
 }

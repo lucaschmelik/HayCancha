@@ -14,12 +14,12 @@ namespace HayCancha.DAL
         private static IdiomaDAL _oIdiomaDAL;
         public static IdiomaDAL Instancia => _oIdiomaDAL ?? new IdiomaDAL();
 
-        public string RetornaTraduccion(string sNombreControl, int iIdioma)
+        public string RetornaTraduccion(string sNombreTexto, int iIdioma)
         {
             var dicParametros = new Dictionary<string, object>()
             {
                 {
-                    "NombreControl", sNombreControl
+                    "Texto", sNombreTexto
                 },
                 {
                     "Idioma", iIdioma.ToString()
@@ -28,11 +28,11 @@ namespace HayCancha.DAL
 
             var oDt = new DataTable();
 
-            oDt.Columns.Add("Texto", typeof(string));
+            oDt.Columns.Add("Traduccion", typeof(string));
 
-            var oDrEncontrado = EjecutaStp("stpObtenerTextoPorNombreIdioma", dicParametros, oDt).AsEnumerable().FirstOrDefault();
+            var oDrEncontrado = EjecutaStp("stpObtenerTraduccionPorTextoIdioma", dicParametros, oDt).AsEnumerable().FirstOrDefault();
 
-            return oDrEncontrado?["Texto"].ToString();
+            return oDrEncontrado?["Traduccion"].ToString();
         }
     }
 }

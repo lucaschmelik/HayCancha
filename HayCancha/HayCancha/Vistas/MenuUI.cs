@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
@@ -97,9 +98,9 @@ namespace HayCancha
                 SessionService.Session.Idioma = IdiomaEnum.Chino;
         }
 
-        public void Update()
+        public new void Update()
         {
-            TraductorBLL.Instancia.ActualizarControles(this.Controls);
+            ActualizarControles(Controls);
 
             IdiomaControl = SessionService.Session.Idioma;
         }
@@ -121,15 +122,12 @@ namespace HayCancha
 
         private void tsmAlquiler_Click(object sender, EventArgs e)
         {
-            VistaService.Instancia.AbrirFormEnPanel(panelMenus, _fmAlquilerEtapaUno);
-            if (_fmAlquilerEtapaUno.IdiomaControl == this.IdiomaControl) return;
-            Update();
-            _fmAlquilerEtapaUno.IdiomaControl = SessionService.Session.Idioma;
+            VistaService.AbrirFormEnPanel(panelMenus, _fmAlquilerEtapaUno);
         }
 
         private void tsmUsuarios_Click(object sender, EventArgs e)
         {
-            VistaService.Instancia.AbrirFormEnPanel(panelMenus, new UsuariosUI());
+            VistaService.AbrirFormEnPanel(panelMenus, new UsuariosUI());
         }
         
         private void imgNotificacion_Click(object sender, EventArgs e)
@@ -143,7 +141,6 @@ namespace HayCancha
             imgPuntoNotificacion.Visible = false;
             ucNotificacion.Show();
             ucNotificacion.Focus();
-
         }
 
         private void ucNotificacion_Leave(object sender, EventArgs e)
@@ -154,8 +151,36 @@ namespace HayCancha
         private void AbrirFmAlquilerEtapaUnoEtapaDos(object senderReserva, EventArgs e)
         {
             var frmAlquilerEtapaDos = new AlquilerEtapaDosUI(senderReserva as Reserva);
-            VistaService.Instancia.AbrirFormEnPanel(panelMenus, frmAlquilerEtapaDos);
+            VistaService.AbrirFormEnPanel(panelMenus, frmAlquilerEtapaDos);
             if(frmAlquilerEtapaDos.IdiomaControl != this.IdiomaControl) Update();
+        }
+
+        public void ActualizarControles(IEnumerable Coleccion)
+        {
+            foreach (var oComponente in Coleccion)
+            {
+                if (oComponente.GetType() == typeof(Panel))
+                {
+                    ActualizarControles(((Panel)oComponente).Controls);
+                }
+
+                if (oComponente.GetType() == typeof(MenuStrip))
+                {
+                    ActualizarControles(((MenuStrip)oComponente).Items);
+                }
+
+                if (oComponente.GetType() == typeof(ToolStripMenuItem))
+                {
+                    if (((ToolStripMenuItem)oComponente).DropDownItems.Count > 0)
+                    {
+                        ActualizarControles(((ToolStripMenuItem)oComponente).DropDownItems);
+                    }
+                    ((ToolStripMenuItem)oComponente).Text = TraductorService.RetornaTraduccion(((ToolStripMenuItem)oComponente).Text) ?? ((ToolStripMenuItem)oComponente).Text;
+                    continue;
+                }
+
+                ((Control) oComponente).Text = TraductorService.RetornaTraduccion(((Control)oComponente).Text) ?? ((Control)oComponente).Text;
+            }
         }
     }
 }

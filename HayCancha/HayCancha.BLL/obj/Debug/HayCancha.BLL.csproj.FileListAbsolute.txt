@@ -11,3 +11,17 @@ C:\Proyecto\HayCancha\HayCancha.BLL\bin\Debug\HayCancha.DAL.dll
 C:\Proyecto\HayCancha\HayCancha.BLL\bin\Debug\HayCancha.Servicios.dll
 C:\Proyecto\HayCancha\HayCancha.BLL\bin\Debug\HayCancha.DAL.pdb
 C:\Proyecto\HayCancha\HayCancha.BLL\bin\Debug\HayCancha.Servicios.pdb
+C:\Users\lucas\source\repos\Facultad\Proyecto\HayCancha\HayCancha.BLL\bin\Debug\HayCancha.BLL.dll.config
+C:\Users\lucas\source\repos\Facultad\Proyecto\HayCancha\HayCancha.BLL\bin\Debug\HayCancha.BLL.dll
+C:\Users\lucas\source\repos\Facultad\Proyecto\HayCancha\HayCancha.BLL\bin\Debug\HayCancha.BLL.pdb
+C:\Users\lucas\source\repos\Facultad\Proyecto\HayCancha\HayCancha.BLL\bin\Debug\HayCancha.BE.dll
+C:\Users\lucas\source\repos\Facultad\Proyecto\HayCancha\HayCancha.BLL\bin\Debug\HayCancha.DAL.dll
+C:\Users\lucas\source\repos\Facultad\Proyecto\HayCancha\HayCancha.BLL\bin\Debug\HayCancha.Servicios.dll
+C:\Users\lucas\source\repos\Facultad\Proyecto\HayCancha\HayCancha.BLL\bin\Debug\HayCancha.BE.pdb
+C:\Users\lucas\source\repos\Facultad\Proyecto\HayCancha\HayCancha.BLL\bin\Debug\HayCancha.DAL.pdb
+C:\Users\lucas\source\repos\Facultad\Proyecto\HayCancha\HayCancha.BLL\bin\Debug\HayCancha.Servicios.pdb
+C:\Users\lucas\source\repos\Facultad\Proyecto\HayCancha\HayCancha.BLL\obj\Debug\HayCancha.BLL.csprojAssemblyReference.cache
+C:\Users\lucas\source\repos\Facultad\Proyecto\HayCancha\HayCancha.BLL\obj\Debug\HayCancha.BLL.csproj.CoreCompileInputs.cache
+C:\Users\lucas\source\repos\Facultad\Proyecto\HayCancha\HayCancha.BLL\obj\Debug\HayCancha.BLL.csproj.CopyComplete
+C:\Users\lucas\source\repos\Facultad\Proyecto\HayCancha\HayCancha.BLL\obj\Debug\HayCancha.BLL.dll
+C:\Users\lucas\source\repos\Facultad\Proyecto\HayCancha\HayCancha.BLL\obj\Debug\HayCancha.BLL.pdb

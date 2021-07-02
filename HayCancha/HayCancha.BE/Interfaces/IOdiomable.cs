@@ -1,4 +1,5 @@
-﻿using HayCancha.BE.Enumerables;
+﻿using System.Collections;
+using HayCancha.BE.Enumerables;
 
 namespace HayCancha.BE.Interfaces
 {
@@ -6,5 +7,6 @@ namespace HayCancha.BE.Interfaces
     {
         IdiomaEnum IdiomaControl { get; set; }
         void Update();
+        void ActualizarControles(IEnumerable Coleccion);
     }
 }

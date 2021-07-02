@@ -7,12 +7,9 @@ using System.Windows.Forms;
 
 namespace HayCancha.Servicios
 {
-    public class VistaService
+    public static class VistaService
     {
-        private static VistaService _oInstancia;
-        public static VistaService Instancia => _oInstancia ?? (_oInstancia = new VistaService());
-
-        public void AbrirFormEnPanel(Control oPanel, object oFormhijo)
+        public static void AbrirFormEnPanel(Control oPanel, object oFormhijo)
         {
             if (oPanel.Controls.Count > 0)
                 oPanel.Controls.RemoveAt(0);

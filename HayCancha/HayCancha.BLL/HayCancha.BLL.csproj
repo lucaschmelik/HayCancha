@@ -50,7 +50,6 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Include="TraductorBLL.cs" />
     <Compile Include="UsuarioBLL.cs" />
   </ItemGroup>
   <ItemGroup>
