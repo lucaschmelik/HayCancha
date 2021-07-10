@@ -6,9 +6,9 @@ namespace HayCancha.BE.Abstractas
     {
         protected AbstractEntidad()
         {
-            Id = new Guid();
+            Id = 0;
         }
 
-        public Guid Id { get; set; }
+        public int Id { get; set; }
     }
 }

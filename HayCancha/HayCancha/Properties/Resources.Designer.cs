@@ -73,6 +73,36 @@ namespace HayCancha.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap eliminar {
+            get {
+                object obj = ResourceManager.GetObject("eliminar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap eliminar1 {
+            get {
+                object obj = ResourceManager.GetObject("eliminar1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap exit {
+            get {
+                object obj = ResourceManager.GetObject("exit", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap IdiomaChino {
             get {
                 object obj = ResourceManager.GetObject("IdiomaChino", resourceCulture);
@@ -96,6 +126,16 @@ namespace HayCancha.Properties {
         internal static System.Drawing.Bitmap IdiomaIngles {
             get {
                 object obj = ResourceManager.GetObject("IdiomaIngles", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap IdiomaNuevo {
+            get {
+                object obj = ResourceManager.GetObject("IdiomaNuevo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

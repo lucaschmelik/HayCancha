@@ -44,6 +44,7 @@ namespace HayCancha
             this.tsmIdiomaEspañol = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmIdiomaIngles = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmIdiomaChino = new System.Windows.Forms.ToolStripMenuItem();
+            this.NuevoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmSalir = new System.Windows.Forms.ToolStripMenuItem();
             this.panelPerfil = new System.Windows.Forms.Panel();
             this.imgPuntoNotificacion = new System.Windows.Forms.PictureBox();
@@ -53,10 +54,9 @@ namespace HayCancha
             this.imgPerfil = new System.Windows.Forms.PictureBox();
             this.panelMenus = new System.Windows.Forms.Panel();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.imgSalir = new System.Windows.Forms.PictureBox();
             this.bunifuElipse2 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.imgSalir = new System.Windows.Forms.PictureBox();
             this.ucNotificacion = new HayCancha.NotificacionUC();
-            this.nUEVOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.msMenu.SuspendLayout();
             this.panelPerfil.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgPuntoNotificacion)).BeginInit();
@@ -133,7 +133,7 @@ namespace HayCancha
             this.tsmIdiomaEspañol,
             this.tsmIdiomaIngles,
             this.tsmIdiomaChino,
-            this.nUEVOToolStripMenuItem});
+            this.NuevoToolStripMenuItem});
             this.tsmIdioma.Name = "tsmIdioma";
             this.tsmIdioma.Size = new System.Drawing.Size(61, 20);
             this.tsmIdioma.Tag = "11";
@@ -162,6 +162,14 @@ namespace HayCancha
             this.tsmIdiomaChino.Size = new System.Drawing.Size(180, 22);
             this.tsmIdiomaChino.Text = "CHINO";
             this.tsmIdiomaChino.Click += new System.EventHandler(this.tsmIdiomaChino_Click);
+            // 
+            // NuevoToolStripMenuItem
+            // 
+            this.NuevoToolStripMenuItem.Image = global::HayCancha.Properties.Resources.IdiomaNuevo;
+            this.NuevoToolStripMenuItem.Name = "NuevoToolStripMenuItem";
+            this.NuevoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.NuevoToolStripMenuItem.Text = "NUEVO";
+            this.NuevoToolStripMenuItem.Click += new System.EventHandler(this.NuevoToolStripMenuItem_Click);
             // 
             // tsmSalir
             // 
@@ -251,6 +259,11 @@ namespace HayCancha
             this.bunifuElipse1.ElipseRadius = 10;
             this.bunifuElipse1.TargetControl = this;
             // 
+            // bunifuElipse2
+            // 
+            this.bunifuElipse2.ElipseRadius = 50;
+            this.bunifuElipse2.TargetControl = this.imgPuntoNotificacion;
+            // 
             // imgSalir
             // 
             this.imgSalir.BackColor = System.Drawing.Color.White;
@@ -263,27 +276,16 @@ namespace HayCancha
             this.imgSalir.TabStop = false;
             this.imgSalir.Click += new System.EventHandler(this.imgSalir_Click);
             // 
-            // bunifuElipse2
-            // 
-            this.bunifuElipse2.ElipseRadius = 50;
-            this.bunifuElipse2.TargetControl = this.imgPuntoNotificacion;
-            // 
             // ucNotificacion
             // 
             this.ucNotificacion.BackColor = System.Drawing.Color.DarkGreen;
-            this.ucNotificacion.IdiomaControl = HayCancha.BE.Enumerables.IdiomaEnum.Español;
+            this.ucNotificacion.IdiomaControl = (int)HayCancha.BE.Enumerables.IdiomaEnum.Español;
             this.ucNotificacion.Location = new System.Drawing.Point(535, 64);
             this.ucNotificacion.Name = "ucNotificacion";
             this.ucNotificacion.Size = new System.Drawing.Size(236, 381);
             this.ucNotificacion.TabIndex = 0;
             this.ucNotificacion.Visible = false;
             this.ucNotificacion.Leave += new System.EventHandler(this.ucNotificacion_Leave);
-            // 
-            // nUEVOToolStripMenuItem
-            // 
-            this.nUEVOToolStripMenuItem.Name = "nUEVOToolStripMenuItem";
-            this.nUEVOToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.nUEVOToolStripMenuItem.Text = "NUEVO";
             // 
             // MenuUI
             // 
@@ -342,6 +344,6 @@ namespace HayCancha
         private NotificacionUC ucNotificacion;
         private System.Windows.Forms.PictureBox imgPuntoNotificacion;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse2;
-        private System.Windows.Forms.ToolStripMenuItem nUEVOToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem NuevoToolStripMenuItem;
     }
 }

@@ -21,43 +21,26 @@ namespace HayCancha.Servicios
 
         public void CargarPermisos(Usuario oUsuario)
         {
+            var oDrEncontrada = PermisoDAL.Instancia.ObtenerPermisoUsuario(Session.ObtenerNombreUsuario());
+
             var oFamilia = new Familia()
             {
-                Permiso = (PermisoEnum) Enum.GetValues(typeof(PermisoEnum)).GetValue((int) PermisoDAL.Instancia.ObtenerPermisoUsuario(Session.ObtenerNombreUsuario())["Id"] - 1)
+                Permiso = (int)oDrEncontrada["Id"],
+                Nombre = oDrEncontrada["Nombre"].ToString()
             };
 
             Session.AgregarPermiso(oFamilia);
 
-            ListarPermisos(oFamilia);
+            PermisoService.ListarPermisos(oFamilia);
         }
 
-        private static void ListarPermisos(AbstractComponent oComponente)
+        public void VerificarPermisos(Control oMenuStrip)
         {
-            var oDt = PermisoDAL.Instancia.ObtenerHijos((int)oComponente.Permiso);
-
-            foreach (var oDrHijo in oDt.AsEnumerable())
-            {
-                if ((bool)oDrHijo["EsRol"])
-                {
-                    var oComponenteHijo = new Familia() { Permiso = (PermisoEnum)Enum.GetValues(typeof(PermisoEnum)).GetValue(int.Parse(oDrHijo["Id"].ToString()) - 1) };
-                    oComponente.AgregarHijo(oComponenteHijo);
-                    ListarPermisos(oComponenteHijo);
-                }
-                else
-                {
-                    var oComponenteHijo = new Patente() { Permiso = (PermisoEnum)Enum.GetValues(typeof(PermisoEnum)).GetValue(int.Parse(oDrHijo["Id"].ToString()) - 1) };
-                    oComponente.AgregarHijo(oComponenteHijo);
-                }
-            }
-        }
-
-        public void VerificarPermisos(MenuStrip oMenuStrip)
-        {
-            foreach (ToolStripMenuItem oComponenteMenu in oMenuStrip.Items)
+            foreach (ToolStripMenuItem oComponenteMenu in ((MenuStrip)oMenuStrip).Items)
             {
                 if (oComponenteMenu.Tag != null)
                 {
-                    oComponenteMenu.Visible = Session.TienePermiso((PermisoEnum)Enum.GetValues(typeof(PermisoEnum)).GetValue(int.Parse(oComponenteMenu.Tag.ToString()) - 1), Session.ObtenerListaPermisos());
+                    oComponenteMenu.Visible = Session.TienePermiso(int.Parse(oComponenteMenu.Tag.ToString()), Session.ObtenerListaPermisos());
                 }
             }
         }

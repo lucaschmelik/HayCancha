@@ -6,13 +6,13 @@ using HayCancha.BE.Interfaces;
 
 namespace HayCancha.BE.Clases
 {
-    public class Session : Idioma
+    public class Session : AbstractObserver
     {
         private Usuario _oUsuario;
 
-        private IdiomaEnum _Idioma = IdiomaEnum.Español;
+        private int _Idioma = (int)IdiomaEnum.Español;
 
-        public IdiomaEnum Idioma
+        public int Idioma
         {
             get => _Idioma;
             set
@@ -47,7 +47,7 @@ namespace HayCancha.BE.Clases
             _oUsuario.Imagen = imgPerfil;
         }
 
-        public bool TienePermiso(PermisoEnum oPermiso, IList<AbstractComponent> lstPermisos)
+        public bool TienePermiso(int oPermiso, IList<AbstractComponent> lstPermisos)
         {
             foreach (var oComponente in lstPermisos)
             {

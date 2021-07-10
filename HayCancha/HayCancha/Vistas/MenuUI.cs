@@ -8,10 +8,11 @@ using HayCancha.BE.Enumerables;
 using HayCancha.BE.Interfaces;
 using HayCancha.BLL;
 using HayCancha.Servicios;
+using HayCancha.Vistas;
 
 namespace HayCancha
 {
-    public partial class MenuUI : Form, IOdiomable
+    public partial class MenuUI : Form, Idiomable
     {
         public MenuUI(LoginUI frmLogin)
         {
@@ -41,7 +42,7 @@ namespace HayCancha
         private int _iMovX;
         private int _iMovY;
 
-        public IdiomaEnum IdiomaControl { get; set; }
+        public int IdiomaControl { get; set; }
 
         private void Menu_MouseDown(object sender, MouseEventArgs e)
         {
@@ -82,20 +83,20 @@ namespace HayCancha
 
         private void tsmIdiomaEspañol_Click(object sender, EventArgs e)
         {
-            if (SessionService.Session.Idioma != IdiomaEnum.Español)
-                SessionService.Session.Idioma = IdiomaEnum.Español;
+            if (SessionService.Session.Idioma != (int)IdiomaEnum.Español)
+                SessionService.Session.Idioma = (int)IdiomaEnum.Español;
         }
 
         private void tsmIdiomaIngles_Click(object sender, EventArgs e)
         {
-            if (SessionService.Session.Idioma != IdiomaEnum.Ingles)
-                SessionService.Session.Idioma = IdiomaEnum.Ingles;
+            if (SessionService.Session.Idioma != (int)IdiomaEnum.Ingles)
+                SessionService.Session.Idioma = (int)IdiomaEnum.Ingles;
         }
 
         private void tsmIdiomaChino_Click(object sender, EventArgs e)
         {
-            if (SessionService.Session.Idioma != IdiomaEnum.Chino)
-                SessionService.Session.Idioma = IdiomaEnum.Chino;
+            if (SessionService.Session.Idioma != (int)IdiomaEnum.Chino)
+                SessionService.Session.Idioma = (int)IdiomaEnum.Chino;
         }
 
         public new void Update()
@@ -181,6 +182,11 @@ namespace HayCancha
 
                 ((Control) oComponente).Text = TraductorService.RetornaTraduccion(((Control)oComponente).Text) ?? ((Control)oComponente).Text;
             }
+        }
+
+        private void NuevoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            VistaService.AbrirFormEnPanel(panelMenus, new IdiomasUI());
         }
     }
 }

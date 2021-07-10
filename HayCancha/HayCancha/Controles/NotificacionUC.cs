@@ -7,7 +7,7 @@ using HayCancha.Servicios;
 
 namespace HayCancha
 {
-    public partial class NotificacionUC : UserControl, IOdiomable
+    public partial class NotificacionUC : UserControl, Idiomable
     {
         public NotificacionUC()
         {
@@ -16,7 +16,7 @@ namespace HayCancha
             if (IdiomaControl != SessionService.Session.Idioma) Update();
         }
 
-        public IdiomaEnum IdiomaControl { get; set; }
+        public int IdiomaControl { get; set; }
 
         public void ActualizarControles(IEnumerable Coleccion)
         {

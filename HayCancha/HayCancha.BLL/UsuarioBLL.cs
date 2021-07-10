@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
 using HayCancha.BE;
 using HayCancha.BE.Enumerables;
@@ -63,6 +64,8 @@ namespace HayCancha.BLL
         {
             _oUsuarioDAL.GuardarImagenPerfil(btPerfil);
         }
+
+        public IList<Usuario> ObtenerUsuarioNoAdmin() => _oUsuarioDAL.ObtenerUsuarioNoAdmin();
 
     }
 }

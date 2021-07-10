@@ -5,7 +5,10 @@ namespace HayCancha.BE.Abstractas
 {
     public abstract class AbstractComponent
     {
-        public PermisoEnum Permiso { get; set; }
+        public string Nombre { get; set; }
+
+        public int Permiso { get; set; }
+
         public abstract IList<AbstractComponent> lstHijos { get; }
 
         public abstract void AgregarHijo(AbstractComponent oComponente);

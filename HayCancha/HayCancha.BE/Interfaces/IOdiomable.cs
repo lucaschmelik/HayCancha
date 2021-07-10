@@ -3,7 +3,7 @@ using HayCancha.BE.Enumerables;
 
 namespace HayCancha.BE.Interfaces
 {
-    public interface IOdiomable
+    public interface IDiomable
     {
         IdiomaEnum IdiomaControl { get; set; }
         void Update();

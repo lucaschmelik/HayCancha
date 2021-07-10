@@ -11,7 +11,7 @@ using HayCancha.Servicios;
 
 namespace HayCancha
 {
-    public partial class LoginUI : Form, IOdiomable
+    public partial class LoginUI : Form, Idiomable
     {
         public LoginUI()
         {
@@ -25,7 +25,7 @@ namespace HayCancha
         private int _iMovX;
         private int _iMovY;
 
-        public IdiomaEnum IdiomaControl { get; set; }
+        public int IdiomaControl { get; set; }
 
         private void Login_Load(object sender, EventArgs e)
         {
@@ -107,20 +107,20 @@ namespace HayCancha
 
         private void imgIdiomaEspañol_Click(object sender, EventArgs e)
         {
-            if (SessionService.Session.Idioma != IdiomaEnum.Español) 
-                SessionService.Session.Idioma = IdiomaEnum.Español;
+            if (SessionService.Session.Idioma != (int)IdiomaEnum.Español) 
+                SessionService.Session.Idioma = (int)IdiomaEnum.Español;
         }
 
         private void imgIdiomaIngles_Click(object sender, EventArgs e)
         {
-            if (SessionService.Session.Idioma != IdiomaEnum.Ingles) 
-                SessionService.Session.Idioma = IdiomaEnum.Ingles;
+            if (SessionService.Session.Idioma != (int)IdiomaEnum.Ingles) 
+                SessionService.Session.Idioma = (int)IdiomaEnum.Ingles;
         }
 
         private void imgIdiomaChino_Click(object sender, EventArgs e)
         {
-            if (SessionService.Session.Idioma != IdiomaEnum.Chino)
-                SessionService.Session.Idioma = IdiomaEnum.Chino;
+            if (SessionService.Session.Idioma != (int)IdiomaEnum.Chino)
+                SessionService.Session.Idioma = (int)IdiomaEnum.Chino;
         }
 
         public new void Update()
@@ -137,7 +137,8 @@ namespace HayCancha
                 {
                     ActualizarControles(((Panel)oComponente).Controls);
                 }
-                ((Control)oComponente).Text = TraductorService.RetornaTraduccion(((Control)oComponente).Text);
+
+                ((Control) oComponente).Text = TraductorService.RetornaTraduccion(((Control) oComponente).Text);
             }
         }
     }

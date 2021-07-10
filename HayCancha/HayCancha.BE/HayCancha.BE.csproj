@@ -49,15 +49,17 @@
     <Compile Include="Abstractas\AbstractEntidad.cs" />
     <Compile Include="Clases\Cancha.cs" />
     <Compile Include="Clases\Familia.cs" />
+    <Compile Include="Clases\Idioma.cs" />
     <Compile Include="Clases\Patente.cs" />
     <Compile Include="Clases\Reserva.cs" />
     <Compile Include="Clases\Session.cs" />
+    <Compile Include="Clases\TextosTraducibles.cs" />
     <Compile Include="Enumerables\EstadoReservaEnum.cs" />
     <Compile Include="Enumerables\IdiomaEnum.cs" />
     <Compile Include="Enumerables\PermisoEnum.cs" />
     <Compile Include="Enumerables\TipoCanchaEnum.cs" />
-    <Compile Include="Interfaces\Idioma.cs" />
-    <Compile Include="Interfaces\IOdiomable.cs" />
+    <Compile Include="Abstractas\AbstractObserver.cs" />
+    <Compile Include="Interfaces\Idiomable.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Clases\Usuario.cs" />
   </ItemGroup>

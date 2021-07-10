@@ -44,3 +44,4 @@ C:\Users\lucas\source\repos\Facultad\Proyecto\HayCancha\HayCancha\obj\Debug\HayC
 C:\Users\lucas\source\repos\Facultad\Proyecto\HayCancha\HayCancha\obj\Debug\HayCancha.UI.csproj.CopyComplete
 C:\Users\lucas\source\repos\Facultad\Proyecto\HayCancha\HayCancha\obj\Debug\HayCancha.exe
 C:\Users\lucas\source\repos\Facultad\Proyecto\HayCancha\HayCancha\obj\Debug\HayCancha.pdb
+C:\Users\lucas\source\repos\Facultad\Proyecto\HayCancha\HayCancha\obj\Debug\HayCancha.Vistas.IdiomasUI.resources

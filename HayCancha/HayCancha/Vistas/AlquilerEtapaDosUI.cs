@@ -16,7 +16,7 @@ using HayCancha.Servicios;
 
 namespace HayCancha
 {
-    public partial class AlquilerEtapaDosUI : Form, IOdiomable
+    public partial class AlquilerEtapaDosUI : Form, Idiomable
     {
         public AlquilerEtapaDosUI(Reserva oReserva)
         {
@@ -33,7 +33,7 @@ namespace HayCancha
         }
 
         private Reserva _oReserva;
-        public IdiomaEnum IdiomaControl { get; set; }
+        public int IdiomaControl { get; set; }
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {

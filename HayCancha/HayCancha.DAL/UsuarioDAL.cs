@@ -2,6 +2,7 @@
 using System.Data;
 using System.Linq;
 using HayCancha.BE;
+using HayCancha.BE.Clases;
 using HayCancha.BE.Enumerables;
 
 namespace HayCancha.DAL
@@ -14,30 +15,32 @@ namespace HayCancha.DAL
         {
             oUsuario = new Usuario(){ };
         }
-
-        public Usuario GetOne()
-        {
-            var oDrEncontrado = EjecutaStp("ObtenerUsuario", new Dictionary<string, object>() { { "Id", oUsuario.Id } }, RetornaTabla()).AsEnumerable().FirstOrDefault();
-
-            return new Usuario
-            {
-                Nombre = oDrEncontrado["Nombre"].ToString(),
-                Contraseña = oDrEncontrado["Contraseña"].ToString()
-            };
-        }
-
+        
         public Usuario ObtenerUsuarioPorNombreContraseña()
         {
-            var oDrUsuario = EjecutaStp("stpObtenerPorNombreContraseñaUsuario", new Dictionary<string, object>() { { "Nombre", oUsuario.Nombre }, { "Contraseña", oUsuario.Contraseña } }, RetornaTabla()).AsEnumerable().FirstOrDefault();
+            var oDrUsuario = EjecutaStp("stpObtenerPorNombreContraseñaUsuario", new Dictionary<string, object>() { { "Nombre", oUsuario.Nombre }, { "Contraseña", oUsuario.Contraseña } }, RetornaTablaUsuario()).AsEnumerable().FirstOrDefault();
 
             return oDrUsuario == null? null : new Usuario { Nombre = oDrUsuario["Nombre"].ToString(), Contraseña = oDrUsuario["Contraseña"].ToString()};
         }
 
         public Usuario ObtenerUsuarioPorNombre()
         {
-            var oDrUsuario = EjecutaStp("stpObtenerPorNombreUsuario", new Dictionary<string, object>() { { "Nombre", oUsuario.Nombre } }, RetornaTabla()).AsEnumerable().FirstOrDefault();
+            var oDrUsuario = EjecutaStp("stpObtenerPorNombreUsuario", new Dictionary<string, object>() { { "Nombre", oUsuario.Nombre } }, RetornaTablaUsuario()).AsEnumerable().FirstOrDefault();
 
             return oDrUsuario == null ? null : new Usuario { Nombre = oDrUsuario["Nombre"].ToString() };
+        }
+
+        public IList<Usuario> ObtenerUsuarioNoAdmin()
+        {
+            var oDt = new DataTable();
+
+            oDt.Columns.Add("Id", typeof(int));
+            oDt.Columns.Add("Nombre", typeof(string));
+            oDt.Columns.Add("Permiso", typeof(int));
+
+            var oDtUsuario = EjecutaStp("stpObtenerUsuariosNoAdmin", new Dictionary<string, object>() {}, oDt);
+
+            return Enumerable.Select(oDtUsuario.AsEnumerable(), oUsuario => new Usuario() {Id = (int) oUsuario["Id"], Nombre = oUsuario["Nombre"].ToString(), lstPermisos = {new Familia() {Permiso = (int) oUsuario["Permiso"]}}}).ToList();
         }
 
         public void RegistrarUsuario(PermisoEnum oRol, byte[] btImagen)
@@ -72,7 +75,7 @@ namespace HayCancha.DAL
             return (byte[])oDrImagen[0];
         }
 
-        public DataTable RetornaTabla()
+        public DataTable RetornaTablaUsuario()
         {
             var oDt = new DataTable();
 
