@@ -37,5 +37,14 @@ namespace HayCancha.BE
 
             return oDt;
         }
+
+        protected DataTable RetornaDatatableId()
+        {
+            var oDt = new DataTable();
+
+            oDt.Columns.Add("Id", typeof(int));
+
+            return oDt;
+        }
     }
 }

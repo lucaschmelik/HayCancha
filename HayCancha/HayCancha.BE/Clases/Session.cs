@@ -22,6 +22,8 @@ namespace HayCancha.BE.Clases
             }
         }
 
+        public Usuario UsuarioLogueado { get => _oUsuario; }
+
         public void Login(Usuario oUsuario)
         {
             _oUsuario = oUsuario;

@@ -44,14 +44,19 @@ namespace HayCancha.Servicios
             return oDt;
         }
 
-        public static void AddRowInDataGridViewPedido(DataGridView dgv, DataRow oDr)
+        public static DataTable GetDatatableFromDataRow(DataRow dataGridView)
+        { 
+            return dataGridView.Table.Copy();
+        }
+
+        public static void AddRowInDataGridView(DataGridView dgv, DataRow oDr)
         {
-            var oDt = GetDatatableFromDatagridView(dgv);
+            var oDt = GetDatatableFromDatagridView(dgv).Columns.Count != 0? GetDatatableFromDatagridView(dgv):  oDr.Table.Clone();
             oDt.Rows.Add(oDr.ItemArray.Clone() as object[] ?? throw new Exception("Ocurrió un error al intentar agregar un producto!!"));
             LoadDatagripView(dgv, oDt);
         }
 
-        public static void DeleteRowInDataGridViewPedido(DataGridView dgv, DataRow oDr, string sNameColumn)
+        public static void DeleteRowInDataGridView(DataGridView dgv, DataRow oDr, string sNameColumn = "Id")
         {
             var oDt = GetDatatableFromDatagridView(dgv);
             oDt.AsEnumerable().Where(x => x[sNameColumn].ToString() == oDr[sNameColumn].ToString()).FirstOrDefault().Delete();
@@ -59,6 +64,19 @@ namespace HayCancha.Servicios
         }
 
         public static void LoadDatagripView(DataGridView dgv, DataTable table)
+        {
+            try
+            {
+                dgv.DataSource = null;
+                dgv.DataSource = table;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        public static void LoadDatagripView(DataGridView dgv, IList table)
         {
             try
             {

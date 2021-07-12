@@ -3,9 +3,11 @@ namespace HayCancha.BE.Enumerables
 {
     public enum EstadoReservaEnum
     {
-        Nueva = 0,
-        Solicitada = 1,
-        Confirmada = 2,
-        Finalizada = 3
+        Nueva = 1,
+        PendienteAutorizacion = 2,
+        Autorizada = 3,
+        Confirmada = 4,
+        Finalizada = 5,
+        Rechazada = 6
     }
 }

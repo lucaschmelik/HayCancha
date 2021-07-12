@@ -18,7 +18,6 @@ namespace HayCancha
             InitializeComponent();
         }
 
-        private UsuarioBLL _oUsuarioBLL;
         private MenuUI _frmMenu;
 
         private int _iMov;
@@ -61,9 +60,9 @@ namespace HayCancha
             {
                 ValidarNombreContraseña();
 
-                _oUsuarioBLL = new UsuarioBLL(txtUsuario.Text, txtContraseña.Text);
+                UsuarioBLL.CargarUsuario(txtUsuario.Text, txtContraseña.Text);
 
-                _oUsuarioBLL.Login();
+                UsuarioBLL.Login();
 
                 this.Hide();
 
@@ -85,9 +84,9 @@ namespace HayCancha
             {
                 ValidarNombreContraseña();
 
-                _oUsuarioBLL = new UsuarioBLL(txtUsuario.Text, txtContraseña.Text);
+                UsuarioBLL.CargarUsuario(txtUsuario.Text, txtContraseña.Text);
 
-                _oUsuarioBLL.RegistrarUsuario();
+                UsuarioBLL.RegistrarUsuario();
 
                 MessageBox.Show("El usuario se registro correctamente");
 

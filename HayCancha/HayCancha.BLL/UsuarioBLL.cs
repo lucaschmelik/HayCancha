@@ -8,12 +8,12 @@ using HayCancha.Servicios;
 
 namespace HayCancha.BLL
 {
-    public class UsuarioBLL
+    public static class UsuarioBLL
     {
-        private Usuario _oUsuario;
-        private UsuarioDAL _oUsuarioDAL;
-
-        public UsuarioBLL(string sNombre, string sContraseña)
+        private static Usuario _oUsuario;
+        private static UsuarioDAL _oUsuarioDAL;
+        
+        public static void CargarUsuario(string sNombre, string sContraseña)
         {
             _oUsuario = new Usuario
             {
@@ -27,7 +27,7 @@ namespace HayCancha.BLL
             };
         }
 
-        public void Login()
+        public static void Login()
         {
             if (SessionService.Session.IsLogged()) throw new Exception("Existe una sesión iniciada");
 
@@ -41,6 +41,8 @@ namespace HayCancha.BLL
 
             if (oUsuarioEncontrado.Nombre != _oUsuario.Nombre || oUsuarioEncontrado.Contraseña != _oUsuario.Contraseña) throw new Exception("Ingreso usuario incorrecto");
 
+            _oUsuario = oUsuarioEncontrado;
+
             SessionService.Session.Login(_oUsuario);
 
             SessionService.Session.AgregarImagenPerfil(ConversorImagenService.ConvetirByteAImagen(_oUsuarioDAL.ObtenerImagenPerfil()));
@@ -48,7 +50,7 @@ namespace HayCancha.BLL
             SessionService.Instancia.CargarPermisos(_oUsuario);
         }
 
-        public void RegistrarUsuario()
+        public static void RegistrarUsuario()
         {
             _oUsuarioDAL = new UsuarioDAL()
             {
@@ -60,12 +62,15 @@ namespace HayCancha.BLL
             _oUsuarioDAL.RegistrarUsuario(PermisoEnum.Jugador, _oUsuarioDAL.ObtenerImagenDefault());
         }
 
-        public void CambiarImagenPerfil(byte[] btPerfil)
+        public static void CambiarImagenPerfil(byte[] btPerfil)
         {
             _oUsuarioDAL.GuardarImagenPerfil(btPerfil);
         }
 
-        public IList<Usuario> ObtenerUsuarioNoAdmin() => _oUsuarioDAL.ObtenerUsuarioNoAdmin();
+        public static IList<Usuario> ObtenerUsuariosNoAdmin() => _oUsuarioDAL.ObtenerUsuariosNoAdmin();
 
+        public static IList<Usuario> ObtenerUsuariosPorNombre(string sNombre) => _oUsuarioDAL.ObtenerUsuariosPorNombre(sNombre);
+
+        public static Usuario ObtenerUsuarioPorNombre (string sNombre) => _oUsuarioDAL.ObtenerUsuarioPorNombre();
     }
 }

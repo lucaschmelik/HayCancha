@@ -27,7 +27,6 @@ namespace HayCancha
             if(IdiomaControl != _frmLogin.IdiomaControl) Update();
             SessionService.Instancia.VerificarPermisos(msMenu);
             imgPerfil.Image = SessionService.Session.ObtenerImagenPerfil();
-            _UsuarioBLL = new UsuarioBLL(SessionService.Session.ObtenerNombreUsuario(), SessionService.Session.ObtenerContraseñaUsuario());
             RedondearPictureBox();
             lblNombreMenu.Text = SessionService.Session.ObtenerNombreUsuario().ToUpper();
             _fmAlquilerEtapaUno = new AlquilerEtapaUnoUI();
@@ -35,7 +34,6 @@ namespace HayCancha
         }
 
         private LoginUI _frmLogin;
-        private UsuarioBLL _UsuarioBLL;
         private AlquilerEtapaUnoUI _fmAlquilerEtapaUno;
 
         private int _iMov;
@@ -116,7 +114,7 @@ namespace HayCancha
 
             if (drImagen != DialogResult.OK) return;
 
-            _UsuarioBLL.CambiarImagenPerfil(File.ReadAllBytes(ofdImagen.FileName));
+            UsuarioBLL.CambiarImagenPerfil(File.ReadAllBytes(ofdImagen.FileName));
 
             imgPerfil.Load(ofdImagen.FileName);
         }
@@ -130,7 +128,17 @@ namespace HayCancha
         {
             VistaService.AbrirFormEnPanel(panelMenus, new UsuariosUI());
         }
-        
+
+        private void tsmReservas_Click(object sender, EventArgs e)
+        {
+            VistaService.AbrirFormEnPanel(panelMenus, new ReservasUI());
+        }
+
+        private void tsmPartidos_Click(object sender, EventArgs e)
+        {
+            VistaService.AbrirFormEnPanel(panelMenus, new PartidosUI());
+        }
+
         private void imgNotificacion_Click(object sender, EventArgs e)
         {
             if (ucNotificacion.Visible)

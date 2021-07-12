@@ -92,6 +92,18 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Vistas\PartidosUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\PartidosUI.Designer.cs">
+      <DependentUpon>PartidosUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\ReservasUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\ReservasUI.Designer.cs">
+      <DependentUpon>ReservasUI.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\UsuariosUI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -128,6 +140,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Vistas\PartidosUI.resx">
+      <DependentUpon>PartidosUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\ReservasUI.resx">
+      <DependentUpon>ReservasUI.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vistas\UsuariosUI.resx">
       <DependentUpon>UsuariosUI.cs</DependentUpon>
     </EmbeddedResource>

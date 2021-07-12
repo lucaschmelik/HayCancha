@@ -20,17 +20,17 @@ namespace HayCancha.DAL
         {
             var oDrUsuario = EjecutaStp("stpObtenerPorNombreContraseñaUsuario", new Dictionary<string, object>() { { "Nombre", oUsuario.Nombre }, { "Contraseña", oUsuario.Contraseña } }, RetornaTablaUsuario()).AsEnumerable().FirstOrDefault();
 
-            return oDrUsuario == null? null : new Usuario { Nombre = oDrUsuario["Nombre"].ToString(), Contraseña = oDrUsuario["Contraseña"].ToString()};
+            return oDrUsuario == null? null : new Usuario { Id = int.Parse(oDrUsuario["Id"].ToString()), Nombre = oDrUsuario["Nombre"].ToString(), Contraseña = oDrUsuario["Contraseña"].ToString()};
         }
 
         public Usuario ObtenerUsuarioPorNombre()
         {
             var oDrUsuario = EjecutaStp("stpObtenerPorNombreUsuario", new Dictionary<string, object>() { { "Nombre", oUsuario.Nombre } }, RetornaTablaUsuario()).AsEnumerable().FirstOrDefault();
 
-            return oDrUsuario == null ? null : new Usuario { Nombre = oDrUsuario["Nombre"].ToString() };
+            return oDrUsuario == null ? null : new Usuario { Id = int.Parse(oDrUsuario["Id"].ToString()), Nombre = oDrUsuario["Nombre"].ToString() };
         }
 
-        public IList<Usuario> ObtenerUsuarioNoAdmin()
+        public IList<Usuario> ObtenerUsuariosNoAdmin()
         {
             var oDt = new DataTable();
 
@@ -43,6 +43,17 @@ namespace HayCancha.DAL
             return Enumerable.Select(oDtUsuario.AsEnumerable(), oUsuario => new Usuario() {Id = (int) oUsuario["Id"], Nombre = oUsuario["Nombre"].ToString(), lstPermisos = {new Familia() {Permiso = (int) oUsuario["Permiso"]}}}).ToList();
         }
 
+        public IList<Usuario> ObtenerUsuariosPorNombre(string sNombre)
+        {
+            var oDt = new DataTable();
+
+            oDt.Columns.Add("Id", typeof(int));
+            oDt.Columns.Add("Nombre", typeof(string));
+
+            var oDtUsuario = EjecutaStp("stpObtenerUsuarioPorNombre", new Dictionary<string, object>() { { "Nombre", sNombre} }, oDt);
+            return Enumerable.Select(oDtUsuario.AsEnumerable(), oUsuario => new Usuario() { Id = (int)oUsuario["Id"], Nombre = oUsuario["Nombre"].ToString() }).ToList();
+        }
+             
         public void RegistrarUsuario(PermisoEnum oRol, byte[] btImagen)
         {
             EjecutaStp("stpAltaUsuario", new Dictionary<string, object>() { { "Nombre", oUsuario.Nombre }, { "Contraseña", oUsuario.Contraseña }, { "Permiso", (int)oRol }, { "Imagen", btImagen} }, new DataTable());

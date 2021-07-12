@@ -7,6 +7,8 @@ using System.Linq;
 using HayCancha.BE.Interfaces;
 using System.Collections;
 using HayCancha.Servicios;
+using System.Collections.Generic;
+using HayCancha.BLL;
 
 namespace HayCancha
 {
@@ -27,59 +29,26 @@ namespace HayCancha
 
         private void AlquilerUI_Load(object sender, EventArgs e)
         {
-            foreach (var TipoCancha in Enum.GetValues(typeof(TipoCanchaEnum)))
-            {
-                ddTipoCancha.AddItem($"Cancha de {(int)TipoCancha}");
-            }
-
-            var dt = new DataTable();
-
-            dt.Columns.Add("CANCHA", typeof(string));
-            dt.Columns.Add("HORA", typeof(DateTime));
-
-            var rows = new object[]
-            {
-                "Monumental",
-                DateTime.Now
-            };
-
-            var rows2 = new object[]
-            {
-                "Bombonera",
-                DateTime.Now
-            };
-
-            var rows3 = new object[]
-            {
-                "Gasometro",
-                DateTime.Now
-            };
-
-            dt.Rows.Add(rows);
-            dt.Rows.Add(rows2);
-            dt.Rows.Add(rows3);
-
-            dgvCancha.DataSource = dt;
-
-            ddTipoCancha.selectedIndex = 0;
+            CargarDropDownList();
         }
 
         private void btnSiguiente_Click(object sender, EventArgs e)
         {
-            var CanchaSeleccionada = ((DataRowView)dgvCancha.SelectedRows[0].DataBoundItem).Row ;
-
-            _oReserva.Estadio = new Cancha()
+            try
             {
-                Nombre = CanchaSeleccionada["CANCHA"].ToString(),
-            };
+                if (dgvCancha.Rows.Count == 0) throw new Exception("Tiene que seleccionar una cancha!");
 
-            foreach (TipoCanchaEnum item in Enum.GetValues(typeof(TipoCanchaEnum)))
-            {
-                if ((int) item == int.Parse(ddTipoCancha.selectedValue.Last().ToString())) _oReserva.Estadio.TipoCancha = item;
-                break;
+                var CanchaSeleccionada = ((DataRowView)dgvCancha.SelectedRows[0].DataBoundItem).Row;
+
+                _oReserva.Estadio.Id = int.Parse(CanchaSeleccionada["Id"].ToString());
+                _oReserva.Estadio.Nombre = CanchaSeleccionada["ESTADIO"].ToString();
+                
+                EventoEnviar?.Invoke(_oReserva, e);
             }
-
-            EventoEnviar?.Invoke(_oReserva, e);
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "ALERTA", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
         }
 
         public new void Update()
@@ -93,6 +62,50 @@ namespace HayCancha
             {
                 ((Control)oComponente).Text = TraductorService.RetornaTraduccion(((Control)oComponente).Text) ?? ((Control)oComponente).Text;
             }
+        }
+
+        private void imgBuscarCancha_Click(object sender, EventArgs e)
+        {
+            _oReserva.FechaInicio = dtpFecha.Value.AddHours(int.Parse(ddHora.selectedValue.Split(' ')[0].Replace("hs", "")));
+
+            _oReserva.Estadio = new Cancha()
+            {
+                TipoCancha = (TipoCanchaEnum) int.Parse(ddTipoCancha.selectedValue.Last().ToString())
+            };
+
+            var lstCanchas = AlquilerBLL.ObtenerCanchasDisponibles(_oReserva.FechaInicio, _oReserva.Estadio.TipoCancha);
+
+            var oDt = new DataTable();
+
+            oDt.Columns.Add("Id", typeof(int));
+            oDt.Columns.Add("ESTADIO", typeof(string));
+
+            foreach (var cancha in lstCanchas)
+            {
+                oDt.Rows.Add(cancha.Id, cancha.Nombre.ToUpper());
+            }
+
+            VistaService.LoadDatagripView(dgvCancha, oDt);
+
+            dgvCancha.Columns["Id"].Visible = false;
+        }
+
+        private void CargarDropDownList()
+        {
+            foreach (var TipoCancha in Enum.GetValues(typeof(TipoCanchaEnum)))
+            {
+                ddTipoCancha.AddItem($"Cancha de {(int)TipoCancha}");
+            }
+
+            var iHora = 15;
+            for (var i = 0; i < 8; i++)
+            {
+                ddHora.AddItem($"{iHora}hs - {iHora + 1}hs");
+                iHora++;
+            }
+
+            ddTipoCancha.selectedIndex = 0;
+            ddHora.selectedIndex = 0;
         }
     }
 }

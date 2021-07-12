@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using HayCancha.BE;
 using HayCancha.BE.Clases;
+using HayCancha.BE.Enumerables;
 
 namespace HayCancha.DAL
 {
@@ -14,29 +15,19 @@ namespace HayCancha.DAL
         private static CanchaDAL _oInstanciaDAL;
         public static CanchaDAL Instancia => _oInstanciaDAL ?? new CanchaDAL();
 
-        public IList<Cancha> RetornaCanchasPorTipoFecha(DateTime dtFecha, int iTipoCancha)
+        private DataTable RetornaDataTableCancha()
         {
-            var dicParametros = new Dictionary<string, object>()
-            {
-                {
-                    "Fecha", dtFecha
-                },
-                {
-                    "TipoCancha", iTipoCancha
-                }
-            };
-
             var oDt = new DataTable();
 
             oDt.Columns.Add("Id", typeof(int));
             oDt.Columns.Add("Nombre", typeof(string));
-            oDt.Columns.Add("Hora", typeof(DateTime));
+            oDt.Columns.Add("TipoCancha", typeof(int));
 
-            var oDrEncontrado = EjecutaStp("stpObtenerCanchaPorFechaTipoCancha", dicParametros, oDt).AsEnumerable().FirstOrDefault();
-
-            oDrEncontrado?["Texto"].ToString();
-
-            return null;
+            return oDt;
         }
+
+        public DataTable ObtenerCanchas() => EjecutaStp("stpObtenerCanchas", new Dictionary<string, object>() { }, RetornaDataTableCancha());
+
+        public DataTable ObtenerCanchasOcupadas(DateTime dtSeleccionado, TipoCanchaEnum enumTipoCancha) => EjecutaStp("stpObtenerCanchasOcupadas", new Dictionary<string, object>(){{ "FechaInicio", dtSeleccionado }, { "TipoCancha", (int) enumTipoCancha } }, RetornaDataTableCancha());
     }
 }

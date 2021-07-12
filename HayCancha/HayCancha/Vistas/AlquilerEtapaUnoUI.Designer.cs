@@ -43,6 +43,8 @@ namespace HayCancha
             this.btnSiguienteEtapaUno = new System.Windows.Forms.Button();
             this.bunifuElipse3 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.imgBuscarCancha = new Bunifu.Framework.UI.BunifuImageButton();
+            this.ddHora = new Bunifu.Framework.UI.BunifuDropdown();
+            this.bunifuElipse4 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCancha)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgBuscarCancha)).BeginInit();
             this.SuspendLayout();
@@ -60,7 +62,7 @@ namespace HayCancha
             this.dtpFecha.Name = "dtpFecha";
             this.dtpFecha.Size = new System.Drawing.Size(209, 31);
             this.dtpFecha.TabIndex = 0;
-            this.dtpFecha.Value = new System.DateTime(2021, 6, 11, 18, 37, 3, 0);
+            this.dtpFecha.Value = new System.DateTime(2021, 7, 11, 0, 0, 0, 0);
             // 
             // bunifuElipse1
             // 
@@ -88,7 +90,7 @@ namespace HayCancha
             this.dgvCancha.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvCancha.ColumnHeadersHeight = 30;
             this.dgvCancha.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -101,7 +103,7 @@ namespace HayCancha
             this.dgvCancha.Location = new System.Drawing.Point(46, 99);
             this.dgvCancha.Name = "dgvCancha";
             this.dgvCancha.ReadOnly = true;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
@@ -113,7 +115,7 @@ namespace HayCancha
             this.dgvCancha.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvCancha.RowTemplate.Height = 30;
             this.dgvCancha.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCancha.Size = new System.Drawing.Size(234, 269);
+            this.dgvCancha.Size = new System.Drawing.Size(234, 285);
             this.dgvCancha.TabIndex = 5;
             // 
             // ddTipoCancha
@@ -124,13 +126,13 @@ namespace HayCancha
             this.ddTipoCancha.ForeColor = System.Drawing.Color.Black;
             this.ddTipoCancha.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.ddTipoCancha.Items = new string[0];
-            this.ddTipoCancha.Location = new System.Drawing.Point(314, 195);
+            this.ddTipoCancha.Location = new System.Drawing.Point(314, 187);
             this.ddTipoCancha.Margin = new System.Windows.Forms.Padding(4);
             this.ddTipoCancha.Name = "ddTipoCancha";
             this.ddTipoCancha.NomalColor = System.Drawing.Color.Gainsboro;
             this.ddTipoCancha.onHoverColor = System.Drawing.Color.Gainsboro;
             this.ddTipoCancha.selectedIndex = -1;
-            this.ddTipoCancha.Size = new System.Drawing.Size(209, 35);
+            this.ddTipoCancha.Size = new System.Drawing.Size(209, 31);
             this.ddTipoCancha.TabIndex = 4;
             // 
             // bunifuElipse2
@@ -156,7 +158,7 @@ namespace HayCancha
             this.btnSiguienteEtapaUno.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSiguienteEtapaUno.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSiguienteEtapaUno.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnSiguienteEtapaUno.Location = new System.Drawing.Point(432, 335);
+            this.btnSiguienteEtapaUno.Location = new System.Drawing.Point(432, 351);
             this.btnSiguienteEtapaUno.Name = "btnSiguienteEtapaUno";
             this.btnSiguienteEtapaUno.Size = new System.Drawing.Size(91, 33);
             this.btnSiguienteEtapaUno.TabIndex = 7;
@@ -175,13 +177,36 @@ namespace HayCancha
             this.imgBuscarCancha.Cursor = System.Windows.Forms.Cursors.Hand;
             this.imgBuscarCancha.Image = ((System.Drawing.Image)(resources.GetObject("imgBuscarCancha.Image")));
             this.imgBuscarCancha.ImageActive = null;
-            this.imgBuscarCancha.Location = new System.Drawing.Point(397, 254);
+            this.imgBuscarCancha.Location = new System.Drawing.Point(398, 288);
             this.imgBuscarCancha.Name = "imgBuscarCancha";
             this.imgBuscarCancha.Size = new System.Drawing.Size(49, 40);
             this.imgBuscarCancha.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.imgBuscarCancha.TabIndex = 1;
             this.imgBuscarCancha.TabStop = false;
             this.imgBuscarCancha.Zoom = 10;
+            this.imgBuscarCancha.Click += new System.EventHandler(this.imgBuscarCancha_Click);
+            // 
+            // ddHora
+            // 
+            this.ddHora.BackColor = System.Drawing.Color.Transparent;
+            this.ddHora.BorderRadius = 10;
+            this.ddHora.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F);
+            this.ddHora.ForeColor = System.Drawing.Color.Black;
+            this.ddHora.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.ddHora.Items = new string[0];
+            this.ddHora.Location = new System.Drawing.Point(314, 232);
+            this.ddHora.Margin = new System.Windows.Forms.Padding(4);
+            this.ddHora.Name = "ddHora";
+            this.ddHora.NomalColor = System.Drawing.Color.Gainsboro;
+            this.ddHora.onHoverColor = System.Drawing.Color.Gainsboro;
+            this.ddHora.selectedIndex = -1;
+            this.ddHora.Size = new System.Drawing.Size(209, 31);
+            this.ddHora.TabIndex = 8;
+            // 
+            // bunifuElipse4
+            // 
+            this.bunifuElipse4.ElipseRadius = 10;
+            this.bunifuElipse4.TargetControl = this.ddHora;
             // 
             // AlquilerEtapaUnoUI
             // 
@@ -189,6 +214,7 @@ namespace HayCancha
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.ForestGreen;
             this.ClientSize = new System.Drawing.Size(569, 422);
+            this.Controls.Add(this.ddHora);
             this.Controls.Add(this.btnSiguienteEtapaUno);
             this.Controls.Add(this.lblAlquiler);
             this.Controls.Add(this.dgvCancha);
@@ -218,5 +244,7 @@ namespace HayCancha
         private System.Windows.Forms.Label lblAlquiler;
         private System.Windows.Forms.Button btnSiguienteEtapaUno;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse3;
+        private Bunifu.Framework.UI.BunifuDropdown ddHora;
+        private Bunifu.Framework.UI.BunifuElipse bunifuElipse4;
     }
 }

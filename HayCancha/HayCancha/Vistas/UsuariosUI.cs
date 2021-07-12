@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,29 +11,30 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using HayCancha.BE.Clases;
+using HayCancha.BE.Interfaces;
 using HayCancha.BLL;
 using HayCancha.Servicios;
 using Microsoft.VisualBasic;
 
 namespace HayCancha
 {
-    [SuppressMessage("ReSharper", "PossibleNullReferenceException")]
-    public partial class UsuariosUI : Form
+    public partial class UsuariosUI : Form, Idiomable
     {
         public UsuariosUI()
         {
             InitializeComponent();
             CargarControles();
             VistaService.DisableControl(btnAgregarPatente);
+            SessionService.Session.Suscribir(this);
+            if (IdiomaControl != SessionService.Session.Idioma) Update();
         }
-
-        public UsuarioBLL _UsuarioBLL = new UsuarioBLL(SessionService.Session.ObtenerNombreUsuario(),
-            SessionService.Session.ObtenerContraseñaUsuario());
+        
+        public int IdiomaControl { get; set; }
 
         private void CargarControles()
         {
             //DrowDawm
-            ddIUsuarios.Items = _UsuarioBLL.ObtenerUsuarioNoAdmin().Select(x => x.Nombre).ToArray();
+            ddIUsuarios.Items = UsuarioBLL.ObtenerUsuariosNoAdmin().Select(x => x.Nombre).ToArray();
             ddIUsuarios.selectedIndex = 0;
 
             //Grillas
@@ -42,6 +44,19 @@ namespace HayCancha
             VistaService.LoadDatagripView(dgvSeleccionadas, oDtSeleccionadas);
             dgvFamilias.Columns["Permiso"].Visible = false;
             dgvSeleccionadas.Columns["Permiso"].Visible = false;
+        }
+
+        public void Update()
+        {
+            ActualizarControles(this.Controls);
+        }
+
+        public void ActualizarControles(IEnumerable Coleccion)
+        {
+            foreach (var oComponente in Coleccion)
+            {
+                ((Control)oComponente).Text = TraductorService.RetornaTraduccion(((Control)oComponente).Text) ?? ((Control)oComponente).Text;
+            }
         }
 
         private void ddIUsuarios_onItemSelected(object sender, EventArgs e)
@@ -76,7 +91,7 @@ namespace HayCancha
 
                 if (VistaService.GetDatatableFromDatagridView(dgvSeleccionadas).AsEnumerable().Any(x => x["Permiso"].ToString() == oDrSeleccionada["Permiso"].ToString())) throw new Exception($"La patente {oDrSeleccionada["PATENTES"]} ya se encuentra asignada a {ddIUsuarios.selectedValue}!!");
 
-                VistaService.AddRowInDataGridViewPedido(dgvSeleccionadas, oDrSeleccionada);
+                VistaService.AddRowInDataGridView(dgvSeleccionadas, oDrSeleccionada);
 
                 dgvSeleccionadas.Columns["Permiso"].Visible = false;
             }
@@ -94,7 +109,7 @@ namespace HayCancha
 
                 if (VistaService.GetDatatableFromDatagridView(dgvSeleccionadas).AsEnumerable().Any(x => x["Permiso"].ToString() == oDrSeleccionada["Permiso"].ToString())) throw new Exception($"La familia {oDrSeleccionada["FAMILIAS"]} ya se encuentra asignada a {ddIUsuarios.selectedValue}!!");
 
-                VistaService.AddRowInDataGridViewPedido(dgvSeleccionadas, oDrSeleccionada);
+                VistaService.AddRowInDataGridView(dgvSeleccionadas, oDrSeleccionada);
 
                 dgvSeleccionadas.Columns["Permiso"].Visible = false;
             }
@@ -112,7 +127,7 @@ namespace HayCancha
 
                 var oDrSeleccionada = ((DataRowView)dgvSeleccionadas.SelectedRows[0].DataBoundItem).Row;
 
-                VistaService.DeleteRowInDataGridViewPedido(dgvSeleccionadas, oDrSeleccionada, "Permiso");
+                VistaService.DeleteRowInDataGridView(dgvSeleccionadas, oDrSeleccionada, "Permiso");
 
                 dgvSeleccionadas.Columns["Permiso"].Visible = false;
             }
@@ -128,7 +143,7 @@ namespace HayCancha
             {
                 PermisoService.ActualizarFamilia(ddIUsuarios.selectedValue, VistaService.GetDatatableFromDatagridView(dgvSeleccionadas));
 
-                MessageBox.Show($"Los acceso de {ddIUsuarios.selectedValue} fueron actualizados exitosamente!", "ALERTA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show($"Los accesos de {ddIUsuarios.selectedValue} y los usuarios con esta familia fueron actualizados exitosamente!", "ALERTA", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
             catch (Exception ex)

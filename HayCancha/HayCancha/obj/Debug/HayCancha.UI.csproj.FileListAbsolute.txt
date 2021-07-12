@@ -45,3 +45,5 @@ C:\Users\lucas\source\repos\Facultad\Proyecto\HayCancha\HayCancha\obj\Debug\HayC
 C:\Users\lucas\source\repos\Facultad\Proyecto\HayCancha\HayCancha\obj\Debug\HayCancha.exe
 C:\Users\lucas\source\repos\Facultad\Proyecto\HayCancha\HayCancha\obj\Debug\HayCancha.pdb
 C:\Users\lucas\source\repos\Facultad\Proyecto\HayCancha\HayCancha\obj\Debug\HayCancha.Vistas.IdiomasUI.resources
+C:\Users\lucas\source\repos\Facultad\Proyecto\HayCancha\HayCancha\obj\Debug\HayCancha.Vistas.ReservasUI.resources
+C:\Users\lucas\source\repos\Facultad\Proyecto\HayCancha\HayCancha\obj\Debug\HayCancha.Vistas.PartidosUI.resources

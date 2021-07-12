@@ -37,7 +37,9 @@ namespace HayCancha
             this.tsmUsuarios = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmAlquiler = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmEquipos = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmPartidos = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmEstadisticas = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmReservas = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmReportes = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmOpciones = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmIdioma = new System.Windows.Forms.ToolStripMenuItem();
@@ -72,7 +74,9 @@ namespace HayCancha
             this.tsmUsuarios,
             this.tsmAlquiler,
             this.tsmEquipos,
+            this.tsmPartidos,
             this.tsmEstadisticas,
+            this.tsmReservas,
             this.tsmReportes,
             this.tsmOpciones,
             this.tsmIdioma,
@@ -106,12 +110,28 @@ namespace HayCancha
             this.tsmEquipos.Tag = "7";
             this.tsmEquipos.Text = "EQUIPOS";
             // 
+            // tsmPartidos
+            // 
+            this.tsmPartidos.Name = "tsmPartidos";
+            this.tsmPartidos.Size = new System.Drawing.Size(71, 20);
+            this.tsmPartidos.Tag = "19";
+            this.tsmPartidos.Text = "PARTIDOS";
+            this.tsmPartidos.Click += new System.EventHandler(this.tsmPartidos_Click);
+            // 
             // tsmEstadisticas
             // 
             this.tsmEstadisticas.Name = "tsmEstadisticas";
             this.tsmEstadisticas.Size = new System.Drawing.Size(92, 20);
             this.tsmEstadisticas.Tag = "8";
             this.tsmEstadisticas.Text = "ESTADISTICAS";
+            // 
+            // tsmReservas
+            // 
+            this.tsmReservas.Name = "tsmReservas";
+            this.tsmReservas.Size = new System.Drawing.Size(71, 20);
+            this.tsmReservas.Tag = "18";
+            this.tsmReservas.Text = "RESERVAS";
+            this.tsmReservas.Click += new System.EventHandler(this.tsmReservas_Click);
             // 
             // tsmReportes
             // 
@@ -279,7 +299,7 @@ namespace HayCancha
             // ucNotificacion
             // 
             this.ucNotificacion.BackColor = System.Drawing.Color.DarkGreen;
-            this.ucNotificacion.IdiomaControl = (int)HayCancha.BE.Enumerables.IdiomaEnum.Español;
+            this.ucNotificacion.IdiomaControl = 1;
             this.ucNotificacion.Location = new System.Drawing.Point(535, 64);
             this.ucNotificacion.Name = "ucNotificacion";
             this.ucNotificacion.Size = new System.Drawing.Size(236, 381);
@@ -345,5 +365,7 @@ namespace HayCancha
         private System.Windows.Forms.PictureBox imgPuntoNotificacion;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse2;
         private System.Windows.Forms.ToolStripMenuItem NuevoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tsmReservas;
+        private System.Windows.Forms.ToolStripMenuItem tsmPartidos;
     }
 }
