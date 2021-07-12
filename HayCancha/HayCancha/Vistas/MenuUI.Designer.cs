@@ -55,6 +55,7 @@ namespace HayCancha
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.imgPerfil = new System.Windows.Forms.PictureBox();
             this.panelMenus = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuElipse2 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.imgSalir = new System.Windows.Forms.PictureBox();
@@ -65,6 +66,8 @@ namespace HayCancha
             ((System.ComponentModel.ISupportInitialize)(this.imgNotificacion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgPerfil)).BeginInit();
+            this.panelMenus.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgSalir)).BeginInit();
             this.SuspendLayout();
             // 
@@ -163,7 +166,7 @@ namespace HayCancha
             // 
             this.tsmIdiomaEspañol.Image = global::HayCancha.Properties.Resources.IdiomaEspañol;
             this.tsmIdiomaEspañol.Name = "tsmIdiomaEspañol";
-            this.tsmIdiomaEspañol.Size = new System.Drawing.Size(180, 22);
+            this.tsmIdiomaEspañol.Size = new System.Drawing.Size(124, 22);
             this.tsmIdiomaEspañol.Text = "ESPAÑOL";
             this.tsmIdiomaEspañol.Click += new System.EventHandler(this.tsmIdiomaEspañol_Click);
             // 
@@ -171,7 +174,7 @@ namespace HayCancha
             // 
             this.tsmIdiomaIngles.Image = global::HayCancha.Properties.Resources.IdiomaIngles;
             this.tsmIdiomaIngles.Name = "tsmIdiomaIngles";
-            this.tsmIdiomaIngles.Size = new System.Drawing.Size(180, 22);
+            this.tsmIdiomaIngles.Size = new System.Drawing.Size(124, 22);
             this.tsmIdiomaIngles.Text = "INGLES";
             this.tsmIdiomaIngles.Click += new System.EventHandler(this.tsmIdiomaIngles_Click);
             // 
@@ -179,7 +182,7 @@ namespace HayCancha
             // 
             this.tsmIdiomaChino.Image = global::HayCancha.Properties.Resources.IdiomaChino;
             this.tsmIdiomaChino.Name = "tsmIdiomaChino";
-            this.tsmIdiomaChino.Size = new System.Drawing.Size(180, 22);
+            this.tsmIdiomaChino.Size = new System.Drawing.Size(124, 22);
             this.tsmIdiomaChino.Text = "CHINO";
             this.tsmIdiomaChino.Click += new System.EventHandler(this.tsmIdiomaChino_Click);
             // 
@@ -187,7 +190,7 @@ namespace HayCancha
             // 
             this.NuevoToolStripMenuItem.Image = global::HayCancha.Properties.Resources.IdiomaNuevo;
             this.NuevoToolStripMenuItem.Name = "NuevoToolStripMenuItem";
-            this.NuevoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.NuevoToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.NuevoToolStripMenuItem.Text = "NUEVO";
             this.NuevoToolStripMenuItem.Click += new System.EventHandler(this.NuevoToolStripMenuItem_Click);
             // 
@@ -269,10 +272,21 @@ namespace HayCancha
             // 
             // panelMenus
             // 
+            this.panelMenus.Controls.Add(this.pictureBox2);
             this.panelMenus.Location = new System.Drawing.Point(4, 26);
             this.panelMenus.Name = "panelMenus";
             this.panelMenus.Size = new System.Drawing.Size(569, 422);
             this.panelMenus.TabIndex = 12;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::HayCancha.Properties.Resources._123;
+            this.pictureBox2.Location = new System.Drawing.Point(27, 38);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(478, 339);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 0;
+            this.pictureBox2.TabStop = false;
             // 
             // bunifuElipse1
             // 
@@ -334,6 +348,8 @@ namespace HayCancha
             ((System.ComponentModel.ISupportInitialize)(this.imgNotificacion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgPerfil)).EndInit();
+            this.panelMenus.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgSalir)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -367,5 +383,6 @@ namespace HayCancha
         private System.Windows.Forms.ToolStripMenuItem NuevoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tsmReservas;
         private System.Windows.Forms.ToolStripMenuItem tsmPartidos;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
