@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.Data;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace HayCancha.Servicios
@@ -44,11 +40,6 @@ namespace HayCancha.Servicios
             return oDt;
         }
 
-        public static DataTable GetDatatableFromDataRow(DataRow dataGridView)
-        { 
-            return dataGridView.Table.Copy();
-        }
-
         public static void AddRowInDataGridView(DataGridView dgv, DataRow oDr)
         {
             var oDt = GetDatatableFromDatagridView(dgv).Columns.Count != 0? GetDatatableFromDatagridView(dgv):  oDr.Table.Clone();
@@ -64,19 +55,6 @@ namespace HayCancha.Servicios
         }
 
         public static void LoadDatagripView(DataGridView dgv, DataTable table)
-        {
-            try
-            {
-                dgv.DataSource = null;
-                dgv.DataSource = table;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        public static void LoadDatagripView(DataGridView dgv, IList table)
         {
             try
             {

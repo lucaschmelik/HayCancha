@@ -30,39 +30,36 @@ namespace HayCancha
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UsuariosUI));
             this.btnActualizarPermisos = new System.Windows.Forms.Button();
             this.lblPermisos = new System.Windows.Forms.Label();
             this.ddIUsuarios = new Bunifu.Framework.UI.BunifuDropdown();
             this.dgvPatentes = new System.Windows.Forms.DataGridView();
             this.dgvFamilias = new System.Windows.Forms.DataGridView();
-            this.dgvSeleccionadas = new System.Windows.Forms.DataGridView();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuElipse2 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuElipse3 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuElipse4 = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.btnSacar = new Bunifu.Framework.UI.BunifuImageButton();
             this.btnAgregarPatente = new Bunifu.Framework.UI.BunifuImageButton();
             this.btnCrearFamilia = new System.Windows.Forms.Button();
             this.bunifuElipse5 = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.btnTodas = new System.Windows.Forms.Button();
             this.bunifuElipse6 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.btnAgregarFamilia = new Bunifu.Framework.UI.BunifuImageButton();
+            this.trvPermisos = new System.Windows.Forms.TreeView();
+            this.btnSacar = new Bunifu.Framework.UI.BunifuImageButton();
+            this.bntAsignarPermiso = new System.Windows.Forms.Button();
+            this.bunifuElipse7 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPatentes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFamilias)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSeleccionadas)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnSacar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAgregarPatente)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAgregarFamilia)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnSacar)).BeginInit();
             this.SuspendLayout();
             // 
             // btnActualizarPermisos
@@ -70,7 +67,7 @@ namespace HayCancha
             this.btnActualizarPermisos.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnActualizarPermisos.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnActualizarPermisos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnActualizarPermisos.Location = new System.Drawing.Point(465, 359);
+            this.btnActualizarPermisos.Location = new System.Drawing.Point(410, 344);
             this.btnActualizarPermisos.Name = "btnActualizarPermisos";
             this.btnActualizarPermisos.Size = new System.Drawing.Size(92, 42);
             this.btnActualizarPermisos.TabIndex = 28;
@@ -95,7 +92,7 @@ namespace HayCancha
             this.ddIUsuarios.BorderRadius = 3;
             this.ddIUsuarios.ForeColor = System.Drawing.Color.Black;
             this.ddIUsuarios.Items = new string[0];
-            this.ddIUsuarios.Location = new System.Drawing.Point(30, 54);
+            this.ddIUsuarios.Location = new System.Drawing.Point(361, 126);
             this.ddIUsuarios.Name = "ddIUsuarios";
             this.ddIUsuarios.NomalColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(215)))), ((int)(((byte)(215)))));
             this.ddIUsuarios.onHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(215)))), ((int)(((byte)(215)))));
@@ -115,43 +112,43 @@ namespace HayCancha
             this.dgvPatentes.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvPatentes.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvPatentes.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.DarkGreen;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Menu;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DarkGreen;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.Menu;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPatentes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle25.BackColor = System.Drawing.Color.DarkGreen;
+            dataGridViewCellStyle25.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11F);
+            dataGridViewCellStyle25.ForeColor = System.Drawing.SystemColors.Menu;
+            dataGridViewCellStyle25.SelectionBackColor = System.Drawing.Color.DarkGreen;
+            dataGridViewCellStyle25.SelectionForeColor = System.Drawing.SystemColors.Menu;
+            dataGridViewCellStyle25.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPatentes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle25;
             this.dgvPatentes.ColumnHeadersHeight = 30;
             this.dgvPatentes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(254)))), ((int)(((byte)(221)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.Desktop;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPatentes.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle26.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle26.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle26.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle26.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(254)))), ((int)(((byte)(221)))));
+            dataGridViewCellStyle26.SelectionForeColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPatentes.DefaultCellStyle = dataGridViewCellStyle26;
             this.dgvPatentes.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnF2;
             this.dgvPatentes.EnableHeadersVisualStyles = false;
-            this.dgvPatentes.Location = new System.Drawing.Point(30, 247);
+            this.dgvPatentes.Location = new System.Drawing.Point(187, 103);
             this.dgvPatentes.MultiSelect = false;
             this.dgvPatentes.Name = "dgvPatentes";
             this.dgvPatentes.ReadOnly = true;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(254)))), ((int)(((byte)(221)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPatentes.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle27.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle27.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle27.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle27.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(254)))), ((int)(((byte)(221)))));
+            dataGridViewCellStyle27.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle27.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPatentes.RowHeadersDefaultCellStyle = dataGridViewCellStyle27;
             this.dgvPatentes.RowHeadersVisible = false;
             this.dgvPatentes.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvPatentes.RowTemplate.Height = 30;
             this.dgvPatentes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPatentes.Size = new System.Drawing.Size(177, 130);
+            this.dgvPatentes.Size = new System.Drawing.Size(137, 130);
             this.dgvPatentes.TabIndex = 34;
             // 
             // dgvFamilias
@@ -165,95 +162,45 @@ namespace HayCancha
             this.dgvFamilias.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvFamilias.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvFamilias.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.DarkGreen;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11F);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.Menu;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.DarkGreen;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.Menu;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvFamilias.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle28.BackColor = System.Drawing.Color.DarkGreen;
+            dataGridViewCellStyle28.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11F);
+            dataGridViewCellStyle28.ForeColor = System.Drawing.SystemColors.Menu;
+            dataGridViewCellStyle28.SelectionBackColor = System.Drawing.Color.DarkGreen;
+            dataGridViewCellStyle28.SelectionForeColor = System.Drawing.SystemColors.Menu;
+            dataGridViewCellStyle28.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvFamilias.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle28;
             this.dgvFamilias.ColumnHeadersHeight = 30;
             this.dgvFamilias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(254)))), ((int)(((byte)(221)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.Desktop;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvFamilias.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle29.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle29.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle29.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle29.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(254)))), ((int)(((byte)(221)))));
+            dataGridViewCellStyle29.SelectionForeColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle29.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvFamilias.DefaultCellStyle = dataGridViewCellStyle29;
             this.dgvFamilias.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnF2;
             this.dgvFamilias.EnableHeadersVisualStyles = false;
-            this.dgvFamilias.Location = new System.Drawing.Point(30, 106);
+            this.dgvFamilias.Location = new System.Drawing.Point(30, 103);
             this.dgvFamilias.MultiSelect = false;
             this.dgvFamilias.Name = "dgvFamilias";
             this.dgvFamilias.ReadOnly = true;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(254)))), ((int)(((byte)(221)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvFamilias.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle30.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle30.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle30.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle30.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(254)))), ((int)(((byte)(221)))));
+            dataGridViewCellStyle30.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle30.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvFamilias.RowHeadersDefaultCellStyle = dataGridViewCellStyle30;
             this.dgvFamilias.RowHeadersVisible = false;
             this.dgvFamilias.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvFamilias.RowTemplate.Height = 30;
             this.dgvFamilias.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvFamilias.Size = new System.Drawing.Size(177, 130);
+            this.dgvFamilias.Size = new System.Drawing.Size(137, 130);
             this.dgvFamilias.TabIndex = 35;
             this.dgvFamilias.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFamilias_CellClick);
-            // 
-            // dgvSeleccionadas
-            // 
-            this.dgvSeleccionadas.AllowUserToAddRows = false;
-            this.dgvSeleccionadas.AllowUserToDeleteRows = false;
-            this.dgvSeleccionadas.AllowUserToResizeColumns = false;
-            this.dgvSeleccionadas.AllowUserToResizeRows = false;
-            this.dgvSeleccionadas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvSeleccionadas.BackgroundColor = System.Drawing.Color.Gainsboro;
-            this.dgvSeleccionadas.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvSeleccionadas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dgvSeleccionadas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.DarkGreen;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11F);
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.Menu;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.DarkGreen;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.Menu;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvSeleccionadas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
-            this.dgvSeleccionadas.ColumnHeadersHeight = 30;
-            this.dgvSeleccionadas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(254)))), ((int)(((byte)(221)))));
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.Desktop;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvSeleccionadas.DefaultCellStyle = dataGridViewCellStyle8;
-            this.dgvSeleccionadas.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnF2;
-            this.dgvSeleccionadas.EnableHeadersVisualStyles = false;
-            this.dgvSeleccionadas.Location = new System.Drawing.Point(266, 106);
-            this.dgvSeleccionadas.MultiSelect = false;
-            this.dgvSeleccionadas.Name = "dgvSeleccionadas";
-            this.dgvSeleccionadas.ReadOnly = true;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(254)))), ((int)(((byte)(221)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvSeleccionadas.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
-            this.dgvSeleccionadas.RowHeadersVisible = false;
-            this.dgvSeleccionadas.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.dgvSeleccionadas.RowTemplate.Height = 30;
-            this.dgvSeleccionadas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvSeleccionadas.Size = new System.Drawing.Size(177, 298);
-            this.dgvSeleccionadas.TabIndex = 36;
             // 
             // bunifuElipse1
             // 
@@ -268,27 +215,12 @@ namespace HayCancha
             // bunifuElipse3
             // 
             this.bunifuElipse3.ElipseRadius = 10;
-            this.bunifuElipse3.TargetControl = this.dgvSeleccionadas;
+            this.bunifuElipse3.TargetControl = this;
             // 
             // bunifuElipse4
             // 
             this.bunifuElipse4.ElipseRadius = 10;
             this.bunifuElipse4.TargetControl = this.dgvPatentes;
-            // 
-            // btnSacar
-            // 
-            this.btnSacar.BackColor = System.Drawing.Color.Transparent;
-            this.btnSacar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSacar.Image = global::HayCancha.Properties.Resources.eliminar1;
-            this.btnSacar.ImageActive = null;
-            this.btnSacar.Location = new System.Drawing.Point(221, 237);
-            this.btnSacar.Name = "btnSacar";
-            this.btnSacar.Size = new System.Drawing.Size(28, 26);
-            this.btnSacar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnSacar.TabIndex = 30;
-            this.btnSacar.TabStop = false;
-            this.btnSacar.Zoom = 10;
-            this.btnSacar.Click += new System.EventHandler(this.btnSacar_Click);
             // 
             // btnAgregarPatente
             // 
@@ -296,7 +228,7 @@ namespace HayCancha
             this.btnAgregarPatente.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAgregarPatente.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregarPatente.Image")));
             this.btnAgregarPatente.ImageActive = null;
-            this.btnAgregarPatente.Location = new System.Drawing.Point(221, 269);
+            this.btnAgregarPatente.Location = new System.Drawing.Point(241, 239);
             this.btnAgregarPatente.Name = "btnAgregarPatente";
             this.btnAgregarPatente.Size = new System.Drawing.Size(28, 30);
             this.btnAgregarPatente.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -310,7 +242,7 @@ namespace HayCancha
             this.btnCrearFamilia.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCrearFamilia.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCrearFamilia.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnCrearFamilia.Location = new System.Drawing.Point(465, 296);
+            this.btnCrearFamilia.Location = new System.Drawing.Point(410, 296);
             this.btnCrearFamilia.Name = "btnCrearFamilia";
             this.btnCrearFamilia.Size = new System.Drawing.Size(92, 42);
             this.btnCrearFamilia.TabIndex = 37;
@@ -323,23 +255,10 @@ namespace HayCancha
             this.bunifuElipse5.ElipseRadius = 15;
             this.bunifuElipse5.TargetControl = this.btnCrearFamilia;
             // 
-            // btnTodas
-            // 
-            this.btnTodas.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnTodas.Font = new System.Drawing.Font("Century Gothic", 7F, System.Drawing.FontStyle.Bold);
-            this.btnTodas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnTodas.Location = new System.Drawing.Point(159, 379);
-            this.btnTodas.Name = "btnTodas";
-            this.btnTodas.Size = new System.Drawing.Size(48, 25);
-            this.btnTodas.TabIndex = 38;
-            this.btnTodas.Text = "TODAS";
-            this.btnTodas.UseVisualStyleBackColor = true;
-            this.btnTodas.Click += new System.EventHandler(this.btnTodas_Click);
-            // 
             // bunifuElipse6
             // 
-            this.bunifuElipse6.ElipseRadius = 15;
-            this.bunifuElipse6.TargetControl = this.btnTodas;
+            this.bunifuElipse6.ElipseRadius = 20;
+            this.bunifuElipse6.TargetControl = this.trvPermisos;
             // 
             // btnAgregarFamilia
             // 
@@ -347,7 +266,7 @@ namespace HayCancha
             this.btnAgregarFamilia.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAgregarFamilia.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregarFamilia.Image")));
             this.btnAgregarFamilia.ImageActive = null;
-            this.btnAgregarFamilia.Location = new System.Drawing.Point(221, 201);
+            this.btnAgregarFamilia.Location = new System.Drawing.Point(83, 239);
             this.btnAgregarFamilia.Name = "btnAgregarFamilia";
             this.btnAgregarFamilia.Size = new System.Drawing.Size(28, 30);
             this.btnAgregarFamilia.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -356,16 +275,58 @@ namespace HayCancha
             this.btnAgregarFamilia.Zoom = 10;
             this.btnAgregarFamilia.Click += new System.EventHandler(this.btnAgregarFamilia_Click);
             // 
+            // trvPermisos
+            // 
+            this.trvPermisos.BackColor = System.Drawing.Color.Gainsboro;
+            this.trvPermisos.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.trvPermisos.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.trvPermisos.Location = new System.Drawing.Point(30, 280);
+            this.trvPermisos.Name = "trvPermisos";
+            this.trvPermisos.Size = new System.Drawing.Size(294, 121);
+            this.trvPermisos.TabIndex = 40;
+            // 
+            // btnSacar
+            // 
+            this.btnSacar.BackColor = System.Drawing.Color.Transparent;
+            this.btnSacar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSacar.Image = ((System.Drawing.Image)(resources.GetObject("btnSacar.Image")));
+            this.btnSacar.ImageActive = null;
+            this.btnSacar.Location = new System.Drawing.Point(165, 239);
+            this.btnSacar.Name = "btnSacar";
+            this.btnSacar.Size = new System.Drawing.Size(21, 31);
+            this.btnSacar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnSacar.TabIndex = 30;
+            this.btnSacar.TabStop = false;
+            this.btnSacar.Zoom = 10;
+            this.btnSacar.Click += new System.EventHandler(this.btnSacar_Click);
+            // 
+            // bntAsignarPermiso
+            // 
+            this.bntAsignarPermiso.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bntAsignarPermiso.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bntAsignarPermiso.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.bntAsignarPermiso.Location = new System.Drawing.Point(361, 178);
+            this.bntAsignarPermiso.Name = "bntAsignarPermiso";
+            this.bntAsignarPermiso.Size = new System.Drawing.Size(177, 42);
+            this.bntAsignarPermiso.TabIndex = 41;
+            this.bntAsignarPermiso.Text = "ASIGNAR PERMISO";
+            this.bntAsignarPermiso.UseVisualStyleBackColor = true;
+            // 
+            // bunifuElipse7
+            // 
+            this.bunifuElipse7.ElipseRadius = 15;
+            this.bunifuElipse7.TargetControl = this.bntAsignarPermiso;
+            // 
             // UsuariosUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.ForestGreen;
             this.ClientSize = new System.Drawing.Size(569, 422);
+            this.Controls.Add(this.bntAsignarPermiso);
+            this.Controls.Add(this.trvPermisos);
             this.Controls.Add(this.btnAgregarFamilia);
-            this.Controls.Add(this.btnTodas);
             this.Controls.Add(this.btnCrearFamilia);
-            this.Controls.Add(this.dgvSeleccionadas);
             this.Controls.Add(this.dgvFamilias);
             this.Controls.Add(this.dgvPatentes);
             this.Controls.Add(this.ddIUsuarios);
@@ -378,10 +339,9 @@ namespace HayCancha
             this.Text = "UsuariosUI";
             ((System.ComponentModel.ISupportInitialize)(this.dgvPatentes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFamilias)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSeleccionadas)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnSacar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAgregarPatente)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAgregarFamilia)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnSacar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -390,20 +350,21 @@ namespace HayCancha
         #endregion
         private System.Windows.Forms.Button btnActualizarPermisos;
         private System.Windows.Forms.Label lblPermisos;
-        private Bunifu.Framework.UI.BunifuImageButton btnSacar;
         private Bunifu.Framework.UI.BunifuImageButton btnAgregarPatente;
         private Bunifu.Framework.UI.BunifuDropdown ddIUsuarios;
         private System.Windows.Forms.DataGridView dgvPatentes;
         private System.Windows.Forms.DataGridView dgvFamilias;
-        private System.Windows.Forms.DataGridView dgvSeleccionadas;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse2;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse3;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse4;
         private System.Windows.Forms.Button btnCrearFamilia;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse5;
-        private System.Windows.Forms.Button btnTodas;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse6;
         private Bunifu.Framework.UI.BunifuImageButton btnAgregarFamilia;
+        private System.Windows.Forms.TreeView trvPermisos;
+        private Bunifu.Framework.UI.BunifuImageButton btnSacar;
+        private System.Windows.Forms.Button bntAsignarPermiso;
+        private Bunifu.Framework.UI.BunifuElipse bunifuElipse7;
     }
 }

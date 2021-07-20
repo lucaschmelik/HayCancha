@@ -9,11 +9,13 @@ namespace HayCancha.BE.Clases
 {
     public class Idioma : AbstractEntidad
     {
+        public Idioma() { }
         public Idioma(int iId, string sNombre)
         {
             Id = iId;
             Nombre = sNombre;
         }
+
         public string Nombre { get; set; }
     }
 }

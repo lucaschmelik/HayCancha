@@ -10,6 +10,7 @@ using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using HayCancha.BE.Abstractas;
 using HayCancha.BE.Clases;
 using HayCancha.BE.Interfaces;
 using HayCancha.BLL;
@@ -38,12 +39,10 @@ namespace HayCancha
             ddIUsuarios.selectedIndex = 0;
 
             //Grillas
-            var oDtFamilias = PermisoService.ObtenerFamilias();
-            var oDtSeleccionadas = PermisoService.ObtenerPatentesPorNombreUsuario(ddIUsuarios.selectedValue);
-            VistaService.LoadDatagripView(dgvFamilias, oDtFamilias);
-            VistaService.LoadDatagripView(dgvSeleccionadas, oDtSeleccionadas);
-            dgvFamilias.Columns["Permiso"].Visible = false;
-            dgvSeleccionadas.Columns["Permiso"].Visible = false;
+            VistaService.LoadDatagripView(dgvFamilias, PermisoService.ObtenerFamilias());
+            VistaService.LoadDatagripView(dgvPatentes, PermisoService.ObtenerPatentes());
+            dgvPatentes.Columns["Permiso"].Visible = dgvFamilias.Columns["Permiso"].Visible = false;
+
         }
 
         public void Update()
@@ -59,28 +58,40 @@ namespace HayCancha
             }
         }
 
+        private void CargarTreedView(AbstractComponent oComponent, TreeNode trnNodo)
+        {
+            var iPosicionNodo = 0;
+
+            foreach (var hijoComponent in oComponent.lstHijos)
+            {
+                trnNodo.Nodes.Add(hijoComponent.Nombre);
+
+                if (hijoComponent.GetType() == typeof(Familia)) { CargarTreedView(hijoComponent, trnNodo.Nodes[iPosicionNodo]);}
+
+                iPosicionNodo++;
+            }
+        }
+
         private void ddIUsuarios_onItemSelected(object sender, EventArgs e)
         {
             var oDtSeleccionadas = PermisoService.ObtenerPatentesPorNombreUsuario(ddIUsuarios.selectedValue);
-            
-            VistaService.LoadDatagripView(dgvSeleccionadas, oDtSeleccionadas);
-
-            dgvSeleccionadas.Columns["Permiso"].Visible = false;
         }
 
         private void dgvFamilias_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             VistaService.EnableControl(btnAgregarPatente);
 
-            var FamiliaSeleccionada = new Familia()
-            {
-                Nombre = dgvFamilias.SelectedRows[0].Cells[1].Value.ToString(),
-                Permiso = int.Parse(dgvFamilias.SelectedRows[0].Cells[0].Value.ToString())
-            };
+            var oDrSeleccionada = ((DataRowView)dgvFamilias.SelectedRows[0].DataBoundItem).Row;
 
-            VistaService.LoadDatagripView(dgvPatentes, PermisoService.ObtenerPatentesPorFamilia(FamiliaSeleccionada));
+            var oFamiliaSeleccioanda = new Familia() { Permiso = int.Parse(oDrSeleccionada["Permiso"].ToString()), Nombre = (oDrSeleccionada["FAMILIAS"].ToString()) };
 
-            dgvPatentes.Columns["Permiso"].Visible = false;
+            PermisoService.ListarPermisos(oFamiliaSeleccioanda);
+
+            trvPermisos.Nodes.Clear();
+
+            trvPermisos.Nodes.Add(oFamiliaSeleccioanda.Nombre);
+
+            CargarTreedView(oFamiliaSeleccioanda, trvPermisos.Nodes[0]);
         }
 
         private void btnAgregarPatente_Click(object sender, EventArgs e)
@@ -89,11 +100,8 @@ namespace HayCancha
             {
                 var oDrSeleccionada = ((DataRowView) dgvPatentes.SelectedRows[0].DataBoundItem).Row;
 
-                if (VistaService.GetDatatableFromDatagridView(dgvSeleccionadas).AsEnumerable().Any(x => x["Permiso"].ToString() == oDrSeleccionada["Permiso"].ToString())) throw new Exception($"La patente {oDrSeleccionada["PATENTES"]} ya se encuentra asignada a {ddIUsuarios.selectedValue}!!");
+                //if (VistaService.GetDatatableFromDatagridView(dgvSeleccionadas).AsEnumerable().Any(x => x["Permiso"].ToString() == oDrSeleccionada["Permiso"].ToString())) throw new Exception($"La patente {oDrSeleccionada["PATENTES"]} ya se encuentra asignada a {ddIUsuarios.selectedValue}!!");
 
-                VistaService.AddRowInDataGridView(dgvSeleccionadas, oDrSeleccionada);
-
-                dgvSeleccionadas.Columns["Permiso"].Visible = false;
             }
             catch (Exception ex)
             {
@@ -105,13 +113,8 @@ namespace HayCancha
         {
             try
             {
-                var oDrSeleccionada = ((DataRowView)dgvFamilias.SelectedRows[0].DataBoundItem).Row;
+                //if (VistaService.GetDatatableFromDatagridView(dgvSeleccionadas).AsEnumerable().Any(x => x["Permiso"].ToString() == oDrSeleccionada["Permiso"].ToString())) throw new Exception($"La familia {oDrSeleccionada["FAMILIAS"]} ya se encuentra asignada a {ddIUsuarios.selectedValue}!!");
 
-                if (VistaService.GetDatatableFromDatagridView(dgvSeleccionadas).AsEnumerable().Any(x => x["Permiso"].ToString() == oDrSeleccionada["Permiso"].ToString())) throw new Exception($"La familia {oDrSeleccionada["FAMILIAS"]} ya se encuentra asignada a {ddIUsuarios.selectedValue}!!");
-
-                VistaService.AddRowInDataGridView(dgvSeleccionadas, oDrSeleccionada);
-
-                dgvSeleccionadas.Columns["Permiso"].Visible = false;
             }
             catch (Exception ex)
             {
@@ -119,17 +122,13 @@ namespace HayCancha
             }
         }
 
+
         private void btnSacar_Click(object sender, EventArgs e)
         {
             try
             {
-                if (dgvSeleccionadas.RowCount == 1) throw new Exception("No puede eliminar todos los accesos del usuario!!");
+                //if (dgvSeleccionadas.RowCount == 1) throw new Exception("No puede eliminar todos los accesos del usuario!!");
 
-                var oDrSeleccionada = ((DataRowView)dgvSeleccionadas.SelectedRows[0].DataBoundItem).Row;
-
-                VistaService.DeleteRowInDataGridView(dgvSeleccionadas, oDrSeleccionada, "Permiso");
-
-                dgvSeleccionadas.Columns["Permiso"].Visible = false;
             }
             catch (Exception ex)
             {
@@ -141,7 +140,7 @@ namespace HayCancha
         {
             try
             {
-                PermisoService.ActualizarFamilia(ddIUsuarios.selectedValue, VistaService.GetDatatableFromDatagridView(dgvSeleccionadas));
+                //PermisoService.ActualizarFamilia(ddIUsuarios.selectedValue, VistaService.GetDatatableFromDatagridView(dgvSeleccionadas));
 
                 MessageBox.Show($"Los accesos de {ddIUsuarios.selectedValue} y los usuarios con esta familia fueron actualizados exitosamente!", "ALERTA", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -160,9 +159,9 @@ namespace HayCancha
 
                 if(sNombreFamilia == string.Empty) return;
 
-                var iIdNuevaFamilia = PermisoService.CrearFamilia(sNombreFamilia, VistaService.GetDatatableFromDatagridView(dgvSeleccionadas));
+                //var iIdNuevaFamilia = PermisoService.CrearFamilia(sNombreFamilia, VistaService.GetDatatableFromDatagridView(dgvSeleccionadas));
 
-                PermisoService.AsignarPermisoUsuario(ddIUsuarios.selectedValue, iIdNuevaFamilia);
+                //PermisoService.AsignarPermisoUsuario(ddIUsuarios.selectedValue, iIdNuevaFamilia);
                 
                 MessageBox.Show($"La familia {sNombreFamilia} fue creada y asignada a {ddIUsuarios.selectedValue} exitosamente!", "ALERTA", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -170,14 +169,6 @@ namespace HayCancha
             {
                 MessageBox.Show(ex.Message, "ALERTA", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
-        }
-
-        private void btnTodas_Click(object sender, EventArgs e)
-        {
-            VistaService.EnableControl(btnAgregarPatente);
-            var oDtPatentes = PermisoService.ObtenerPatentes();
-            VistaService.LoadDatagripView(dgvPatentes, oDtPatentes);
-            dgvPatentes.Columns["Permiso"].Visible = false;
         }
     }
 }

@@ -27,6 +27,14 @@ namespace HayCancha.DAL
             return oDt;
         }
 
+        private DataTable ObtenerDataTableTraducciones()
+        {
+            var oDt = new DataTable();
+            oDt.Columns.Add("Id", typeof(int));
+            oDt.Columns.Add("Descripcion", typeof(string));
+            return oDt;
+        }
+
         public string RetornaTraduccion(string sNombreTexto, int iIdioma)
         {
             var dicParametros = new Dictionary<string, object>()
@@ -39,33 +47,38 @@ namespace HayCancha.DAL
                 }
             };
 
-            var oDrEncontrado = EjecutaStp("stpObtenerTraduccionPorTextoIdioma", dicParametros, ObtenerDataTableTraduccion()).AsEnumerable().FirstOrDefault();
+            var oDrEncontrado =
+                EjecutaStp("stpObtenerTraduccionPorTextoIdioma", dicParametros, ObtenerDataTableTraduccion())
+                    .AsEnumerable().FirstOrDefault();
 
             return oDrEncontrado?["Traduccion"].ToString();
         }
 
-        public IList<TextosTraducibles> RetornaTextosTraduciblesPorDefecto()
-        {
-            var oDt = new DataTable();
-            oDt.Columns.Add("Id", typeof(int));
-            oDt.Columns.Add("Descripcion", typeof(string));
-
-            EjecutaStp("stpObtenerTextosTraducibles", new Dictionary<string, object>(), oDt);
-
-            return Enumerable.Select(oDt.AsEnumerable(), oTexto => new TextosTraducibles((int) oTexto["Id"], oTexto["Descripcion"].ToString(), new Idioma((int)IdiomaEnum.Español, IdiomaEnum.Español.ToString()))).ToList();
-        }
+        public IList<TextosTraducibles> ObtenerTextosTraduciblesPorDefecto() => Enumerable
+            .Select(
+                EjecutaStp("stpObtenerTextosTraducibles", new Dictionary<string, object>(),
+                    ObtenerDataTableTraducciones()).AsEnumerable(),
+                oTexto => new TextosTraducibles((int) oTexto["Id"], oTexto["Descripcion"].ToString(),
+                    new Idioma((int) IdiomaEnum.Español, IdiomaEnum.Español.ToString()))).ToList();
 
         public void GuardarIdioma(string sIdioma, DataTable oDtTraducciones)
         {
             //TODO VALIDAR QUE NO SE GUARDEN DOS IDIOMAS IGUALES!!
-            var IdIdiomaNuevo = EjecutaStp("stpGuardarIdioma", new Dictionary<string, object>() {{"Idioma", sIdioma.ToUpper()}}, ObtenerDataTableId()).AsEnumerable().FirstOrDefault()?["Id"];
+            var IdIdiomaNuevo =
+                EjecutaStp("stpGuardarIdioma", new Dictionary<string, object>() {{"Idioma", sIdioma.ToUpper()}},
+                    ObtenerDataTableId()).AsEnumerable().FirstOrDefault()?["Id"];
 
             foreach (var row in oDtTraducciones.AsEnumerable())
             {
-                if (row["Traduccion"].ToString() != string.Empty && RetornaTraduccion(row["Traduccion"].ToString(), (int)IdIdiomaNuevo) != null)
-                    throw new Exception($"La palabra {row["Traduccion"]} ya existe para este idioma, verifique las traducciones!!");
-                
-                EjecutaStp("stpGuardarTraduccion", new Dictionary<string, object>() {{ "Texto", row["Id"]}, { "Idioma", sIdioma.ToUpper() }, {"Traduccion", row["Traduccion"]}}, new DataTable());
+                if (row["Traduccion"].ToString() != string.Empty &&
+                    RetornaTraduccion(row["Traduccion"].ToString(), (int) IdIdiomaNuevo) != null)
+                    throw new Exception(
+                        $"La palabra {row["Traduccion"]} ya existe para este idioma, verifique las traducciones!!");
+
+                EjecutaStp("stpGuardarTraduccion",
+                    new Dictionary<string, object>()
+                        {{"Texto", row["Id"]}, {"Idioma", sIdioma.ToUpper()}, {"Traduccion", row["Traduccion"]}},
+                    new DataTable());
             }
         }
 
@@ -80,7 +93,20 @@ namespace HayCancha.DAL
         {
             var oDt = new DataTable();
             oDt.Columns.Add("Id", typeof(int));
-            return (int)EjecutaStp("stpObtenerPorDescripcionIdIdioma", new Dictionary<string, object>() { { "Descripcion", sDescripcion } }, oDt).AsEnumerable().FirstOrDefault()?["Id"];
+            return (int) EjecutaStp("stpObtenerPorDescripcionIdIdioma",
+                    new Dictionary<string, object>() {{"Descripcion", sDescripcion}}, oDt).AsEnumerable()
+                .FirstOrDefault()?["Id"];
         }
+
+        public DataTable ObtenerTraduccionesPorIdioma(int iId)
+        {
+            var oDt = ObtenerDataTableTraducciones();
+
+            oDt.Columns.Add("Texto", typeof(int)); 
+
+            return EjecutaStp("stpObtenerTraduccionesPorIdioma", new Dictionary<string, object>() {{"Idioma", iId}}, oDt);
+        }
+
+        public void ActualizarTraduccion(int iIdioma, int iTexto, string sDescripcion) => EjecutaStp("stpAsignarDescripcionTraduccion", new Dictionary<string, object>() {{"Idioma", iIdioma}, {"Texto", iTexto}, {"Descripcion", sDescripcion}}, new DataTable());
     }
 }

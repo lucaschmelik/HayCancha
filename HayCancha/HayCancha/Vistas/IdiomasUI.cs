@@ -20,10 +20,11 @@ namespace HayCancha.Vistas
 
         private void IdiomasUI_Load(object sender, EventArgs e)
         {
-            dgvIdiomas.DataSource = TraductorService.RetornaTextosTraduciblesPorDefecto().Select(x => new { x.Id, x.Descripcion }).ToArray();
+            dgvIdiomas.DataSource = TraductorService.ObtenerTextosTraduciblesPorDefecto().Select(x => new { x.Id, x.Descripcion }).ToArray();
             dgvIdiomas.Columns.Add("Traduccion", "Traducción");
             dgvIdiomas.Columns[0].Width = 50;
             CargarDdIdiomasPersonalizados();
+            VistaService.DisableControl(btnActualizarIdioma);
         }
 
         public int IdiomaControl { get; set; }
@@ -56,6 +57,7 @@ namespace HayCancha.Vistas
         {
             try
             {
+                if (TraductorService.ObtenerIdiomas().AsEnumerable().Any(x=>x["Descripcion"].ToString().ToUpper() == txtIngresarIdioma.Text.ToUpper())) throw new Exception("El idioma ingresado ya existe");
                 TraductorService.GuardarIdioma(txtIngresarIdioma.Text, VistaService.GetDatatableFromDatagridView(dgvIdiomas));
                 ddIdiomasPersonalizados.AddItem(txtIngresarIdioma.Text);
                 MessageBox.Show($@"El idioma {txtIngresarIdioma.Text.ToUpper()} se guardó correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -68,7 +70,34 @@ namespace HayCancha.Vistas
 
         private void ddlIdiomasPersonalizados_onItemSelected(object sender, EventArgs e)
         {
-            SessionService.Session.Idioma = TraductorService.ObtenerIdIdiomaPorDescripcion(ddIdiomasPersonalizados.selectedValue);
+            try
+            {
+                VistaService.EnableControl(btnActualizarIdioma);
+
+                var oDtGrilla = VistaService.GetDatatableFromDatagridView(dgvIdiomas);
+
+                var oDtTextosTraducibles = TraductorService.ObtenerTraduccionesPorIdioma(TraductorService.ObtenerIdIdiomaPorDescripcion(ddIdiomasPersonalizados.selectedValue));
+
+                foreach (var textos in oDtTextosTraducibles.AsEnumerable())
+                {
+                    oDtGrilla.AsEnumerable().FirstOrDefault(x => int.Parse(x["Id"].ToString()) == int.Parse(textos["Texto"].ToString()))["Traduccion"] = textos["Descripcion"];
+                }
+
+                dgvIdiomas.Columns.Remove("Traduccion");
+
+                oDtGrilla.Columns["Id"].SetOrdinal(0);
+                oDtGrilla.Columns["Descripcion"].SetOrdinal(1);
+                oDtGrilla.Columns["Traduccion"].SetOrdinal(2);
+
+                VistaService.LoadDatagripView(dgvIdiomas, oDtGrilla);
+
+                dgvIdiomas.Columns[0].Width = 50;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void CargarDdIdiomasPersonalizados()
@@ -77,6 +106,23 @@ namespace HayCancha.Vistas
             {
                 ddIdiomasPersonalizados.AddItem(sIdioma["Descripcion"].ToString());
             }
+        }
+
+        private void btnActualizarIdioma_Click(object sender, EventArgs e)
+        {
+            var iIdiomaSeleccionado = TraductorService.ObtenerIdIdiomaPorDescripcion(ddIdiomasPersonalizados.selectedValue);
+            TraductorService.ActualizarIdioma(iIdiomaSeleccionado, VistaService.GetDatatableFromDatagridView(dgvIdiomas));
+
+            var sMensaje = SessionService.Session.Idioma != iIdiomaSeleccionado ? 
+                $@"El idioma {ddIdiomasPersonalizados.selectedValue.ToUpper()} se actualizó correctamente."
+                : $@"El idioma {ddIdiomasPersonalizados.selectedValue.ToUpper()} se actualizó correctamente. Deberá reiniciar cerrar la aplicación para visualizar las modificaciones";
+
+            MessageBox.Show(sMensaje, "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void imgOk_Click(object sender, EventArgs e)
+        {
+            SessionService.Session.Idioma = TraductorService.ObtenerIdIdiomaPorDescripcion(ddIdiomasPersonalizados.selectedValue);
         }
     }
 }
