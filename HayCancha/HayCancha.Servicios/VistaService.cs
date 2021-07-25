@@ -43,14 +43,18 @@ namespace HayCancha.Servicios
         public static void AddRowInDataGridView(DataGridView dgv, DataRow oDr)
         {
             var oDt = GetDatatableFromDatagridView(dgv).Columns.Count != 0? GetDatatableFromDatagridView(dgv):  oDr.Table.Clone();
+
             oDt.Rows.Add(oDr.ItemArray.Clone() as object[] ?? throw new Exception("Ocurrió un error al intentar agregar un producto!!"));
+
             LoadDatagripView(dgv, oDt);
         }
 
         public static void DeleteRowInDataGridView(DataGridView dgv, DataRow oDr, string sNameColumn = "Id")
         {
             var oDt = GetDatatableFromDatagridView(dgv);
+
             oDt.AsEnumerable().Where(x => x[sNameColumn].ToString() == oDr[sNameColumn].ToString()).FirstOrDefault().Delete();
+
             LoadDatagripView(dgv, oDt);
         }
 
