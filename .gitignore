@@ -2,3 +2,4 @@ encodings.xml
 indexLayout.xml
 vcs.xml
 *.cache
+*.suo
