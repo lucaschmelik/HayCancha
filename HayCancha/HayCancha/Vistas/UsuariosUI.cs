@@ -28,9 +28,12 @@ namespace HayCancha
             VistaService.DisableControl(btnAgregarPatente);
             SessionService.Session.Suscribir(this);
             if (IdiomaControl != SessionService.Session.Idioma) Update();
+            _lstPermisos = new List<AbstractComponent>();
         }
         
         public int IdiomaControl { get; set; }
+
+        private IList<AbstractComponent> _lstPermisos;
 
         private void CargarControles()
         {
@@ -75,23 +78,6 @@ namespace HayCancha
         private void ddIUsuarios_onItemSelected(object sender, EventArgs e)
         {
             var oDtSeleccionadas = PermisoService.ObtenerPatentesPorNombreUsuario(ddIUsuarios.selectedValue);
-        }
-
-        private void dgvFamilias_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            VistaService.EnableControl(btnAgregarPatente);
-
-            var oDrSeleccionada = ((DataRowView)dgvFamilias.SelectedRows[0].DataBoundItem).Row;
-
-            var oFamiliaSeleccioanda = new Familia() { Permiso = int.Parse(oDrSeleccionada["Permiso"].ToString()), Nombre = (oDrSeleccionada["FAMILIAS"].ToString()) };
-
-            PermisoService.ListarPermisos(oFamiliaSeleccioanda);
-
-            trvPermisos.Nodes.Clear();
-
-            trvPermisos.Nodes.Add(oFamiliaSeleccioanda.Nombre);
-
-            CargarTreedView(oFamiliaSeleccioanda, trvPermisos.Nodes[0]);
         }
 
         private void btnAgregarPatente_Click(object sender, EventArgs e)
@@ -169,6 +155,30 @@ namespace HayCancha
             {
                 MessageBox.Show(ex.Message, "ALERTA", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
+        }
+
+        private void btnMostrarFamilia_Click(object sender, EventArgs e)
+        {
+            VistaService.EnableControl(btnAgregarPatente);
+
+            var oDrSeleccionada = ((DataRowView)dgvFamilias.SelectedRows[0].DataBoundItem).Row;
+
+            var oFamiliaSeleccioanda = new Familia() { Permiso = int.Parse(oDrSeleccionada["Permiso"].ToString()), Nombre = (oDrSeleccionada["FAMILIAS"].ToString()) };
+
+            PermisoService.ListarPermisos(oFamiliaSeleccioanda);
+
+            AgregarNodoTreedView(oFamiliaSeleccioanda, oFamiliaSeleccioanda.Nombre);
+        }
+
+        private void AgregarNodoTreedView(AbstractComponent familia, string nodo)
+        {
+            trvPermisos.Nodes.Clear();
+
+            trvPermisos.Nodes.Add(nodo);
+
+            CargarTreedView(familia, trvPermisos.Nodes[0]);
+
+            _lstPermisos = familia.lstHijos;
         }
     }
 }
