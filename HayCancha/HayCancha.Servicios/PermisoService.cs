@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Data;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using HayCancha.BE.Abstractas;
 using HayCancha.BE.Clases;
 using HayCancha.DAL;
@@ -114,5 +111,20 @@ namespace HayCancha.Servicios
 
             PermisoDAL.Instancia.ActualizarFamilia(int.Parse(PermisoDAL.Instancia.ObtenerPermisoUsuario(sNombreUsuario)["Id"].ToString()), iIdPermisoNuevo);
         }
+
+        public static bool TienePermiso(string oPermiso, IList<AbstractComponent> lstPermisos)
+        {
+            foreach (var oComponente in lstPermisos)
+            {
+                if (oComponente.Nombre == oPermiso) return true;
+
+                if (oComponente.lstHijos == null) continue;
+
+                if (TienePermiso(oPermiso, oComponente.lstHijos))
+                    return true;
+            }
+            return false;
+        }
+
     }
 }

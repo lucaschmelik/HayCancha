@@ -86,7 +86,18 @@ namespace HayCancha
             {
                 var oDrSeleccionada = ((DataRowView) dgvPatentes.SelectedRows[0].DataBoundItem).Row;
 
-                //if (VistaService.GetDatatableFromDatagridView(dgvSeleccionadas).AsEnumerable().Any(x => x["Permiso"].ToString() == oDrSeleccionada["Permiso"].ToString())) throw new Exception($"La patente {oDrSeleccionada["PATENTES"]} ya se encuentra asignada a {ddIUsuarios.selectedValue}!!");
+                if (PermisoService.TienePermiso(oDrSeleccionada["PATENTES"].ToString(), _lstPermisos)) throw new Exception($"La patente { oDrSeleccionada["PATENTES"] } ya se encuentra asignada");
+
+                if (trvPermisos.SelectedNode != null)
+                {
+                    trvPermisos.SelectedNode.Nodes.Add(oDrSeleccionada["PATENTES"].ToString());
+                }
+                else
+                {
+                    trvPermisos.Nodes[0].Nodes.Add(oDrSeleccionada["PATENTES"].ToString());
+                }
+                _lstPermisos.FirstOrDefault().lstHijos.Add(new Patente() { Permiso = int.Parse(oDrSeleccionada["Permiso"].ToString()), Nombre = oDrSeleccionada["PATENTES"].ToString() });
+                MessageBox.Show($"La patente {oDrSeleccionada["PATENTES"]} fue asignada exitosamente!", "ALERTA", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
             catch (Exception ex)
@@ -99,8 +110,28 @@ namespace HayCancha
         {
             try
             {
-                //if (VistaService.GetDatatableFromDatagridView(dgvSeleccionadas).AsEnumerable().Any(x => x["Permiso"].ToString() == oDrSeleccionada["Permiso"].ToString())) throw new Exception($"La familia {oDrSeleccionada["FAMILIAS"]} ya se encuentra asignada a {ddIUsuarios.selectedValue}!!");
+                var oDrSeleccionada= ((DataRowView) dgvPatentes.SelectedRows[0].DataBoundItem).Row;
 
+                var oFamilia = new Familia()
+                {
+                    Nombre = oDrSeleccionada["PATENTES"].ToString(),
+                    Permiso = int.Parse(oDrSeleccionada["Permiso"].ToString())
+                };
+
+                if (PermisoService.TienePermiso(oFamilia.Nombre, _lstPermisos)) throw new Exception($"La familia { oFamilia.Nombre } ya se encuentra asignada");
+
+                if (trvPermisos.SelectedNode != null)
+                {
+                    trvPermisos.SelectedNode.Nodes.Add(oFamilia.Nombre);
+                }
+                else
+                {
+                    trvPermisos.Nodes[0].Nodes.Add(oFamilia.Nombre);
+                }
+                
+                _lstPermisos.FirstOrDefault(x => x.Nombre == trvPermisos.SelectedNode.Text)?.lstHijos.Add(oFamilia);
+
+                MessageBox.Show($"La familia { oFamilia.Nombre } fue asignada exitosamente!", "ALERTA", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
@@ -167,18 +198,18 @@ namespace HayCancha
 
             PermisoService.ListarPermisos(oFamiliaSeleccioanda);
 
-            AgregarNodoTreedView(oFamiliaSeleccioanda, oFamiliaSeleccioanda.Nombre);
+            _lstPermisos = oFamiliaSeleccioanda.lstHijos;
+
+            AgregarNodoTreedView(oFamiliaSeleccioanda.Nombre);
         }
 
-        private void AgregarNodoTreedView(AbstractComponent familia, string nodo)
+        private void AgregarNodoTreedView(string nodo)
         {
             trvPermisos.Nodes.Clear();
 
             trvPermisos.Nodes.Add(nodo);
 
-            CargarTreedView(familia, trvPermisos.Nodes[0]);
-
-            _lstPermisos = familia.lstHijos;
+            CargarTreedView(_lstPermisos.FirstOrDefault(), trvPermisos.Nodes[0]);
         }
     }
 }
