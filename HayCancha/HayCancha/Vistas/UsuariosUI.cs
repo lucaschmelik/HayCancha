@@ -25,15 +25,16 @@ namespace HayCancha
         {
             InitializeComponent();
             CargarControles();
-            VistaService.DisableControl(btnAgregarPatente);
             SessionService.Session.Suscribir(this);
             if (IdiomaControl != SessionService.Session.Idioma) Update();
             _lstPermisos = new List<AbstractComponent>();
         }
-        
+
         public int IdiomaControl { get; set; }
 
         private IList<AbstractComponent> _lstPermisos;
+
+        private bool _bEsCrear = false;
 
         private void CargarControles()
         {
@@ -45,7 +46,6 @@ namespace HayCancha
             VistaService.LoadDatagripView(dgvFamilias, PermisoService.ObtenerFamilias());
             VistaService.LoadDatagripView(dgvPatentes, PermisoService.ObtenerPatentes());
             dgvPatentes.Columns["Permiso"].Visible = dgvFamilias.Columns["Permiso"].Visible = false;
-
         }
 
         public void Update()
@@ -86,7 +86,13 @@ namespace HayCancha
             {
                 var oDrSeleccionada = ((DataRowView) dgvPatentes.SelectedRows[0].DataBoundItem).Row;
 
-                if (PermisoService.TienePermiso(oDrSeleccionada["PATENTES"].ToString(), _lstPermisos)) throw new Exception($"La patente { oDrSeleccionada["PATENTES"] } ya se encuentra asignada");
+                var oPatente = new Patente()
+                {
+                    Permiso = int.Parse(oDrSeleccionada["Permiso"].ToString()),
+                    Nombre = oDrSeleccionada["PATENTES"].ToString()
+                };
+
+                if (PermisoService.TienePermiso(oPatente.Nombre, _lstPermisos)) throw new Exception($"La patente { oPatente.Nombre } ya se encuentra asignada");
 
                 if (trvPermisos.SelectedNode != null)
                 {
@@ -96,8 +102,10 @@ namespace HayCancha
                 {
                     trvPermisos.Nodes[0].Nodes.Add(oDrSeleccionada["PATENTES"].ToString());
                 }
-                _lstPermisos.FirstOrDefault().lstHijos.Add(new Patente() { Permiso = int.Parse(oDrSeleccionada["Permiso"].ToString()), Nombre = oDrSeleccionada["PATENTES"].ToString() });
-                MessageBox.Show($"La patente {oDrSeleccionada["PATENTES"]} fue asignada exitosamente!", "ALERTA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                
+                _lstPermisos.Add(oPatente);
+                
+                MessageBox.Show($"La patente { oPatente.Nombre } fue asignada exitosamente!", "ALERTA", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
             catch (Exception ex)
@@ -110,26 +118,30 @@ namespace HayCancha
         {
             try
             {
-                var oDrSeleccionada= ((DataRowView) dgvPatentes.SelectedRows[0].DataBoundItem).Row;
+                var oDrSeleccionada= ((DataRowView) dgvFamilias.SelectedRows[0].DataBoundItem).Row;
 
                 var oFamilia = new Familia()
                 {
-                    Nombre = oDrSeleccionada["PATENTES"].ToString(),
+                    Nombre = oDrSeleccionada["FAMILIAS"].ToString(),
                     Permiso = int.Parse(oDrSeleccionada["Permiso"].ToString())
                 };
 
                 if (PermisoService.TienePermiso(oFamilia.Nombre, _lstPermisos)) throw new Exception($"La familia { oFamilia.Nombre } ya se encuentra asignada");
 
+                PermisoService.ListarPermisos(oFamilia);
+
                 if (trvPermisos.SelectedNode != null)
                 {
                     trvPermisos.SelectedNode.Nodes.Add(oFamilia.Nombre);
+                    CargarTreedView(oFamilia, trvPermisos.SelectedNode.Nodes[0]);
                 }
                 else
                 {
                     trvPermisos.Nodes[0].Nodes.Add(oFamilia.Nombre);
+                    CargarTreedView(oFamilia, trvPermisos.Nodes[0].LastNode);
                 }
                 
-                _lstPermisos.FirstOrDefault(x => x.Nombre == trvPermisos.SelectedNode.Text)?.lstHijos.Add(oFamilia);
+                _lstPermisos.Add(oFamilia);
 
                 MessageBox.Show($"La familia { oFamilia.Nombre } fue asignada exitosamente!", "ALERTA", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -145,7 +157,6 @@ namespace HayCancha
             try
             {
                 //if (dgvSeleccionadas.RowCount == 1) throw new Exception("No puede eliminar todos los accesos del usuario!!");
-
             }
             catch (Exception ex)
             {
@@ -172,15 +183,34 @@ namespace HayCancha
         {
             try
             {
-                var sNombreFamilia = Interaction.InputBox("Ingrese el nombre de la familia", "NUEVA FAMILIA");
+                if (btnCrearFamilia.Text == "CREAR")
+                {
+                    trvPermisos.Nodes.Clear();
 
-                if(sNombreFamilia == string.Empty) return;
+                    btnCrearFamilia.Text = "GUARDAR";
 
-                //var iIdNuevaFamilia = PermisoService.CrearFamilia(sNombreFamilia, VistaService.GetDatatableFromDatagridView(dgvSeleccionadas));
+                    trvPermisos.Nodes.Add("Nuevo");
 
-                //PermisoService.AsignarPermisoUsuario(ddIUsuarios.selectedValue, iIdNuevaFamilia);
-                
-                MessageBox.Show($"La familia {sNombreFamilia} fue creada y asignada a {ddIUsuarios.selectedValue} exitosamente!", "ALERTA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    VistaService.DisableControl(btnMostrarFamilia);
+                    VistaService.DisableControl(bntAsignarPermiso);
+                    VistaService.DisableControl(btnActualizarPermisos);
+
+                    Update();
+                }
+                else
+                {
+                    var sNombreFamilia = Interaction.InputBox("Ingrese el nombre de la familia", "NUEVA FAMILIA");
+
+                    btnCrearFamilia.Text = "CREAR";
+
+                    Update();
+
+                    VistaService.EnableControl(btnMostrarFamilia);
+                    VistaService.EnableControl(bntAsignarPermiso);
+                    VistaService.EnableControl(btnActualizarPermisos);
+
+                    MessageBox.Show($"La familia {sNombreFamilia} fue creada y asignada a {ddIUsuarios.selectedValue} exitosamente!", "ALERTA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
             catch (Exception ex)
             {
@@ -191,6 +221,10 @@ namespace HayCancha
         private void btnMostrarFamilia_Click(object sender, EventArgs e)
         {
             VistaService.EnableControl(btnAgregarPatente);
+            VistaService.EnableControl(btnAgregarFamilia);
+            VistaService.EnableControl(btnSacar);
+            VistaService.EnableControl(btnActualizarPermisos);
+            VistaService.EnableControl(bntAsignarPermiso);
 
             var oDrSeleccionada = ((DataRowView)dgvFamilias.SelectedRows[0].DataBoundItem).Row;
 
@@ -209,7 +243,16 @@ namespace HayCancha
 
             trvPermisos.Nodes.Add(nodo);
 
-            CargarTreedView(_lstPermisos.FirstOrDefault(), trvPermisos.Nodes[0]);
+            foreach (var permisos in _lstPermisos)
+            {
+                trvPermisos.Nodes[0].Nodes.Add(permisos.Nombre);
+
+                if (permisos.lstHijos != null)
+                {
+                    CargarTreedView(_lstPermisos.FirstOrDefault(), trvPermisos.Nodes[0].FirstNode);
+                }
+
+            }
         }
     }
 }

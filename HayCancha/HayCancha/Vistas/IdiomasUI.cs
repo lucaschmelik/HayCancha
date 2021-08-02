@@ -57,6 +57,7 @@ namespace HayCancha.Vistas
         {
             try
             {
+                if(txtIngresarIdioma.Text == string.Empty) throw new Exception("Debe ingresar un nombre para el nuevo idioma");
                 if (TraductorService.ObtenerIdiomas().AsEnumerable().Any(x=>x["Descripcion"].ToString().ToUpper() == txtIngresarIdioma.Text.ToUpper())) throw new Exception("El idioma ingresado ya existe");
                 TraductorService.GuardarIdioma(txtIngresarIdioma.Text, VistaService.GetDatatableFromDatagridView(dgvIdiomas));
                 ddIdiomasPersonalizados.AddItem(txtIngresarIdioma.Text);
