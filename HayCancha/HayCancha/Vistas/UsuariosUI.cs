@@ -1,14 +1,10 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Diagnostics.CodeAnalysis;
 using System.Drawing;
 using System.Linq;
-using System.Runtime.Remoting.Messaging;
-using System.Text;
-using System.Threading.Tasks;
+using System.Linq.Expressions;
 using System.Windows.Forms;
 using HayCancha.BE.Abstractas;
 using HayCancha.BE.Clases;
@@ -34,7 +30,7 @@ namespace HayCancha
 
         private IList<AbstractComponent> _lstPermisos;
 
-        private bool _bEsCrear = false;
+        private bool _bEstaCreando;
 
         private void CargarControles()
         {
@@ -94,6 +90,10 @@ namespace HayCancha
 
                 if (PermisoService.TienePermiso(oPatente.Nombre, _lstPermisos)) throw new Exception($"La patente { oPatente.Nombre } ya se encuentra asignada");
 
+                VistaService.DisableControl(btnAsignarPermiso);
+                if (!_bEstaCreando) VistaService.EnableControl(btnActualizarPermisos);
+                VistaService.EnableControl(btnSacar);
+
                 if (trvPermisos.SelectedNode != null)
                 {
                     trvPermisos.SelectedNode.Nodes.Add(oDrSeleccionada["PATENTES"].ToString());
@@ -128,6 +128,10 @@ namespace HayCancha
 
                 if (PermisoService.TienePermiso(oFamilia.Nombre, _lstPermisos)) throw new Exception($"La familia { oFamilia.Nombre } ya se encuentra asignada");
 
+                VistaService.DisableControl(btnAsignarPermiso);
+                if(!_bEstaCreando) VistaService.EnableControl(btnActualizarPermisos);
+                VistaService.EnableControl(btnSacar);
+
                 PermisoService.ListarPermisos(oFamilia);
 
                 if (trvPermisos.SelectedNode != null)
@@ -151,12 +155,24 @@ namespace HayCancha
             }
         }
 
-
         private void btnSacar_Click(object sender, EventArgs e)
         {
             try
             {
-                //if (dgvSeleccionadas.RowCount == 1) throw new Exception("No puede eliminar todos los accesos del usuario!!");
+                VistaService.DisableControl(btnAsignarPermiso);
+                if (!_bEstaCreando) VistaService.EnableControl(btnActualizarPermisos);
+
+                if (trvPermisos.Nodes.Count == 0) { VistaService.DisableControl(btnSacar); return; }
+
+                if(trvPermisos.SelectedNode == null) throw new Exception("Debe seleccionar un nodo!");
+
+                var sNombre = trvPermisos.SelectedNode.Text;
+                
+                trvPermisos.SelectedNode.Remove();
+
+                _lstPermisos = _lstPermisos.Where(x => x.Nombre != sNombre).ToList();
+
+                if (_lstPermisos.Count == 0) VistaService.DisableControl(btnSacar);
             }
             catch (Exception ex)
             {
@@ -168,7 +184,9 @@ namespace HayCancha
         {
             try
             {
-                //PermisoService.ActualizarFamilia(ddIUsuarios.selectedValue, VistaService.GetDatatableFromDatagridView(dgvSeleccionadas));
+                VistaService.EnableControl(btnAsignarPermiso);
+                
+                PermisoService.ActualizarFamilia(trvPermisos.Nodes[0].Text, PermisoService.FiltrarPermisosRepetidos(_lstPermisos));
 
                 MessageBox.Show($"Los accesos de {ddIUsuarios.selectedValue} y los usuarios con esta familia fueron actualizados exitosamente!", "ALERTA", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -183,17 +201,24 @@ namespace HayCancha
         {
             try
             {
-                if (btnCrearFamilia.Text == "CREAR")
+                if (!_bEstaCreando)
                 {
-                    trvPermisos.Nodes.Clear();
+                    _lstPermisos = new List<AbstractComponent>();
 
-                    btnCrearFamilia.Text = "GUARDAR";
+                    trvPermisos.Nodes.Clear();
 
                     trvPermisos.Nodes.Add("Nuevo");
 
-                    VistaService.DisableControl(btnMostrarFamilia);
-                    VistaService.DisableControl(bntAsignarPermiso);
+                    btnCrearFamilia.Text = "GUARDAR";
+
+                    _bEstaCreando = true;
+
                     VistaService.DisableControl(btnActualizarPermisos);
+                    VistaService.DisableControl(btnMostrarFamilia);
+                    VistaService.DisableControl(btnAsignarPermiso);
+                    VistaService.DisableControl(btnActualizarPermisos);
+                    VistaService.EnableControl(btnAgregarFamilia);
+                    VistaService.EnableControl(btnAgregarPatente);
 
                     Update();
                 }
@@ -203,13 +228,20 @@ namespace HayCancha
 
                     btnCrearFamilia.Text = "CREAR";
 
+                    _bEstaCreando = false;
+
+                    VistaService.DisableControl(btnSacar);
+                    VistaService.DisableControl(btnAgregarFamilia);
+                    VistaService.DisableControl(btnAgregarPatente);
+                    VistaService.EnableControl(btnMostrarFamilia);
+
                     Update();
 
-                    VistaService.EnableControl(btnMostrarFamilia);
-                    VistaService.EnableControl(bntAsignarPermiso);
-                    VistaService.EnableControl(btnActualizarPermisos);
+                    PermisoService.CrearFamilia(sNombreFamilia, _lstPermisos);
 
-                    MessageBox.Show($"La familia {sNombreFamilia} fue creada y asignada a {ddIUsuarios.selectedValue} exitosamente!", "ALERTA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show($"La familia {sNombreFamilia} fue creada exitosamente!", "ALERTA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    trvPermisos.Nodes.Clear();
                 }
             }
             catch (Exception ex)
@@ -220,11 +252,11 @@ namespace HayCancha
 
         private void btnMostrarFamilia_Click(object sender, EventArgs e)
         {
+            VistaService.DisableControl(btnActualizarPermisos);
             VistaService.EnableControl(btnAgregarPatente);
             VistaService.EnableControl(btnAgregarFamilia);
             VistaService.EnableControl(btnSacar);
-            VistaService.EnableControl(btnActualizarPermisos);
-            VistaService.EnableControl(bntAsignarPermiso);
+            VistaService.EnableControl(btnAsignarPermiso);
 
             var oDrSeleccionada = ((DataRowView)dgvFamilias.SelectedRows[0].DataBoundItem).Row;
 
@@ -249,10 +281,37 @@ namespace HayCancha
 
                 if (permisos.lstHijos != null)
                 {
-                    CargarTreedView(_lstPermisos.FirstOrDefault(), trvPermisos.Nodes[0].FirstNode);
+                    CargarTreedView(permisos, trvPermisos.Nodes[0].LastNode);
                 }
+            }
+        }
+        
+        private void btnAsignarPermiso_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var nombreFamilia = trvPermisos.Nodes[0].Text;
+
+                var nombreUsuario = ddIUsuarios.selectedValue;
+
+                var familiaSeleccionada = VistaService.GetDatatableFromDatagridView(dgvFamilias).AsEnumerable().Where(familia => familia["FAMILIAS"].ToString() == nombreFamilia).FirstOrDefault();
+
+                if (familiaSeleccionada == null) throw new Exception("No se encontró la familia para asignar, fijesé si no se eliminó o modifico desde que puso mostrar");
+
+                PermisoService.AsignarPermisoUsuario(nombreUsuario, int.Parse(familiaSeleccionada["Permiso"].ToString()));
+
+                MessageBox.Show($"Se asignó la familia { nombreFamilia } al usuario { nombreUsuario } !", "ALERTA", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "ALERTA", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+        }
+
+        private void btnPermisoUsuario_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show($"El usuario {ddIUsuarios.selectedValue.ToUpper()} tiene asignada la familia {PermisoService.ObtenerNombreFamiliaPorNombreUsuario(ddIUsuarios.selectedValue).ToUpper()}", "ALERTA", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

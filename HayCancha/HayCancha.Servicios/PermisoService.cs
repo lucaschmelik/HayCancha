@@ -1,11 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using HayCancha.BE.Abstractas;
 using HayCancha.BE.Clases;
 using HayCancha.DAL;
 
-namespace HayCancha.Servicios
+namespace HayCancha.Servicios 
 {
     public static class PermisoService
     {
@@ -37,23 +38,7 @@ namespace HayCancha.Servicios
             return oDt;
         }
 
-        public static DataTable ObtenerPatentesPorFamilia(Familia oFamilia)
-        {
-            var lstPatentes = new List<AbstractComponent>();
-
-            ListarPermisosEnLista(oFamilia, lstPatentes);
-
-            var oDt = new DataTable();
-
-            oDt.Columns.Add("Permiso", typeof(int));
-            oDt.Columns.Add("PATENTES", typeof(string));
-
-            lstPatentes.Where(x => x.GetType() == typeof(Patente)).ToList().ForEach(x => oDt.Rows.Add(x.Permiso, x.Nombre));
-
-            return oDt;
-        }
-
-        public static int CrearFamilia(string sNombre, DataTable oDtPermisos) => PermisoDAL.Instancia.GuardarFamilia(sNombre, oDtPermisos);
+        private static int ObtenerIdFamiliaPorNombre(string sNombre) => PermisoDAL.Instancia.ObtenerIdFamiliaPorNombre(sNombre);
 
         public static void ListarPermisos(AbstractComponent oComponente)
         {
@@ -103,15 +88,6 @@ namespace HayCancha.Servicios
             }
         }
 
-        public static void AsignarPermisoUsuario(string sNombre, int iPermiso) => PermisoDAL.Instancia.AsignarPermisoUsuario(sNombre, iPermiso);
-
-        public static void ActualizarFamilia(string sNombreUsuario, DataTable oDtPermisos)
-        {
-            var iIdPermisoNuevo = CrearFamilia(PermisoDAL.Instancia.ObtenerPermisoUsuario(sNombreUsuario)["Nombre"].ToString(), oDtPermisos);
-
-            PermisoDAL.Instancia.ActualizarFamilia(int.Parse(PermisoDAL.Instancia.ObtenerPermisoUsuario(sNombreUsuario)["Id"].ToString()), iIdPermisoNuevo);
-        }
-
         public static bool TienePermiso(string oPermiso, IList<AbstractComponent> lstPermisos)
         {
             foreach (var oComponente in lstPermisos)
@@ -126,5 +102,32 @@ namespace HayCancha.Servicios
             return false;
         }
 
+        public static int CrearFamilia(string sNombre, IList<AbstractComponent> lstPermisos) => PermisoDAL.Instancia.GuardarFamilia(sNombre, FiltrarPermisosRepetidos(lstPermisos));
+
+        public static List<AbstractComponent> FiltrarPermisosRepetidos(IList<AbstractComponent> lstPermisos)
+        {
+            var lstPermisosFiltrados = new List<AbstractComponent>();
+
+            lstPermisos.ToList().ForEach(permiso => { if (lstPermisosFiltrados.All(x => x.Nombre != permiso.Nombre)) { lstPermisosFiltrados.Add(permiso); } });
+
+            return lstPermisosFiltrados;
+        }
+        
+        public static void AsignarPermisoUsuario(string sNombre, int iPermiso) => PermisoDAL.Instancia.AsignarPermisoUsuario(sNombre, iPermiso);
+
+        public static void ActualizarFamilia(string sNombre, IList<AbstractComponent> permisosActualizados) 
+        {
+            var oFamilia = new Familia()
+            {
+                Nombre = sNombre,
+                Permiso = ObtenerIdFamiliaPorNombre(sNombre),
+            };
+
+            permisosActualizados.ToList().ForEach(permiso => oFamilia.AgregarHijo(permiso));
+
+            PermisoDAL.Instancia.ActualizarFamilia(oFamilia);
+        }
+
+        public static string ObtenerNombreFamiliaPorNombreUsuario(string sUsuario) => PermisoDAL.Instancia.ObtenerNombrePermisoPorUsuario(sUsuario);
     }
 }

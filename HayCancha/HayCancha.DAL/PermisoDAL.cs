@@ -70,13 +70,13 @@ namespace HayCancha.DAL
 
         public DataTable ObtenerPatentes() => EjecutaStp("stpObtenerPatentes", new Dictionary<string, object>(), RetornaDataTablePatentes());
 
-        public int GuardarFamilia(string sNombre, DataTable oDtPermisos)
+        public int GuardarFamilia(string sNombre, IList<AbstractComponent> lstPermisos)
         {
             var iIdFamilia = int.Parse(EjecutaStp("stpGuardarPermiso", new Dictionary<string, object>() { { "Nombre", sNombre }, { "EsRol", 1 } }, RetornaDatatableSoloId()).AsEnumerable().FirstOrDefault()?["Id"].ToString() ?? throw new InvalidOperationException());
 
-            foreach (var row in oDtPermisos.AsEnumerable())
+            foreach (var permiso in lstPermisos)
             {
-                EjecutaStp("stpGuardarPermisoPermiso", new Dictionary<string, object>() { { "Permiso", iIdFamilia }, { "PermisoHijo", row["Permiso"] } }, new DataTable());
+                EjecutaStp("stpGuardarPermisoPermiso", new Dictionary<string, object>() { { "Permiso", iIdFamilia }, { "PermisoHijo", permiso.Permiso } }, new DataTable());
             }
 
             return iIdFamilia;
@@ -87,7 +87,17 @@ namespace HayCancha.DAL
             EjecutaStp("stpAsignarPermisoUsuario", new Dictionary<string, object>() {{"Usuario", sNombre}, {"Permiso", iPermiso}}, new DataTable());
         }
 
-        public void ActualizarFamilia(int iPermiso, int iPermisoNuevo) => EjecutaStp("stpActualizarFamilia", new Dictionary<string, object>() {{"Permiso", iPermiso}, { "PermisoNuevo", iPermisoNuevo } }, new DataTable());
+        public int ObtenerIdFamiliaPorNombre(string sNombre) => int.Parse(EjecutaStp("stpObtenerIdFamiliaPorNombre", new Dictionary<string, object>() { { "Nombre", sNombre } }, RetornaDatatableSoloId()).AsEnumerable().FirstOrDefault()["Id"].ToString());
 
+        private void EliminarPermisosFamilia(int iIdFamilia) => EjecutaStp("stpEliminarPermisosFamilia", new Dictionary<string, object>() {{"Id", iIdFamilia}}, new DataTable());
+
+        public void ActualizarFamilia(Familia oFamilia)
+        {
+            EliminarPermisosFamilia(oFamilia.Permiso);
+
+            oFamilia.lstHijos.ToList().ForEach(permiso => EjecutaStp("stpGuardarPermisoPermiso", new Dictionary<string, object>() { { "Permiso", oFamilia.Permiso }, { "PermisoHijo", permiso.Permiso } }, new DataTable()));
+        }
+
+        public string ObtenerNombrePermisoPorUsuario(string sNombreUsuario) => EjecutaStp("stpObtenerNombreFamiliaPorUsuario", new Dictionary<string, object>() { { "NombreUsuario", sNombreUsuario } }, RetornaDataTableFamilias()).AsEnumerable().FirstOrDefault()["FAMILIAS"].ToString();
     }
 }
