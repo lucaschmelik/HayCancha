@@ -137,7 +137,7 @@ namespace HayCancha
                 if (trvPermisos.SelectedNode != null)
                 {
                     trvPermisos.SelectedNode.Nodes.Add(oFamilia.Nombre);
-                    CargarTreedView(oFamilia, trvPermisos.SelectedNode.Nodes[0]);
+                    CargarTreedView(oFamilia, trvPermisos.SelectedNode.LastNode);
                 }
                 else
                 {
