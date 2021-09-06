@@ -64,6 +64,8 @@ namespace HayCancha
 
                 UsuarioBLL.Login();
 
+                BitacoraService.Escribir(TipoEventoBitacoraEnum.INFORMACION, "Logeo en el sistema");
+
                 this.Hide();
 
                 _frmMenu = new MenuUI(this);
@@ -73,6 +75,7 @@ namespace HayCancha
             }
             catch (Exception ex)
             {
+                BitacoraService.Escribir(TipoEventoBitacoraEnum.ERROR, ex.Message);
                 SessionService.Session.Logout();
                 MessageBox.Show(ex.Message, "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }

@@ -139,6 +139,11 @@ namespace HayCancha
             VistaService.AbrirFormEnPanel(panelMenus, new PartidosUI());
         }
 
+        private void tsmBitacora_Click(object sender, EventArgs e)
+        {
+            VistaService.AbrirFormEnPanel(panelMenus, new BitacoraUI());
+        }
+
         private void imgNotificacion_Click(object sender, EventArgs e)
         {
             if (ucNotificacion.Visible)

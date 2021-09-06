@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BitacoraService.cs" />
     <Compile Include="ConversorImagenService.cs" />
     <Compile Include="EncriptadorService.cs" />
     <Compile Include="PermisoService.cs" />

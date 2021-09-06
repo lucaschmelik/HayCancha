@@ -34,7 +34,7 @@ namespace HayCancha
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuUI));
             this.msMenu = new System.Windows.Forms.MenuStrip();
-            this.tsmUsuarios = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmPermisos = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmAlquiler = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmEquipos = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmPartidos = new System.Windows.Forms.ToolStripMenuItem();
@@ -59,6 +59,7 @@ namespace HayCancha
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuElipse2 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.imgSalir = new System.Windows.Forms.PictureBox();
+            this.tsmBitacora = new System.Windows.Forms.ToolStripMenuItem();
             this.ucNotificacion = new HayCancha.NotificacionUC();
             this.msMenu.SuspendLayout();
             this.panelPerfil.SuspendLayout();
@@ -74,7 +75,7 @@ namespace HayCancha
             // msMenu
             // 
             this.msMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmUsuarios,
+            this.tsmPermisos,
             this.tsmAlquiler,
             this.tsmEquipos,
             this.tsmPartidos,
@@ -82,6 +83,7 @@ namespace HayCancha
             this.tsmReservas,
             this.tsmReportes,
             this.tsmOpciones,
+            this.tsmBitacora,
             this.tsmIdioma,
             this.tsmSalir});
             this.msMenu.Location = new System.Drawing.Point(0, 0);
@@ -90,13 +92,13 @@ namespace HayCancha
             this.msMenu.TabIndex = 9;
             this.msMenu.Text = "menuStrip1";
             // 
-            // tsmUsuarios
+            // tsmPermisos
             // 
-            this.tsmUsuarios.Name = "tsmUsuarios";
-            this.tsmUsuarios.Size = new System.Drawing.Size(74, 20);
-            this.tsmUsuarios.Tag = "5";
-            this.tsmUsuarios.Text = "USUARIOS";
-            this.tsmUsuarios.Click += new System.EventHandler(this.tsmUsuarios_Click);
+            this.tsmPermisos.Name = "tsmPermisos";
+            this.tsmPermisos.Size = new System.Drawing.Size(74, 20);
+            this.tsmPermisos.Tag = "5";
+            this.tsmPermisos.Text = "PERMISOS";
+            this.tsmPermisos.Click += new System.EventHandler(this.tsmUsuarios_Click);
             // 
             // tsmAlquiler
             // 
@@ -166,7 +168,7 @@ namespace HayCancha
             // 
             this.tsmIdiomaEspañol.Image = global::HayCancha.Properties.Resources.IdiomaEspañol;
             this.tsmIdiomaEspañol.Name = "tsmIdiomaEspañol";
-            this.tsmIdiomaEspañol.Size = new System.Drawing.Size(124, 22);
+            this.tsmIdiomaEspañol.Size = new System.Drawing.Size(180, 22);
             this.tsmIdiomaEspañol.Text = "ESPAÑOL";
             this.tsmIdiomaEspañol.Click += new System.EventHandler(this.tsmIdiomaEspañol_Click);
             // 
@@ -174,7 +176,7 @@ namespace HayCancha
             // 
             this.tsmIdiomaIngles.Image = global::HayCancha.Properties.Resources.IdiomaIngles;
             this.tsmIdiomaIngles.Name = "tsmIdiomaIngles";
-            this.tsmIdiomaIngles.Size = new System.Drawing.Size(124, 22);
+            this.tsmIdiomaIngles.Size = new System.Drawing.Size(180, 22);
             this.tsmIdiomaIngles.Text = "INGLES";
             this.tsmIdiomaIngles.Click += new System.EventHandler(this.tsmIdiomaIngles_Click);
             // 
@@ -182,7 +184,7 @@ namespace HayCancha
             // 
             this.tsmIdiomaChino.Image = global::HayCancha.Properties.Resources.IdiomaChino;
             this.tsmIdiomaChino.Name = "tsmIdiomaChino";
-            this.tsmIdiomaChino.Size = new System.Drawing.Size(124, 22);
+            this.tsmIdiomaChino.Size = new System.Drawing.Size(180, 22);
             this.tsmIdiomaChino.Text = "CHINO";
             this.tsmIdiomaChino.Click += new System.EventHandler(this.tsmIdiomaChino_Click);
             // 
@@ -190,7 +192,7 @@ namespace HayCancha
             // 
             this.NuevoToolStripMenuItem.Image = global::HayCancha.Properties.Resources.IdiomaNuevo;
             this.NuevoToolStripMenuItem.Name = "NuevoToolStripMenuItem";
-            this.NuevoToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.NuevoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.NuevoToolStripMenuItem.Text = "NUEVO";
             this.NuevoToolStripMenuItem.Click += new System.EventHandler(this.NuevoToolStripMenuItem_Click);
             // 
@@ -310,6 +312,14 @@ namespace HayCancha
             this.imgSalir.TabStop = false;
             this.imgSalir.Click += new System.EventHandler(this.imgSalir_Click);
             // 
+            // tsmBitacora
+            // 
+            this.tsmBitacora.Name = "tsmBitacora";
+            this.tsmBitacora.Size = new System.Drawing.Size(74, 20);
+            this.tsmBitacora.Tag = "38";
+            this.tsmBitacora.Text = "BITACORA";
+            this.tsmBitacora.Click += new System.EventHandler(this.tsmBitacora_Click);
+            // 
             // ucNotificacion
             // 
             this.ucNotificacion.BackColor = System.Drawing.Color.DarkGreen;
@@ -359,7 +369,7 @@ namespace HayCancha
         #endregion
         private System.Windows.Forms.PictureBox imgSalir;
         private System.Windows.Forms.MenuStrip msMenu;
-        private System.Windows.Forms.ToolStripMenuItem tsmUsuarios;
+        private System.Windows.Forms.ToolStripMenuItem tsmPermisos;
         private System.Windows.Forms.ToolStripMenuItem tsmAlquiler;
         private System.Windows.Forms.ToolStripMenuItem tsmEquipos;
         private System.Windows.Forms.ToolStripMenuItem tsmOpciones;
@@ -384,5 +394,6 @@ namespace HayCancha
         private System.Windows.Forms.ToolStripMenuItem tsmReservas;
         private System.Windows.Forms.ToolStripMenuItem tsmPartidos;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.ToolStripMenuItem tsmBitacora;
     }
 }
