@@ -19,6 +19,8 @@ namespace HayCancha.Servicios
             BitacoraDAL.Instancia.Guardar(bitacora);
         }
 
-        public static List<Bitacora> ListarBitacoras() => Enumerable.Select(BitacoraDAL.Instancia.CargarBitacora().AsEnumerable(), oBitacora => new Bitacora((DateTime) oBitacora["Fecha"], (TipoEventoBitacoraEnum) Enum.Parse(typeof(TipoEventoBitacoraEnum), oBitacora["TipoEventoBitacoraEnum"].ToString()), oBitacora["Mensaje"].ToString(), oBitacora["Nombre"].ToString())).ToList();
+        public static List<Bitacora> ListarBitacoras() => Enumerable.Select(BitacoraDAL.Instancia.CargarBitacora().AsEnumerable(), oBitacora => new Bitacora((DateTime) oBitacora["Fecha"], (TipoEventoBitacoraEnum) Enum.Parse(typeof(TipoEventoBitacoraEnum), oBitacora["TipoEvento"].ToString()), oBitacora["Mensaje"].ToString(), oBitacora["Nombre"].ToString())).ToList();
+
+        public static List<Bitacora> ListarBitacorasPorFiltrosVarios(Dictionary<string, object> dicParametros) => Enumerable.Select(BitacoraDAL.Instancia.ObtenerBitacorasPorFiltrosVarios(dicParametros).AsEnumerable(), oBitacora => new Bitacora((DateTime) oBitacora["Fecha"], (TipoEventoBitacoraEnum) Enum.Parse(typeof(TipoEventoBitacoraEnum), oBitacora["TipoEvento"].ToString()), oBitacora["Mensaje"].ToString(), oBitacora["Nombre"].ToString())).ToList();
     }
 }

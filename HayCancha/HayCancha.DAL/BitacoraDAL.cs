@@ -17,13 +17,15 @@ namespace HayCancha.DAL
 
         public DataTable CargarBitacora() => EjecutaStp("stpObtenerBitacora", new Dictionary<string, object>(), CrearDatatableBitacora());
 
+        public DataTable ObtenerBitacorasPorFiltrosVarios(Dictionary<string, object> dicParametros) => EjecutaStp("stpObtenerBitacoraPorFiltrosVarios", dicParametros, CrearDatatableBitacora());
+
         public void Guardar(Bitacora oBitacora)
         {
             var oDicParametros = new Dictionary<string, object>
             {
-                {"Nombre", oBitacora.NombreUsuario},
+                {"Nombre", oBitacora.Usuario},
                 {"Mensaje", oBitacora.Mensaje},
-                {"TipoEvento", (int)oBitacora.TipoEvento}
+                {"TipoEvento", (int)oBitacora.Evento}
             };
 
             EjecutaStp("stpInsertarBitacora", oDicParametros, new DataTable());
@@ -36,7 +38,7 @@ namespace HayCancha.DAL
             oDt.Columns.Add("Nombre", typeof(string));
             oDt.Columns.Add("Fecha", typeof(DateTime));
             oDt.Columns.Add("Mensaje", typeof(string));
-            oDt.Columns.Add("TipoEventoBitacoraEnum", typeof(int));
+            oDt.Columns.Add("TipoEvento", typeof(int));
 
             return oDt;
         }

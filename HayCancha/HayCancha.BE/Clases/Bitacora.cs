@@ -9,14 +9,14 @@ namespace HayCancha.BE.Clases
         public Bitacora(DateTime fecha, TipoEventoBitacoraEnum tipoEvento, string mensaje, string nombreUsuario)
         {
             Fecha = fecha;
-            TipoEvento = tipoEvento;
+            Evento = tipoEvento;
             Mensaje = mensaje;
-            NombreUsuario = nombreUsuario;
+            Usuario = nombreUsuario;
         }
 
         public DateTime Fecha { get; set; }
-        public TipoEventoBitacoraEnum TipoEvento { get; set; }
+        public TipoEventoBitacoraEnum Evento { get; set; }
         public string Mensaje { get; set; }
-        public string NombreUsuario { get; set; }
+        public string Usuario { get; set; }
     }
 }
