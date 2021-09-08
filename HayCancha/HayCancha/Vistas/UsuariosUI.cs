@@ -71,6 +71,18 @@ namespace HayCancha
             }
         }
 
+        private void EliminarPermiso(AbstractComponent oPermiso, string sNombrePermisoSeleccionado)
+        {
+            if (oPermiso.GetType() != typeof(Familia)) return;
+
+            oPermiso.lstHijos.Remove(oPermiso.lstHijos.FirstOrDefault(x => x.Nombre == sNombrePermisoSeleccionado));
+
+            foreach (var permiso in oPermiso.lstHijos)
+            {
+                EliminarPermiso(permiso, sNombrePermisoSeleccionado);
+            }
+        }
+
         private void ddIUsuarios_onItemSelected(object sender, EventArgs e)
         {
             var oDtSeleccionadas = PermisoService.ObtenerPatentesPorNombreUsuario(ddIUsuarios.selectedValue);
@@ -165,12 +177,10 @@ namespace HayCancha
                 if (trvPermisos.Nodes.Count == 0) { VistaService.DisableControl(btnSacar); return; }
 
                 if(trvPermisos.SelectedNode == null) throw new Exception("Debe seleccionar un nodo!");
-
-                var sNombre = trvPermisos.SelectedNode.Text;
                 
-                trvPermisos.SelectedNode.Remove();
+                EliminarPermiso(new Familia { lstHijos = _lstPermisos }, trvPermisos.SelectedNode.Text);
 
-                _lstPermisos = _lstPermisos.Where(x => x.Nombre != sNombre).ToList();
+                trvPermisos.SelectedNode.Remove();
 
                 if (_lstPermisos.Count == 0) VistaService.DisableControl(btnSacar);
             }
@@ -188,7 +198,7 @@ namespace HayCancha
                 
                 PermisoService.ActualizarFamilia(trvPermisos.Nodes[0].Text, PermisoService.FiltrarPermisosRepetidos(_lstPermisos));
 
-                MessageBox.Show($"Los accesos de {ddIUsuarios.selectedValue} y los usuarios con esta familia fueron actualizados exitosamente!", "ALERTA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show($"Los permisos fueron actualizados exitosamente!", "ALERTA", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
             catch (Exception ex)

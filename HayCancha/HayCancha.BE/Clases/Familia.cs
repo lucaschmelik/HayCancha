@@ -12,7 +12,11 @@ namespace HayCancha.BE.Clases
         
         private IList<AbstractComponent> _lstHijos;
 
-        public override IList<AbstractComponent> lstHijos => _lstHijos;
+        public override IList<AbstractComponent> lstHijos
+        {
+            get => _lstHijos;
+            set => _lstHijos = value;
+        }
 
         public override void AgregarHijo(AbstractComponent oComponente)
         {

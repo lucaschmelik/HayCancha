@@ -9,7 +9,7 @@ namespace HayCancha.BE.Abstractas
 
         public int Permiso { get; set; }
 
-        public abstract IList<AbstractComponent> lstHijos { get; }
+        public abstract IList<AbstractComponent> lstHijos { get; set; }
 
         public abstract void AgregarHijo(AbstractComponent oComponente);
 

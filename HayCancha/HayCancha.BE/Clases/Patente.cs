@@ -5,7 +5,13 @@ namespace HayCancha.BE.Clases
 {
     public class Patente : AbstractComponent
     {
-        public override IList<AbstractComponent> lstHijos { get; }
+        private readonly IList<AbstractComponent> _lstHijos;
+
+        public override IList<AbstractComponent> lstHijos
+        {
+            get => _lstHijos;
+            set => throw new System.NotImplementedException();
+        }
 
         public override void AgregarHijo(AbstractComponent oComponente)
         {

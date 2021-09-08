@@ -115,7 +115,7 @@ namespace HayCancha.Servicios
         
         public static void AsignarPermisoUsuario(string sNombre, int iPermiso) => PermisoDAL.Instancia.AsignarPermisoUsuario(sNombre, iPermiso);
 
-        public static void ActualizarFamilia(string sNombre, IList<AbstractComponent> permisosActualizados) 
+        public static void ActualizarFamilia(string sNombre, IList<AbstractComponent> permisosActualizados)
         {
             var oFamilia = new Familia()
             {

@@ -96,6 +96,8 @@ namespace HayCancha.DAL
             EliminarPermisosFamilia(oFamilia.Permiso);
 
             oFamilia.lstHijos.ToList().ForEach(permiso => EjecutaStp("stpGuardarPermisoPermiso", new Dictionary<string, object>() { { "Permiso", oFamilia.Permiso }, { "PermisoHijo", permiso.Permiso } }, new DataTable()));
+
+            oFamilia.lstHijos.Where(x => x.GetType() == typeof(Familia)).ToList().ForEach(permiso=>ActualizarFamilia((Familia)permiso));
         }
 
         public string ObtenerNombrePermisoPorUsuario(string sNombreUsuario) => EjecutaStp("stpObtenerNombreFamiliaPorUsuario", new Dictionary<string, object>() { { "NombreUsuario", sNombreUsuario } }, RetornaDataTableFamilias()).AsEnumerable().FirstOrDefault()["FAMILIAS"].ToString();

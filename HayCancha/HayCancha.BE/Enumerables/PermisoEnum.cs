@@ -5,6 +5,6 @@
         Administrador = 1,
         GestordeCancha = 2,
         Organizador = 3,
-        Jugador = 22
+        Jugador = 31
     }
 }
