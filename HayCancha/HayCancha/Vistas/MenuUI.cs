@@ -144,6 +144,11 @@ namespace HayCancha
             VistaService.AbrirFormEnPanel(panelMenus, new BitacoraUI());
         }
 
+        private void tsmBackup_Click(object sender, EventArgs e)
+        {
+            VistaService.AbrirFormEnPanel(panelMenus, new BackupUI());
+        }
+
         private void imgNotificacion_Click(object sender, EventArgs e)
         {
             if (ucNotificacion.Visible)
@@ -200,6 +205,11 @@ namespace HayCancha
         private void NuevoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             VistaService.AbrirFormEnPanel(panelMenus, new IdiomasUI());
+        }
+
+        public void CerrarSesion()
+        {
+            btnMenuSalir_Click(new object(), new EventArgs());
         }
     }
 }

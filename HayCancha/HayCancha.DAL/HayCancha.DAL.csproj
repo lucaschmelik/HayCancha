@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BackupRestoreDAL.cs" />
     <Compile Include="BitacoraDAL.cs" />
     <Compile Include="CanchaDAL.cs" />
     <Compile Include="IdiomaDAL.cs" />

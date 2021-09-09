@@ -53,5 +53,20 @@ namespace HayCancha.BE
 
             return oDt;
         }
+
+        protected void Restore(string sRuta)
+        {
+            var Connection = new SqlConnection("Data Source=.;Initial Catalog=HayCancha;Integrated Security=True");
+
+            Connection.Open();
+
+            var Command = new SqlCommand("ALTER DATABASE [HayCancha] SET SINGLE_USER WITH ROLLBACK IMMEDIATE USE MASTER RESTORE DATABASE [HayCancha] FROM DISK = @ruta WITH REPLACE ALTER DATABASE [HayCancha] SET MULTI_USER", Connection);
+
+            Command.Parameters.AddWithValue("ruta", sRuta);
+
+            Command.ExecuteNonQuery();
+
+            Connection.Close();
+        }
     }
 }
