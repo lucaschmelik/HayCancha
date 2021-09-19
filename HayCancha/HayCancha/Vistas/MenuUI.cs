@@ -126,7 +126,7 @@ namespace HayCancha
 
         private void tsmUsuarios_Click(object sender, EventArgs e)
         {
-            VistaService.AbrirFormEnPanel(panelMenus, new UsuariosUI());
+            VistaService.AbrirFormEnPanel(panelMenus, new PermisosUI());
         }
 
         private void tsmReservas_Click(object sender, EventArgs e)

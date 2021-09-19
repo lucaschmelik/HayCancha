@@ -38,7 +38,6 @@ C:\Users\lucas\source\repos\Facultad\Proyecto\HayCancha\HayCancha\obj\Debug\HayC
 C:\Users\lucas\source\repos\Facultad\Proyecto\HayCancha\HayCancha\obj\Debug\HayCancha.LoginUI.resources
 C:\Users\lucas\source\repos\Facultad\Proyecto\HayCancha\HayCancha\obj\Debug\HayCancha.NotificacionUC.resources
 C:\Users\lucas\source\repos\Facultad\Proyecto\HayCancha\HayCancha\obj\Debug\HayCancha.Properties.Resources.resources
-C:\Users\lucas\source\repos\Facultad\Proyecto\HayCancha\HayCancha\obj\Debug\HayCancha.UsuariosUI.resources
 C:\Users\lucas\source\repos\Facultad\Proyecto\HayCancha\HayCancha\obj\Debug\HayCancha.UI.csproj.GenerateResource.cache
 C:\Users\lucas\source\repos\Facultad\Proyecto\HayCancha\HayCancha\obj\Debug\HayCancha.UI.csproj.CoreCompileInputs.cache
 C:\Users\lucas\source\repos\Facultad\Proyecto\HayCancha\HayCancha\obj\Debug\HayCancha.UI.csproj.CopyComplete
@@ -77,3 +76,4 @@ C:\Users\lucas\source\repos\Facultad\HayCancha\HayCancha\HayCancha\obj\Debug\Hay
 C:\Users\lucas\source\repos\Facultad\HayCancha\HayCancha\HayCancha\obj\Debug\HayCancha.pdb
 C:\Users\lucas\source\repos\Facultad\Proyecto\HayCancha\HayCancha\obj\Debug\HayCancha.Vistas.BitacoraUI.resources
 C:\Users\lucas\source\repos\Facultad\Proyecto\HayCancha\HayCancha\obj\Debug\HayCancha.Vistas.BackupUI.resources
+C:\Users\lucas\source\repos\Facultad\Proyecto\HayCancha\HayCancha\obj\Debug\HayCancha.PermisosUI.resources

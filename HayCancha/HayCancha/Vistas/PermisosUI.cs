@@ -2,9 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Linq.Expressions;
 using System.Windows.Forms;
 using HayCancha.BE.Abstractas;
 using HayCancha.BE.Clases;
@@ -15,9 +13,9 @@ using Microsoft.VisualBasic;
 
 namespace HayCancha
 {
-    public partial class UsuariosUI : Form, Idiomable
+    public partial class PermisosUI : Form, Idiomable
     {
-        public UsuariosUI()
+        public PermisosUI()
         {
             InitializeComponent();
             CargarControles();

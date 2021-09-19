@@ -1,7 +1,7 @@
 ﻿
 namespace HayCancha
 {
-    partial class UsuariosUI
+    partial class PermisosUI
     {
         /// <summary>
         /// Required designer variable.
@@ -36,7 +36,7 @@ namespace HayCancha
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UsuariosUI));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PermisosUI));
             this.btnActualizarPermisos = new System.Windows.Forms.Button();
             this.lblPermisos = new System.Windows.Forms.Label();
             this.ddIUsuarios = new Bunifu.Framework.UI.BunifuDropdown();
@@ -356,7 +356,7 @@ namespace HayCancha
             this.btnAgregarPatente.Zoom = 10;
             this.btnAgregarPatente.Click += new System.EventHandler(this.btnAgregarPatente_Click);
             // 
-            // UsuariosUI
+            // PermisosUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -376,8 +376,8 @@ namespace HayCancha
             this.Controls.Add(this.btnActualizarPermisos);
             this.Controls.Add(this.lblPermisos);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "UsuariosUI";
-            this.Text = "UsuariosUI";
+            this.Name = "PermisosUI";
+            this.Text = "PermisosUI";
             ((System.ComponentModel.ISupportInitialize)(this.dgvPatentes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFamilias)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnPermisoUsuario)).EndInit();
