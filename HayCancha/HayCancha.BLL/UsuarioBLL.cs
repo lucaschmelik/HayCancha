@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using HayCancha.BE;
 using HayCancha.BE.Enumerables;
 using HayCancha.DAL;
@@ -71,5 +72,11 @@ namespace HayCancha.BLL
         public static IList<Usuario> ObtenerUsuariosPorNombre(string sNombre) => _oUsuarioDAL.ObtenerUsuariosPorNombre(sNombre);
 
         public static Usuario ObtenerUsuarioPorNombre (string sNombre) => _oUsuarioDAL.ObtenerUsuarioPorNombre();
+
+        public static DataTable ObtenerUsuariosAuditoriaPorNombre(string sNombre) => _oUsuarioDAL.ObtenerUsuariosAuditoriaPorNombre(sNombre);
+
+        public static void CambiarContraseña(string sNombre, string sContraseña) => _oUsuarioDAL.CambiarContraseña(sNombre, sContraseña, SessionService.Session.UsuarioLogueado.Nombre);
+
+        public static void RestaurarUsuario(int iIdUsuarioAuditoria) => _oUsuarioDAL.RestaurarUsuario(iIdUsuarioAuditoria);
     }
 }

@@ -16,3 +16,12 @@ C:\Users\lucas\source\repos\Facultad\Proyecto\HayCancha\HayCancha.DAL\obj\Debug\
 C:\Users\lucas\source\repos\Facultad\Proyecto\HayCancha\HayCancha.DAL\obj\Debug\HayCancha.DAL.csproj.CopyComplete
 C:\Users\lucas\source\repos\Facultad\Proyecto\HayCancha\HayCancha.DAL\obj\Debug\HayCancha.DAL.dll
 C:\Users\lucas\source\repos\Facultad\Proyecto\HayCancha\HayCancha.DAL\obj\Debug\HayCancha.DAL.pdb
+C:\Users\lucas\source\repos\Facultad\Hay Cancha\HayCancha\HayCancha.DAL\bin\Debug\HayCancha.DAL.dll
+C:\Users\lucas\source\repos\Facultad\Hay Cancha\HayCancha\HayCancha.DAL\bin\Debug\HayCancha.DAL.pdb
+C:\Users\lucas\source\repos\Facultad\Hay Cancha\HayCancha\HayCancha.DAL\bin\Debug\HayCancha.BE.dll
+C:\Users\lucas\source\repos\Facultad\Hay Cancha\HayCancha\HayCancha.DAL\bin\Debug\HayCancha.BE.pdb
+C:\Users\lucas\source\repos\Facultad\Hay Cancha\HayCancha\HayCancha.DAL\obj\Debug\HayCancha.DAL.csprojAssemblyReference.cache
+C:\Users\lucas\source\repos\Facultad\Hay Cancha\HayCancha\HayCancha.DAL\obj\Debug\HayCancha.DAL.csproj.CoreCompileInputs.cache
+C:\Users\lucas\source\repos\Facultad\Hay Cancha\HayCancha\HayCancha.DAL\obj\Debug\HayCancha.DAL.csproj.CopyComplete
+C:\Users\lucas\source\repos\Facultad\Hay Cancha\HayCancha\HayCancha.DAL\obj\Debug\HayCancha.DAL.dll
+C:\Users\lucas\source\repos\Facultad\Hay Cancha\HayCancha\HayCancha.DAL\obj\Debug\HayCancha.DAL.pdb

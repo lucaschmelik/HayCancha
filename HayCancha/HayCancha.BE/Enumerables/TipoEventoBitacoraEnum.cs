@@ -4,6 +4,7 @@
     {
         INFORMACION = 1,
         ADVERTENCIA = 2,
-        ERROR = 3
+        ERROR = 3,
+        SISTEMA = 4
     }
 }

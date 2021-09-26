@@ -10,3 +10,9 @@ C:\Users\lucas\source\repos\Facultad\Proyecto\HayCancha\HayCancha.BE\obj\Debug\H
 C:\Users\lucas\source\repos\Facultad\Proyecto\HayCancha\HayCancha.BE\obj\Debug\HayCancha.BE.csproj.CoreCompileInputs.cache
 C:\Users\lucas\source\repos\Facultad\Proyecto\HayCancha\HayCancha.BE\obj\Debug\HayCancha.BE.dll
 C:\Users\lucas\source\repos\Facultad\Proyecto\HayCancha\HayCancha.BE\obj\Debug\HayCancha.BE.pdb
+C:\Users\lucas\source\repos\Facultad\Hay Cancha\HayCancha\HayCancha.BE\bin\Debug\HayCancha.BE.dll
+C:\Users\lucas\source\repos\Facultad\Hay Cancha\HayCancha\HayCancha.BE\bin\Debug\HayCancha.BE.pdb
+C:\Users\lucas\source\repos\Facultad\Hay Cancha\HayCancha\HayCancha.BE\obj\Debug\HayCancha.BE.csprojAssemblyReference.cache
+C:\Users\lucas\source\repos\Facultad\Hay Cancha\HayCancha\HayCancha.BE\obj\Debug\HayCancha.BE.csproj.CoreCompileInputs.cache
+C:\Users\lucas\source\repos\Facultad\Hay Cancha\HayCancha\HayCancha.BE\obj\Debug\HayCancha.BE.dll
+C:\Users\lucas\source\repos\Facultad\Hay Cancha\HayCancha\HayCancha.BE\obj\Debug\HayCancha.BE.pdb

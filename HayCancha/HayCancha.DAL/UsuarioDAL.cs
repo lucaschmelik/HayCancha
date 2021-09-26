@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using HayCancha.BE;
@@ -13,7 +14,7 @@ namespace HayCancha.DAL
 
         public UsuarioDAL()
         {
-            oUsuario = new Usuario(){ };
+            oUsuario = new Usuario();
         }
         
         public Usuario ObtenerUsuarioPorNombreContraseña()
@@ -96,5 +97,24 @@ namespace HayCancha.DAL
 
             return oDt;
         }
+
+        public DataTable ObtenerUsuariosAuditoriaPorNombre(string sNombre)
+        {
+            var oDt = new DataTable();
+
+            oDt.Columns.Add("Id", typeof(int));
+            oDt.Columns.Add("Nombre", typeof(string));
+            oDt.Columns.Add("Contraseña", typeof(string));
+            oDt.Columns.Add("Imagen", typeof(string));
+            oDt.Columns.Add("Permiso", typeof(string));
+            oDt.Columns.Add("Usuario Modificacion", typeof(string));
+            oDt.Columns.Add("Fecha Modificacion", typeof(DateTime));
+
+            return EjecutaStp("stpObtenerPorNombreUsuarioAuditoria", new Dictionary<string, object> { { "Nombre", sNombre } }, oDt);
+        }
+
+        public void CambiarContraseña(string sNombre, string sContraseña, string sUsuarioModificador) => EjecutaStp("stpCambiarContraseñaUsuario", new Dictionary<string, object> { { "Nombre", sNombre }, { "Contraseña", sContraseña }, { "UsuarioModificador", sUsuarioModificador } }, new DataTable());
+
+        public void RestaurarUsuario(int iIdUsuarioAuditoria) => EjecutaStp("stpRestaurarUsuario", new Dictionary<string, object> { { "IdUsuarioAuditoria", iIdUsuarioAuditoria }}, new DataTable());
     }
 }

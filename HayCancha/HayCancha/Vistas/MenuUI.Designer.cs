@@ -40,37 +40,40 @@ namespace HayCancha
             this.tsmPartidos = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmEstadisticas = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmReservas = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmUsuarios = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmReportes = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmOpciones = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmBitacora = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmIdioma = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmSalir = new System.Windows.Forms.ToolStripMenuItem();
-            this.panelPerfil = new System.Windows.Forms.Panel();
-            this.lblNombreMenu = new System.Windows.Forms.TextBox();
-            this.panelMenus = new System.Windows.Forms.Panel();
-            this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.bunifuElipse2 = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.ucNotificacion = new HayCancha.NotificacionUC();
-            this.tsmBackup = new System.Windows.Forms.ToolStripMenuItem();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.imgSalir = new System.Windows.Forms.PictureBox();
             this.tsmIdiomaEspañol = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmIdiomaIngles = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmIdiomaChino = new System.Windows.Forms.ToolStripMenuItem();
             this.NuevoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmBackup = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmSalir = new System.Windows.Forms.ToolStripMenuItem();
+            this.panelPerfil = new System.Windows.Forms.Panel();
             this.imgPuntoNotificacion = new System.Windows.Forms.PictureBox();
             this.imgNotificacion = new System.Windows.Forms.PictureBox();
+            this.lblNombreMenu = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.imgPerfil = new System.Windows.Forms.PictureBox();
+            this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.bunifuElipse2 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.ucNotificacion = new HayCancha.NotificacionUC();
+            this.imgSalir = new System.Windows.Forms.PictureBox();
+            this.btnCambiarContraseña = new System.Windows.Forms.Button();
+            this.bunifuElipse3 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.panelMenus = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.msMenu.SuspendLayout();
             this.panelPerfil.SuspendLayout();
-            this.panelMenus.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgSalir)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgPuntoNotificacion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgNotificacion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgPerfil)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgSalir)).BeginInit();
+            this.panelMenus.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // msMenu
@@ -82,6 +85,7 @@ namespace HayCancha
             this.tsmPartidos,
             this.tsmEstadisticas,
             this.tsmReservas,
+            this.tsmUsuarios,
             this.tsmReportes,
             this.tsmOpciones,
             this.tsmBitacora,
@@ -140,6 +144,14 @@ namespace HayCancha
             this.tsmReservas.Text = "RESERVAS";
             this.tsmReservas.Click += new System.EventHandler(this.tsmReservas_Click);
             // 
+            // tsmUsuarios
+            // 
+            this.tsmUsuarios.Name = "tsmUsuarios";
+            this.tsmUsuarios.Size = new System.Drawing.Size(74, 20);
+            this.tsmUsuarios.Tag = "41";
+            this.tsmUsuarios.Text = "USUARIOS";
+            this.tsmUsuarios.Click += new System.EventHandler(this.tsmUsuarios_Click_1);
+            // 
             // tsmReportes
             // 
             this.tsmReportes.Name = "tsmReportes";
@@ -174,100 +186,6 @@ namespace HayCancha
             this.tsmIdioma.Tag = "11";
             this.tsmIdioma.Text = "IDIOMA";
             // 
-            // tsmSalir
-            // 
-            this.tsmSalir.Name = "tsmSalir";
-            this.tsmSalir.Size = new System.Drawing.Size(49, 20);
-            this.tsmSalir.Text = "SALIR";
-            this.tsmSalir.Click += new System.EventHandler(this.btnMenuSalir_Click);
-            // 
-            // panelPerfil
-            // 
-            this.panelPerfil.BackColor = System.Drawing.SystemColors.Info;
-            this.panelPerfil.Controls.Add(this.imgPuntoNotificacion);
-            this.panelPerfil.Controls.Add(this.imgNotificacion);
-            this.panelPerfil.Controls.Add(this.lblNombreMenu);
-            this.panelPerfil.Controls.Add(this.pictureBox1);
-            this.panelPerfil.Controls.Add(this.imgPerfil);
-            this.panelPerfil.Location = new System.Drawing.Point(575, 23);
-            this.panelPerfil.Name = "panelPerfil";
-            this.panelPerfil.Size = new System.Drawing.Size(225, 429);
-            this.panelPerfil.TabIndex = 11;
-            // 
-            // lblNombreMenu
-            // 
-            this.lblNombreMenu.BackColor = System.Drawing.SystemColors.Info;
-            this.lblNombreMenu.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.lblNombreMenu.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.lblNombreMenu.Enabled = false;
-            this.lblNombreMenu.Font = new System.Drawing.Font("Impact", 22F);
-            this.lblNombreMenu.Location = new System.Drawing.Point(16, 261);
-            this.lblNombreMenu.Name = "lblNombreMenu";
-            this.lblNombreMenu.ReadOnly = true;
-            this.lblNombreMenu.Size = new System.Drawing.Size(196, 36);
-            this.lblNombreMenu.TabIndex = 13;
-            this.lblNombreMenu.Text = "Lucas";
-            this.lblNombreMenu.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // panelMenus
-            // 
-            this.panelMenus.Controls.Add(this.pictureBox2);
-            this.panelMenus.Location = new System.Drawing.Point(4, 26);
-            this.panelMenus.Name = "panelMenus";
-            this.panelMenus.Size = new System.Drawing.Size(569, 422);
-            this.panelMenus.TabIndex = 12;
-            // 
-            // bunifuElipse1
-            // 
-            this.bunifuElipse1.ElipseRadius = 10;
-            this.bunifuElipse1.TargetControl = this;
-            // 
-            // bunifuElipse2
-            // 
-            this.bunifuElipse2.ElipseRadius = 50;
-            this.bunifuElipse2.TargetControl = this.imgPuntoNotificacion;
-            // 
-            // ucNotificacion
-            // 
-            this.ucNotificacion.BackColor = System.Drawing.Color.DarkGreen;
-            this.ucNotificacion.IdiomaControl = 1;
-            this.ucNotificacion.Location = new System.Drawing.Point(535, 64);
-            this.ucNotificacion.Name = "ucNotificacion";
-            this.ucNotificacion.Size = new System.Drawing.Size(236, 381);
-            this.ucNotificacion.TabIndex = 0;
-            this.ucNotificacion.Visible = false;
-            this.ucNotificacion.Leave += new System.EventHandler(this.ucNotificacion_Leave);
-            // 
-            // tsmBackup
-            // 
-            this.tsmBackup.Name = "tsmBackup";
-            this.tsmBackup.Size = new System.Drawing.Size(75, 20);
-            this.tsmBackup.Tag = "39";
-            this.tsmBackup.Text = "RESPALDO";
-            this.tsmBackup.Click += new System.EventHandler(this.tsmBackup_Click);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::HayCancha.Properties.Resources._123;
-            this.pictureBox2.Location = new System.Drawing.Point(27, 38);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(478, 339);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
-            // 
-            // imgSalir
-            // 
-            this.imgSalir.BackColor = System.Drawing.Color.White;
-            this.imgSalir.Image = ((System.Drawing.Image)(resources.GetObject("imgSalir.Image")));
-            this.imgSalir.Location = new System.Drawing.Point(772, 3);
-            this.imgSalir.Name = "imgSalir";
-            this.imgSalir.Size = new System.Drawing.Size(18, 18);
-            this.imgSalir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.imgSalir.TabIndex = 8;
-            this.imgSalir.TabStop = false;
-            this.imgSalir.Click += new System.EventHandler(this.imgSalir_Click);
-            // 
             // tsmIdiomaEspañol
             // 
             this.tsmIdiomaEspañol.Image = global::HayCancha.Properties.Resources.IdiomaEspañol;
@@ -300,6 +218,36 @@ namespace HayCancha
             this.NuevoToolStripMenuItem.Text = "NUEVO";
             this.NuevoToolStripMenuItem.Click += new System.EventHandler(this.NuevoToolStripMenuItem_Click);
             // 
+            // tsmBackup
+            // 
+            this.tsmBackup.Name = "tsmBackup";
+            this.tsmBackup.Size = new System.Drawing.Size(75, 20);
+            this.tsmBackup.Tag = "39";
+            this.tsmBackup.Text = "RESPALDO";
+            this.tsmBackup.Click += new System.EventHandler(this.tsmBackup_Click);
+            // 
+            // tsmSalir
+            // 
+            this.tsmSalir.Name = "tsmSalir";
+            this.tsmSalir.Size = new System.Drawing.Size(49, 20);
+            this.tsmSalir.Text = "SALIR";
+            this.tsmSalir.Click += new System.EventHandler(this.btnMenuSalir_Click);
+            // 
+            // panelPerfil
+            // 
+            this.panelPerfil.BackColor = System.Drawing.SystemColors.Info;
+            this.panelPerfil.Controls.Add(this.ucNotificacion);
+            this.panelPerfil.Controls.Add(this.btnCambiarContraseña);
+            this.panelPerfil.Controls.Add(this.imgPuntoNotificacion);
+            this.panelPerfil.Controls.Add(this.imgNotificacion);
+            this.panelPerfil.Controls.Add(this.lblNombreMenu);
+            this.panelPerfil.Controls.Add(this.pictureBox1);
+            this.panelPerfil.Controls.Add(this.imgPerfil);
+            this.panelPerfil.Location = new System.Drawing.Point(574, 23);
+            this.panelPerfil.Name = "panelPerfil";
+            this.panelPerfil.Size = new System.Drawing.Size(225, 429);
+            this.panelPerfil.TabIndex = 11;
+            // 
             // imgPuntoNotificacion
             // 
             this.imgPuntoNotificacion.BackColor = System.Drawing.Color.Red;
@@ -321,6 +269,21 @@ namespace HayCancha
             this.imgNotificacion.TabStop = false;
             this.imgNotificacion.Click += new System.EventHandler(this.imgNotificacion_Click);
             // 
+            // lblNombreMenu
+            // 
+            this.lblNombreMenu.BackColor = System.Drawing.SystemColors.Info;
+            this.lblNombreMenu.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.lblNombreMenu.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.lblNombreMenu.Enabled = false;
+            this.lblNombreMenu.Font = new System.Drawing.Font("Impact", 22F);
+            this.lblNombreMenu.Location = new System.Drawing.Point(16, 261);
+            this.lblNombreMenu.Name = "lblNombreMenu";
+            this.lblNombreMenu.ReadOnly = true;
+            this.lblNombreMenu.Size = new System.Drawing.Size(196, 36);
+            this.lblNombreMenu.TabIndex = 13;
+            this.lblNombreMenu.Text = "Lucas";
+            this.lblNombreMenu.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
@@ -341,17 +304,88 @@ namespace HayCancha
             this.imgPerfil.TabStop = false;
             this.imgPerfil.Click += new System.EventHandler(this.imgPerfil_Click);
             // 
+            // bunifuElipse1
+            // 
+            this.bunifuElipse1.ElipseRadius = 10;
+            this.bunifuElipse1.TargetControl = this;
+            // 
+            // bunifuElipse2
+            // 
+            this.bunifuElipse2.ElipseRadius = 50;
+            this.bunifuElipse2.TargetControl = this.imgPuntoNotificacion;
+            // 
+            // ucNotificacion
+            // 
+            this.ucNotificacion.BackColor = System.Drawing.Color.DarkGreen;
+            this.ucNotificacion.IdiomaControl = 1;
+            this.ucNotificacion.Location = new System.Drawing.Point(-39, 29);
+            this.ucNotificacion.Name = "ucNotificacion";
+            this.ucNotificacion.Size = new System.Drawing.Size(236, 374);
+            this.ucNotificacion.TabIndex = 0;
+            this.ucNotificacion.Visible = false;
+            this.ucNotificacion.Leave += new System.EventHandler(this.ucNotificacion_Leave);
+            // 
+            // imgSalir
+            // 
+            this.imgSalir.BackColor = System.Drawing.Color.White;
+            this.imgSalir.Image = ((System.Drawing.Image)(resources.GetObject("imgSalir.Image")));
+            this.imgSalir.Location = new System.Drawing.Point(772, 3);
+            this.imgSalir.Name = "imgSalir";
+            this.imgSalir.Size = new System.Drawing.Size(18, 18);
+            this.imgSalir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.imgSalir.TabIndex = 8;
+            this.imgSalir.TabStop = false;
+            this.imgSalir.Click += new System.EventHandler(this.imgSalir_Click);
+            // 
+            // btnCambiarContraseña
+            // 
+            this.btnCambiarContraseña.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
+            this.btnCambiarContraseña.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCambiarContraseña.FlatAppearance.BorderSize = 0;
+            this.btnCambiarContraseña.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCambiarContraseña.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Bold);
+            this.btnCambiarContraseña.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnCambiarContraseña.Location = new System.Drawing.Point(56, 362);
+            this.btnCambiarContraseña.Name = "btnCambiarContraseña";
+            this.btnCambiarContraseña.Size = new System.Drawing.Size(125, 39);
+            this.btnCambiarContraseña.TabIndex = 44;
+            this.btnCambiarContraseña.Text = "CAMBIAR CONTRASEÑA";
+            this.btnCambiarContraseña.UseVisualStyleBackColor = false;
+            this.btnCambiarContraseña.Click += new System.EventHandler(this.btnCambiarContraseña_Click);
+            // 
+            // bunifuElipse3
+            // 
+            this.bunifuElipse3.ElipseRadius = 25;
+            this.bunifuElipse3.TargetControl = this.btnCambiarContraseña;
+            // 
+            // panelMenus
+            // 
+            this.panelMenus.Controls.Add(this.pictureBox2);
+            this.panelMenus.Location = new System.Drawing.Point(0, 26);
+            this.panelMenus.Name = "panelMenus";
+            this.panelMenus.Size = new System.Drawing.Size(569, 422);
+            this.panelMenus.TabIndex = 13;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::HayCancha.Properties.Resources._123;
+            this.pictureBox2.Location = new System.Drawing.Point(27, 38);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(478, 339);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 0;
+            this.pictureBox2.TabStop = false;
+            // 
             // MenuUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.ForestGreen;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.ucNotificacion);
+            this.Controls.Add(this.panelPerfil);
             this.Controls.Add(this.panelMenus);
             this.Controls.Add(this.imgSalir);
             this.Controls.Add(this.msMenu);
-            this.Controls.Add(this.panelPerfil);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MenuUI";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -364,13 +398,13 @@ namespace HayCancha
             this.msMenu.PerformLayout();
             this.panelPerfil.ResumeLayout(false);
             this.panelPerfil.PerformLayout();
-            this.panelMenus.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgSalir)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgPuntoNotificacion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgNotificacion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgPerfil)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgSalir)).EndInit();
+            this.panelMenus.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -394,7 +428,6 @@ namespace HayCancha
         private System.Windows.Forms.Panel panelPerfil;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox lblNombreMenu;
-        private System.Windows.Forms.Panel panelMenus;
         private System.Windows.Forms.PictureBox imgNotificacion;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
         private NotificacionUC ucNotificacion;
@@ -403,8 +436,12 @@ namespace HayCancha
         private System.Windows.Forms.ToolStripMenuItem NuevoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tsmReservas;
         private System.Windows.Forms.ToolStripMenuItem tsmPartidos;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.ToolStripMenuItem tsmBitacora;
         private System.Windows.Forms.ToolStripMenuItem tsmBackup;
+        private System.Windows.Forms.ToolStripMenuItem tsmUsuarios;
+        private System.Windows.Forms.Button btnCambiarContraseña;
+        private Bunifu.Framework.UI.BunifuElipse bunifuElipse3;
+        private System.Windows.Forms.Panel panelMenus;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

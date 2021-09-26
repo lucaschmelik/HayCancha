@@ -9,6 +9,7 @@ using HayCancha.BE.Interfaces;
 using HayCancha.BLL;
 using HayCancha.Servicios;
 using HayCancha.Vistas;
+using Microsoft.VisualBasic;
 
 namespace HayCancha
 {
@@ -116,6 +117,8 @@ namespace HayCancha
 
             UsuarioBLL.CambiarImagenPerfil(File.ReadAllBytes(ofdImagen.FileName));
 
+            BitacoraService.Escribir(TipoEventoBitacoraEnum.SISTEMA, $"El usuario {SessionService.Session.UsuarioLogueado.Nombre} cambió la foto de perfil");
+
             imgPerfil.Load(ofdImagen.FileName);
         }
 
@@ -147,6 +150,11 @@ namespace HayCancha
         private void tsmBackup_Click(object sender, EventArgs e)
         {
             VistaService.AbrirFormEnPanel(panelMenus, new BackupUI());
+        }
+
+        private void tsmUsuarios_Click_1(object sender, EventArgs e)
+        {
+            VistaService.AbrirFormEnPanel(panelMenus, new UsuariosUI());
         }
 
         private void imgNotificacion_Click(object sender, EventArgs e)
@@ -210,6 +218,19 @@ namespace HayCancha
         public void CerrarSesion()
         {
             btnMenuSalir_Click(new object(), new EventArgs());
+        }
+
+        private void btnCambiarContraseña_Click(object sender, EventArgs e)
+        {
+            var contraseñaNueva = Interaction.InputBox("Ingrese el nombre de la nueva contraseña", $"NUEVA CONTRASEÑA: {SessionService.Session.ObtenerNombreUsuario()}");
+
+            if (contraseñaNueva == string.Empty) return;
+
+            UsuarioBLL.CambiarContraseña(SessionService.Session.ObtenerNombreUsuario(), EncriptadorService.AplicarHash(contraseñaNueva));
+
+            BitacoraService.Escribir(TipoEventoBitacoraEnum.SISTEMA, $"El usuario {SessionService.Session.ObtenerNombreUsuario()} cambió la contraseña.");
+
+            MessageBox.Show($"La contraseña del usuario {SessionService.Session.ObtenerNombreUsuario()} fue cambiada exitosamente!", "ALERTA", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }
