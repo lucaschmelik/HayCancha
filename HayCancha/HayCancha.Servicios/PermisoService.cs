@@ -113,7 +113,7 @@ namespace HayCancha.Servicios
             return lstPermisosFiltrados;
         }
         
-        public static void AsignarPermisoUsuario(string sNombre, int iPermiso) => PermisoDAL.Instancia.AsignarPermisoUsuario(sNombre, iPermiso);
+        public static void AsignarPermisoUsuario(string sNombre, int iPermiso) => PermisoDAL.Instancia.AsignarPermisoUsuario(sNombre, iPermiso, SessionService.Session.ObtenerNombreUsuario());
 
         public static void ActualizarFamilia(string sNombre, IList<AbstractComponent> permisosActualizados)
         {

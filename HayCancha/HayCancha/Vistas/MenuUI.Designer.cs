@@ -52,7 +52,6 @@ namespace HayCancha
             this.tsmBackup = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmSalir = new System.Windows.Forms.ToolStripMenuItem();
             this.panelPerfil = new System.Windows.Forms.Panel();
-            this.ucNotificacion = new HayCancha.NotificacionUC();
             this.btnCambiarContraseña = new System.Windows.Forms.Button();
             this.imgPuntoNotificacion = new System.Windows.Forms.PictureBox();
             this.imgNotificacion = new System.Windows.Forms.PictureBox();
@@ -65,6 +64,7 @@ namespace HayCancha
             this.bunifuElipse3 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.panelMenus = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.ucNotificacion = new HayCancha.NotificacionUC();
             this.msMenu.SuspendLayout();
             this.panelPerfil.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgPuntoNotificacion)).BeginInit();
@@ -248,17 +248,6 @@ namespace HayCancha
             this.panelPerfil.Size = new System.Drawing.Size(225, 429);
             this.panelPerfil.TabIndex = 11;
             // 
-            // ucNotificacion
-            // 
-            this.ucNotificacion.BackColor = System.Drawing.Color.DarkGreen;
-            this.ucNotificacion.IdiomaControl = 1;
-            this.ucNotificacion.Location = new System.Drawing.Point(-39, 29);
-            this.ucNotificacion.Name = "ucNotificacion";
-            this.ucNotificacion.Size = new System.Drawing.Size(236, 374);
-            this.ucNotificacion.TabIndex = 0;
-            this.ucNotificacion.Visible = false;
-            this.ucNotificacion.Leave += new System.EventHandler(this.ucNotificacion_Leave);
-            // 
             // btnCambiarContraseña
             // 
             this.btnCambiarContraseña.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
@@ -376,6 +365,17 @@ namespace HayCancha
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
             // 
+            // ucNotificacion
+            // 
+            this.ucNotificacion.BackColor = System.Drawing.Color.DarkGreen;
+            this.ucNotificacion.IdiomaControl = 1;
+            this.ucNotificacion.Location = new System.Drawing.Point(-39, 29);
+            this.ucNotificacion.Name = "ucNotificacion";
+            this.ucNotificacion.Size = new System.Drawing.Size(236, 374);
+            this.ucNotificacion.TabIndex = 0;
+            this.ucNotificacion.Visible = false;
+            this.ucNotificacion.Leave += new System.EventHandler(this.ucNotificacion_Leave);
+            // 
             // MenuUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -430,7 +430,6 @@ namespace HayCancha
         private System.Windows.Forms.TextBox lblNombreMenu;
         private System.Windows.Forms.PictureBox imgNotificacion;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
-        private NotificacionUC ucNotificacion;
         private System.Windows.Forms.PictureBox imgPuntoNotificacion;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse2;
         private System.Windows.Forms.ToolStripMenuItem NuevoToolStripMenuItem;
@@ -443,5 +442,6 @@ namespace HayCancha
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse3;
         private System.Windows.Forms.Panel panelMenus;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private NotificacionUC ucNotificacion;
     }
 }

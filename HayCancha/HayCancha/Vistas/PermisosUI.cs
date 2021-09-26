@@ -6,6 +6,7 @@ using System.Linq;
 using System.Windows.Forms;
 using HayCancha.BE.Abstractas;
 using HayCancha.BE.Clases;
+using HayCancha.BE.Enumerables;
 using HayCancha.BE.Interfaces;
 using HayCancha.BLL;
 using HayCancha.Servicios;
@@ -308,8 +309,9 @@ namespace HayCancha
 
                 PermisoService.AsignarPermisoUsuario(nombreUsuario, int.Parse(familiaSeleccionada["Permiso"].ToString()));
 
-                MessageBox.Show($"Se asignó la familia { nombreFamilia } al usuario { nombreUsuario } !", "ALERTA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                BitacoraService.Escribir(TipoEventoBitacoraEnum.SISTEMA, $"Se asignó la familia { nombreFamilia } al usuario { nombreUsuario }.");
 
+                MessageBox.Show($"Se asignó la familia { nombreFamilia } al usuario { nombreUsuario } !", "ALERTA", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {

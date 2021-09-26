@@ -82,11 +82,8 @@ namespace HayCancha.DAL
             return iIdFamilia;
         }
 
-        public void AsignarPermisoUsuario(string sNombre, int iPermiso)
-        {
-            EjecutaStp("stpAsignarPermisoUsuario", new Dictionary<string, object>() {{"Usuario", sNombre}, {"Permiso", iPermiso}}, new DataTable());
-        }
-
+        public void AsignarPermisoUsuario(string sNombre, int iPermiso, string sUsuarioModificador) => EjecutaStp("stpAsignarPermisoUsuario", new Dictionary<string, object>() {{"Usuario", sNombre}, {"Permiso", iPermiso}, { "UsuarioModificador", sUsuarioModificador } }, new DataTable());
+        
         public int ObtenerIdFamiliaPorNombre(string sNombre) => int.Parse(EjecutaStp("stpObtenerIdFamiliaPorNombre", new Dictionary<string, object>() { { "Nombre", sNombre } }, RetornaDatatableSoloId()).AsEnumerable().FirstOrDefault()["Id"].ToString());
 
         private void EliminarPermisosFamilia(int iIdFamilia) => EjecutaStp("stpEliminarPermisosFamilia", new Dictionary<string, object>() {{"Id", iIdFamilia}}, new DataTable());
