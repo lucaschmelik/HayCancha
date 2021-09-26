@@ -122,11 +122,11 @@
     <Compile Include="Vistas\PermisosUI.Designer.cs">
       <DependentUpon>PermisosUI.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vistas\UsuariosUI.cs">
+    <Compile Include="Vistas\ControlCambios.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vistas\UsuariosUI.Designer.cs">
-      <DependentUpon>UsuariosUI.cs</DependentUpon>
+    <Compile Include="Vistas\ControlCambios.Designer.cs">
+      <DependentUpon>ControlCambios.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Vistas\AlquilerEtapaDosUI.resx">
       <DependentUpon>AlquilerEtapaDosUI.cs</DependentUpon>
@@ -173,8 +173,8 @@
     <EmbeddedResource Include="Vistas\PermisosUI.resx">
       <DependentUpon>PermisosUI.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vistas\UsuariosUI.resx">
-      <DependentUpon>UsuariosUI.cs</DependentUpon>
+    <EmbeddedResource Include="Vistas\ControlCambios.resx">
+      <DependentUpon>ControlCambios.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

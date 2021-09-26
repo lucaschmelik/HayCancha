@@ -40,7 +40,7 @@ namespace HayCancha
             this.tsmPartidos = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmEstadisticas = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmReservas = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmUsuarios = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmControlCambios = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmReportes = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmOpciones = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmBitacora = new System.Windows.Forms.ToolStripMenuItem();
@@ -52,6 +52,8 @@ namespace HayCancha
             this.tsmBackup = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmSalir = new System.Windows.Forms.ToolStripMenuItem();
             this.panelPerfil = new System.Windows.Forms.Panel();
+            this.ucNotificacion = new HayCancha.NotificacionUC();
+            this.btnCambiarContraseña = new System.Windows.Forms.Button();
             this.imgPuntoNotificacion = new System.Windows.Forms.PictureBox();
             this.imgNotificacion = new System.Windows.Forms.PictureBox();
             this.lblNombreMenu = new System.Windows.Forms.TextBox();
@@ -59,9 +61,7 @@ namespace HayCancha
             this.imgPerfil = new System.Windows.Forms.PictureBox();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuElipse2 = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.ucNotificacion = new HayCancha.NotificacionUC();
             this.imgSalir = new System.Windows.Forms.PictureBox();
-            this.btnCambiarContraseña = new System.Windows.Forms.Button();
             this.bunifuElipse3 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.panelMenus = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -85,7 +85,7 @@ namespace HayCancha
             this.tsmPartidos,
             this.tsmEstadisticas,
             this.tsmReservas,
-            this.tsmUsuarios,
+            this.tsmControlCambios,
             this.tsmReportes,
             this.tsmOpciones,
             this.tsmBitacora,
@@ -144,13 +144,13 @@ namespace HayCancha
             this.tsmReservas.Text = "RESERVAS";
             this.tsmReservas.Click += new System.EventHandler(this.tsmReservas_Click);
             // 
-            // tsmUsuarios
+            // tsmControlCambios
             // 
-            this.tsmUsuarios.Name = "tsmUsuarios";
-            this.tsmUsuarios.Size = new System.Drawing.Size(74, 20);
-            this.tsmUsuarios.Tag = "41";
-            this.tsmUsuarios.Text = "USUARIOS";
-            this.tsmUsuarios.Click += new System.EventHandler(this.tsmUsuarios_Click_1);
+            this.tsmControlCambios.Name = "tsmControlCambios";
+            this.tsmControlCambios.Size = new System.Drawing.Size(145, 20);
+            this.tsmControlCambios.Tag = "41";
+            this.tsmControlCambios.Text = "CONTROL DE CAMBIOS";
+            this.tsmControlCambios.Click += new System.EventHandler(this.tsmUsuarios_Click_1);
             // 
             // tsmReportes
             // 
@@ -248,6 +248,33 @@ namespace HayCancha
             this.panelPerfil.Size = new System.Drawing.Size(225, 429);
             this.panelPerfil.TabIndex = 11;
             // 
+            // ucNotificacion
+            // 
+            this.ucNotificacion.BackColor = System.Drawing.Color.DarkGreen;
+            this.ucNotificacion.IdiomaControl = 1;
+            this.ucNotificacion.Location = new System.Drawing.Point(-39, 29);
+            this.ucNotificacion.Name = "ucNotificacion";
+            this.ucNotificacion.Size = new System.Drawing.Size(236, 374);
+            this.ucNotificacion.TabIndex = 0;
+            this.ucNotificacion.Visible = false;
+            this.ucNotificacion.Leave += new System.EventHandler(this.ucNotificacion_Leave);
+            // 
+            // btnCambiarContraseña
+            // 
+            this.btnCambiarContraseña.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
+            this.btnCambiarContraseña.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCambiarContraseña.FlatAppearance.BorderSize = 0;
+            this.btnCambiarContraseña.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCambiarContraseña.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Bold);
+            this.btnCambiarContraseña.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnCambiarContraseña.Location = new System.Drawing.Point(56, 362);
+            this.btnCambiarContraseña.Name = "btnCambiarContraseña";
+            this.btnCambiarContraseña.Size = new System.Drawing.Size(125, 39);
+            this.btnCambiarContraseña.TabIndex = 44;
+            this.btnCambiarContraseña.Text = "CAMBIAR CONTRASEÑA";
+            this.btnCambiarContraseña.UseVisualStyleBackColor = false;
+            this.btnCambiarContraseña.Click += new System.EventHandler(this.btnCambiarContraseña_Click);
+            // 
             // imgPuntoNotificacion
             // 
             this.imgPuntoNotificacion.BackColor = System.Drawing.Color.Red;
@@ -314,17 +341,6 @@ namespace HayCancha
             this.bunifuElipse2.ElipseRadius = 50;
             this.bunifuElipse2.TargetControl = this.imgPuntoNotificacion;
             // 
-            // ucNotificacion
-            // 
-            this.ucNotificacion.BackColor = System.Drawing.Color.DarkGreen;
-            this.ucNotificacion.IdiomaControl = 1;
-            this.ucNotificacion.Location = new System.Drawing.Point(-39, 29);
-            this.ucNotificacion.Name = "ucNotificacion";
-            this.ucNotificacion.Size = new System.Drawing.Size(236, 374);
-            this.ucNotificacion.TabIndex = 0;
-            this.ucNotificacion.Visible = false;
-            this.ucNotificacion.Leave += new System.EventHandler(this.ucNotificacion_Leave);
-            // 
             // imgSalir
             // 
             this.imgSalir.BackColor = System.Drawing.Color.White;
@@ -336,22 +352,6 @@ namespace HayCancha
             this.imgSalir.TabIndex = 8;
             this.imgSalir.TabStop = false;
             this.imgSalir.Click += new System.EventHandler(this.imgSalir_Click);
-            // 
-            // btnCambiarContraseña
-            // 
-            this.btnCambiarContraseña.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
-            this.btnCambiarContraseña.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCambiarContraseña.FlatAppearance.BorderSize = 0;
-            this.btnCambiarContraseña.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCambiarContraseña.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Bold);
-            this.btnCambiarContraseña.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnCambiarContraseña.Location = new System.Drawing.Point(56, 362);
-            this.btnCambiarContraseña.Name = "btnCambiarContraseña";
-            this.btnCambiarContraseña.Size = new System.Drawing.Size(125, 39);
-            this.btnCambiarContraseña.TabIndex = 44;
-            this.btnCambiarContraseña.Text = "CAMBIAR CONTRASEÑA";
-            this.btnCambiarContraseña.UseVisualStyleBackColor = false;
-            this.btnCambiarContraseña.Click += new System.EventHandler(this.btnCambiarContraseña_Click);
             // 
             // bunifuElipse3
             // 
@@ -438,7 +438,7 @@ namespace HayCancha
         private System.Windows.Forms.ToolStripMenuItem tsmPartidos;
         private System.Windows.Forms.ToolStripMenuItem tsmBitacora;
         private System.Windows.Forms.ToolStripMenuItem tsmBackup;
-        private System.Windows.Forms.ToolStripMenuItem tsmUsuarios;
+        private System.Windows.Forms.ToolStripMenuItem tsmControlCambios;
         private System.Windows.Forms.Button btnCambiarContraseña;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse3;
         private System.Windows.Forms.Panel panelMenus;

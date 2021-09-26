@@ -154,7 +154,7 @@ namespace HayCancha
 
         private void tsmUsuarios_Click_1(object sender, EventArgs e)
         {
-            VistaService.AbrirFormEnPanel(panelMenus, new UsuariosUI());
+            VistaService.AbrirFormEnPanel(panelMenus, new ControlCambios());
         }
 
         private void imgNotificacion_Click(object sender, EventArgs e)
