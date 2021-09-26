@@ -236,14 +236,13 @@ namespace HayCancha
             // panelPerfil
             // 
             this.panelPerfil.BackColor = System.Drawing.SystemColors.Info;
-            this.panelPerfil.Controls.Add(this.ucNotificacion);
             this.panelPerfil.Controls.Add(this.btnCambiarContraseña);
             this.panelPerfil.Controls.Add(this.imgPuntoNotificacion);
             this.panelPerfil.Controls.Add(this.imgNotificacion);
             this.panelPerfil.Controls.Add(this.lblNombreMenu);
             this.panelPerfil.Controls.Add(this.pictureBox1);
             this.panelPerfil.Controls.Add(this.imgPerfil);
-            this.panelPerfil.Location = new System.Drawing.Point(574, 23);
+            this.panelPerfil.Location = new System.Drawing.Point(574, 22);
             this.panelPerfil.Name = "panelPerfil";
             this.panelPerfil.Size = new System.Drawing.Size(225, 429);
             this.panelPerfil.TabIndex = 11;
@@ -369,7 +368,7 @@ namespace HayCancha
             // 
             this.ucNotificacion.BackColor = System.Drawing.Color.DarkGreen;
             this.ucNotificacion.IdiomaControl = 1;
-            this.ucNotificacion.Location = new System.Drawing.Point(-39, 29);
+            this.ucNotificacion.Location = new System.Drawing.Point(538, 53);
             this.ucNotificacion.Name = "ucNotificacion";
             this.ucNotificacion.Size = new System.Drawing.Size(236, 374);
             this.ucNotificacion.TabIndex = 0;
@@ -382,8 +381,9 @@ namespace HayCancha
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.ForestGreen;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.panelPerfil);
+            this.Controls.Add(this.ucNotificacion);
             this.Controls.Add(this.panelMenus);
+            this.Controls.Add(this.panelPerfil);
             this.Controls.Add(this.imgSalir);
             this.Controls.Add(this.msMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
