@@ -222,11 +222,13 @@ namespace HayCancha
 
         private void btnCambiarContraseña_Click(object sender, EventArgs e)
         {
-            var contraseñaNueva = Interaction.InputBox("Ingrese el nombre de la nueva contraseña", $"NUEVA CONTRASEÑA: {SessionService.Session.ObtenerNombreUsuario()}");
+            var contraseñaNueva = Interaction.InputBox("Ingrese la nueva contraseña", $"NUEVA CONTRASEÑA: {SessionService.Session.ObtenerNombreUsuario()}");
 
             if (contraseñaNueva == string.Empty) return;
 
             UsuarioBLL.CambiarContraseña(SessionService.Session.ObtenerNombreUsuario(), EncriptadorService.AplicarHash(contraseñaNueva));
+
+            EncriptadorService.RecalcularDigitosVerificadores();
 
             BitacoraService.Escribir(TipoEventoBitacoraEnum.SISTEMA, $"El usuario {SessionService.Session.ObtenerNombreUsuario()} cambió la contraseña.");
 

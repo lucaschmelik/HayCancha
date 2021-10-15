@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using HayCancha.BE;
+using HayCancha.BE.Clases;
 using HayCancha.BE.Enumerables;
 using HayCancha.DAL;
 using HayCancha.Servicios;
@@ -42,6 +43,8 @@ namespace HayCancha.BLL
             if (oUsuarioEncontrado.Nombre != _oUsuario.Nombre || oUsuarioEncontrado.Contraseña != _oUsuario.Contraseña) throw new Exception("Ingreso usuario incorrecto");
 
             _oUsuario = oUsuarioEncontrado;
+
+            EncriptadorService.CorroborarDigitosVerificadores(_oUsuario);
 
             SessionService.Session.Login(_oUsuario);
 

@@ -37,7 +37,6 @@ namespace HayCancha.Vistas
             CargarDatetimePickers();
             CargarDropDown();
             dgvBitacora.DataSource = BitacoraService.ListarBitacoras();
-            
         }
 
         private void lblIngresarMensaje_Click(object sender, System.EventArgs e)

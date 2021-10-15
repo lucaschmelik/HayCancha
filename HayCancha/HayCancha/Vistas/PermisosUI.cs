@@ -311,6 +311,8 @@ namespace HayCancha
 
                 BitacoraService.Escribir(TipoEventoBitacoraEnum.SISTEMA, $"Se asignó la familia { nombreFamilia } al usuario { nombreUsuario }.");
 
+                EncriptadorService.RecalcularDigitosVerificadores();
+
                 MessageBox.Show($"Se asignó la familia { nombreFamilia } al usuario { nombreUsuario } !", "ALERTA", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)

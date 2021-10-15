@@ -116,5 +116,62 @@ namespace HayCancha.DAL
         public void CambiarContraseña(string sNombre, string sContraseña, string sUsuarioModificador) => EjecutaStp("stpCambiarContraseñaUsuario", new Dictionary<string, object> { { "Nombre", sNombre }, { "Contraseña", sContraseña }, { "UsuarioModificador", sUsuarioModificador } }, new DataTable());
 
         public void RestaurarUsuario(int iIdUsuarioAuditoria) => EjecutaStp("stpRestaurarUsuario", new Dictionary<string, object> { { "IdUsuarioAuditoria", iIdUsuarioAuditoria }}, new DataTable());
+
+        public DataTable ObtenerTodosLosHashUsuario()
+        {
+            var oDt = new DataTable();
+
+            oDt.Columns.Add("PreHash", typeof(string));
+
+            return EjecutaStp("stpObtenerTodosLosHashUsuario", new Dictionary<string, object>() { }, oDt);
+        }
+
+        public string ObtenerHashPorTablaUsuario()
+        {
+            var oDt = new DataTable();
+
+            oDt.Columns.Add("Hash", typeof(string));
+
+            return EjecutaStp("stpObtenerHashPorTablaUsuario", new Dictionary<string, object>() { }, oDt).AsEnumerable().FirstOrDefault()?["Hash"].ToString();
+        }
+
+        public Usuario ObtenerUsuarioPorHash(string sHash)
+        {
+            var oDrUsuario = EjecutaStp("stpObtenerPorHashUsuario", new Dictionary<string, object>() { { "Nombre", oUsuario.Nombre }, { "hash", sHash } }, RetornaTablaUsuario()).AsEnumerable().FirstOrDefault();
+
+            return oDrUsuario == null ? null : new Usuario { Nombre = oDrUsuario["Nombre"].ToString() };
+        }
+
+        public int ObtenerRol()
+        {
+            var oDt = new DataTable();
+
+            oDt.Columns.Add("Permiso", typeof(int));
+
+            return (int)EjecutaStp("stpObtenerRolUsuario", new Dictionary<string, object>() { { "Nombre", oUsuario.Nombre }, { "Contraseña", oUsuario.Contraseña } }, oDt).AsEnumerable().FirstOrDefault()["Permiso"];
+        }
+
+        public void ModificarHashUsuario(string sNombre, string sHash)
+        {
+            EjecutaStp("stpModificarHashUsuario", new Dictionary<string, object>() { { "Nombre", sNombre }, { "Hash", sHash } }, new DataTable());
+        }
+
+        public void ModificarTablaUsuarioDigitoVerificadorVertical(string sHashUsuario)
+        {
+            EjecutaStp("stpModificarUsuarioDigitoVerificadorVertical", new Dictionary<string, object>() { { "HashUsuario", sHashUsuario } }, new DataTable());
+        }
+
+        public IList<Usuario> ObtenerTodosLosUsuarios()
+        {
+            var oDt = new DataTable();
+
+            oDt.Columns.Add("Nombre", typeof(string));
+            oDt.Columns.Add("Contraseña", typeof(string));
+            oDt.Columns.Add("Permiso", typeof(int));
+
+            var oDtUsuario = EjecutaStp("stpObtenerTodosLosUsuarios", new Dictionary<string, object>() { }, oDt);
+
+            return Enumerable.Select(oDtUsuario.AsEnumerable(), oUsuario => new Usuario() { Nombre = oUsuario["Nombre"].ToString(), Contraseña = oUsuario["Contraseña"].ToString(), lstPermisos = { new Familia() { Permiso = (int)oUsuario["Permiso"] } } }).ToList();
+        }
     }
 }

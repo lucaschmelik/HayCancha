@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
+using HayCancha.BE;
 using HayCancha.BE.Enumerables;
 using HayCancha.BE.Interfaces;
 using HayCancha.BLL;
@@ -87,9 +88,14 @@ namespace HayCancha
             {
                 ValidarNombreContraseña();
 
+                //VER SI ESTO FUNCIONA PORQUE VA A BUSCAR EL ROL Y QUIZÁS NECESITE QUE EL USUARIO PASADO POR PARAMETRO SEA REAL
+                EncriptadorService.CorroborarDigitosVerificadores(new Usuario());
+
                 UsuarioBLL.CargarUsuario(txtUsuario.Text, txtContraseña.Text);
 
                 UsuarioBLL.RegistrarUsuario();
+
+                EncriptadorService.RecalcularDigitosVerificadores();
 
                 MessageBox.Show("El usuario se registro correctamente");
 
