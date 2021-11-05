@@ -1,4 +1,6 @@
 ﻿using System.Collections;
+using System.Data;
+using System.Linq;
 using System.Windows.Forms;
 using HayCancha.BE.Enumerables;
 using HayCancha.BE.Interfaces;
@@ -61,9 +63,11 @@ namespace HayCancha.Vistas
             
             UsuarioBLL.RestaurarUsuario((int)dgvUsuarios.SelectedRows[0].Cells["Id"].Value);
 
-            BitacoraService.Escribir(TipoEventoBitacoraEnum.SISTEMA, $"El usuario {usuarioSeleccionado} restauró el perfil a un estado anterior.");
+            EncriptadorService.RecalcularDigitosVerificadores();
 
-            BuscarUsuarioAuditoriaPorNombre(txtBuscar.Text);
+            BitacoraService.Escribir(TipoEventoBitacoraEnum.SISTEMA, $"El usuario {usuarioSeleccionado} fue restaurado a un estado anterior a través del control de cambios.");
+
+            BuscarUsuarioAuditoriaPorNombre(usuarioSeleccionado);
 
             MessageBox.Show($"El usuario {usuarioSeleccionado} fue restaurado exitosamente!", "ALERTA", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -77,8 +81,8 @@ namespace HayCancha.Vistas
         {
             dgvUsuarios.DataSource = UsuarioBLL.ObtenerUsuariosAuditoriaPorNombre(sNombre);
             dgvUsuarios.Columns["Id"].Visible = false;
-            dgvUsuarios.Columns["Imagen"].Width = 70;
-            dgvUsuarios.Columns["Contraseña"].Width = 70;
+            dgvUsuarios.Columns["Imagen"].Width = 68;
+            dgvUsuarios.Columns["Contraseña"].Width = 72;
         }
     }
 }

@@ -80,6 +80,6 @@ namespace HayCancha.BLL
 
         public static void CambiarContraseña(string sNombre, string sContraseña) => _oUsuarioDAL.CambiarContraseña(sNombre, sContraseña, SessionService.Session.UsuarioLogueado.Nombre);
 
-        public static void RestaurarUsuario(int iIdUsuarioAuditoria) => _oUsuarioDAL.RestaurarUsuario(iIdUsuarioAuditoria);
+        public static void RestaurarUsuario(int iIdUsuarioAuditoria) => _oUsuarioDAL.RestaurarUsuario(iIdUsuarioAuditoria, SessionService.Session.UsuarioLogueado.Nombre);
     }
 }

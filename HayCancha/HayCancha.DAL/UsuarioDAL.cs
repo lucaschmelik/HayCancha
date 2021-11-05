@@ -115,7 +115,7 @@ namespace HayCancha.DAL
 
         public void CambiarContraseña(string sNombre, string sContraseña, string sUsuarioModificador) => EjecutaStp("stpCambiarContraseñaUsuario", new Dictionary<string, object> { { "Nombre", sNombre }, { "Contraseña", sContraseña }, { "UsuarioModificador", sUsuarioModificador } }, new DataTable());
 
-        public void RestaurarUsuario(int iIdUsuarioAuditoria) => EjecutaStp("stpRestaurarUsuario", new Dictionary<string, object> { { "IdUsuarioAuditoria", iIdUsuarioAuditoria }}, new DataTable());
+        public void RestaurarUsuario(int iIdUsuarioAuditoria, string sUsuarioModificador) => EjecutaStp("stpRestaurarUsuario", new Dictionary<string, object> { { "IdUsuarioAuditoria", iIdUsuarioAuditoria }, { "UsuarioModificador", sUsuarioModificador } }, new DataTable());
 
         public DataTable ObtenerTodosLosHashUsuario()
         {

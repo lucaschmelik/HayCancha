@@ -62,14 +62,14 @@ namespace HayCancha.Servicios
 
             if (_oUsuarioDAL.ObtenerRol() != (int)PermisoEnum.Administrador) throw new Exception("La tabla usuarios fue alterada, por favor realice una restore de la base de datos.");
 
-            throw new Exception("Algún usuario de la base fue alterado, por favor comuniquese con el administrador.");
+            throw new Exception("La base de datos fue alterada, por favor comuniquese con el administrador.");
         }
 
         private static void VerficarHashHorizontal(Usuario oUsuario)
         {
             var HashNuevo = AplicarHash(oUsuario.Nombre + oUsuario.Contraseña + _oUsuarioDAL.ObtenerRol());
 
-            if (_oUsuarioDAL.ObtenerUsuarioPorHash(HashNuevo) == null) throw new Exception("El usuario ingresado fue alterado, por favor comuniquese con el administrador.");
+            if (_oUsuarioDAL.ObtenerUsuarioPorHash(HashNuevo) == null) throw new Exception($"El usuario {oUsuario.Nombre} fue alterado en la base de datos, por favor comuniquese con el administrador.");
         }
 
         private static void RecalcularHashHorizontalUsuario(Usuario oUsuario)
