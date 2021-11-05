@@ -1,0 +1,9 @@
+C:\Users\lucas\source\repos\Facultad\Hay Cancha\HayCancha\HayCancha.DAL\bin\Release\HayCancha.DAL.dll
+C:\Users\lucas\source\repos\Facultad\Hay Cancha\HayCancha\HayCancha.DAL\bin\Release\HayCancha.DAL.pdb
+C:\Users\lucas\source\repos\Facultad\Hay Cancha\HayCancha\HayCancha.DAL\bin\Release\HayCancha.BE.dll
+C:\Users\lucas\source\repos\Facultad\Hay Cancha\HayCancha\HayCancha.DAL\bin\Release\HayCancha.BE.pdb
+C:\Users\lucas\source\repos\Facultad\Hay Cancha\HayCancha\HayCancha.DAL\obj\Release\HayCancha.DAL.csprojAssemblyReference.cache
+C:\Users\lucas\source\repos\Facultad\Hay Cancha\HayCancha\HayCancha.DAL\obj\Release\HayCancha.DAL.csproj.CoreCompileInputs.cache
+C:\Users\lucas\source\repos\Facultad\Hay Cancha\HayCancha\HayCancha.DAL\obj\Release\HayCancha.DAL.csproj.CopyComplete
+C:\Users\lucas\source\repos\Facultad\Hay Cancha\HayCancha\HayCancha.DAL\obj\Release\HayCancha.DAL.dll
+C:\Users\lucas\source\repos\Facultad\Hay Cancha\HayCancha\HayCancha.DAL\obj\Release\HayCancha.DAL.pdb

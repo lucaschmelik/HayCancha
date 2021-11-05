@@ -21,6 +21,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Recursos", "Recursos", "{75
 		Recursos\pelota.png = Recursos\pelota.png
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "HayCancha", "HayCancha", "{09739B5C-E058-4894-9C39-AD568F9B9CF3}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "HayCancha", "HayCancha\HayCancha.vdproj", "{7B622980-CD68-4D9F-9570-0D8B4D759339}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,9 +51,14 @@ Global
 		{25A5B677-DB5F-4F87-A094-322491FEFE69}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{25A5B677-DB5F-4F87-A094-322491FEFE69}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{25A5B677-DB5F-4F87-A094-322491FEFE69}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B622980-CD68-4D9F-9570-0D8B4D759339}.Debug|Any CPU.ActiveCfg = Debug
+		{7B622980-CD68-4D9F-9570-0D8B4D759339}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7B622980-CD68-4D9F-9570-0D8B4D759339} = {09739B5C-E058-4894-9C39-AD568F9B9CF3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6279D9A7-9D66-41DC-9C0A-D8F78767DE67}

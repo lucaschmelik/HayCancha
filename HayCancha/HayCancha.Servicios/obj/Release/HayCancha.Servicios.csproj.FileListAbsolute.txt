@@ -1,0 +1,11 @@
+C:\Users\lucas\source\repos\Facultad\Hay Cancha\HayCancha\HayCancha.Servicios\bin\Release\HayCancha.Servicios.dll
+C:\Users\lucas\source\repos\Facultad\Hay Cancha\HayCancha\HayCancha.Servicios\bin\Release\HayCancha.Servicios.pdb
+C:\Users\lucas\source\repos\Facultad\Hay Cancha\HayCancha\HayCancha.Servicios\bin\Release\HayCancha.BE.dll
+C:\Users\lucas\source\repos\Facultad\Hay Cancha\HayCancha\HayCancha.Servicios\bin\Release\HayCancha.DAL.dll
+C:\Users\lucas\source\repos\Facultad\Hay Cancha\HayCancha\HayCancha.Servicios\bin\Release\HayCancha.BE.pdb
+C:\Users\lucas\source\repos\Facultad\Hay Cancha\HayCancha\HayCancha.Servicios\bin\Release\HayCancha.DAL.pdb
+C:\Users\lucas\source\repos\Facultad\Hay Cancha\HayCancha\HayCancha.Servicios\obj\Release\HayCancha.Servicios.csprojAssemblyReference.cache
+C:\Users\lucas\source\repos\Facultad\Hay Cancha\HayCancha\HayCancha.Servicios\obj\Release\HayCancha.Servicios.csproj.CoreCompileInputs.cache
+C:\Users\lucas\source\repos\Facultad\Hay Cancha\HayCancha\HayCancha.Servicios\obj\Release\HayCancha.Servicios.csproj.CopyComplete
+C:\Users\lucas\source\repos\Facultad\Hay Cancha\HayCancha\HayCancha.Servicios\obj\Release\HayCancha.Servicios.dll
+C:\Users\lucas\source\repos\Facultad\Hay Cancha\HayCancha\HayCancha.Servicios\obj\Release\HayCancha.Servicios.pdb
