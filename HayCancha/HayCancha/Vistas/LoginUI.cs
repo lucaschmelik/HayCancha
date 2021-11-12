@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Windows.Forms;
-using System.Windows.Forms.VisualStyles;
 using HayCancha.BE;
 using HayCancha.BE.Enumerables;
 using HayCancha.BE.Interfaces;
