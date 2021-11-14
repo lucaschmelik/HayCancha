@@ -83,7 +83,6 @@ namespace HayCancha.Servicios
             process.StartInfo.RedirectStandardOutput = true;
             process.Start();
             Thread.Sleep(2000);
-
         }
 
         private static void CargarDatos()
