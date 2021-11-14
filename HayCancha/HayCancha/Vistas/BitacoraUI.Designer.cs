@@ -264,22 +264,22 @@ namespace HayCancha.Vistas
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Bold);
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.label3.Location = new System.Drawing.Point(12, 336);
+            this.label3.Location = new System.Drawing.Point(10, 336);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(48, 16);
+            this.label3.Size = new System.Drawing.Size(47, 15);
             this.label3.TabIndex = 39;
             this.label3.Text = "DESDE :";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Bold);
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.label4.Location = new System.Drawing.Point(12, 374);
+            this.label4.Location = new System.Drawing.Point(10, 374);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(52, 16);
+            this.label4.Size = new System.Drawing.Size(48, 15);
             this.label4.TabIndex = 40;
             this.label4.Text = "HASTA :";
             // 

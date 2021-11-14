@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using HayCancha.BE;
 using HayCancha.BE.Enumerables;
 using HayCancha.BE.Interfaces;
 using HayCancha.BLL;
 using HayCancha.Servicios;
+using HayCancha.Vistas;
 
 namespace HayCancha
 {
@@ -17,17 +19,48 @@ namespace HayCancha
         }
 
         private MenuUI _frmMenu;
+        private PantallaCarga loading;
 
         private int _iMov;
         private int _iMovX;
         private int _iMovY;
+        
 
         public int IdiomaControl { get; set; }
 
-        private void Login_Load(object sender, EventArgs e)
+        private async void Login_Load(object sender, EventArgs e)
         {
-            SessionService.Session.Suscribir(this);
-            this.CenterToScreen();
+            try
+            {
+                Hide();
+                CenterToScreen();
+                MostrarLoading();
+                Enabled = false;
+                SessionService.Session.Suscribir(this);
+                var oTask = new Task(InstaladorService.ComprobarInstalacion);
+                oTask.Start();
+                await oTask;
+                Show();
+                Opacity = 100;
+                Enabled = true;
+                OcultarLoading();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("La instalación de los componentes necesarios para la aplicación fueron instalados correctamente. Vuelve a iniciar la aplicación.");
+                Close();
+            }
+        }
+
+        private void MostrarLoading()
+        {
+            loading = new PantallaCarga();
+            loading.Show();
+        }
+
+        private void OcultarLoading()
+        {
+            loading?.Close();
         }
 
         private void Login_MouseUp(object sender, MouseEventArgs e)
