@@ -100,13 +100,13 @@ C:\Users\lucas\source\repos\Facultad\Hay Cancha\HayCancha\HayCancha\obj\Debug\Ha
 C:\Users\lucas\source\repos\Facultad\Hay Cancha\HayCancha\HayCancha\obj\Debug\HayCancha.LoginUI.resources
 C:\Users\lucas\source\repos\Facultad\Hay Cancha\HayCancha\HayCancha\obj\Debug\HayCancha.NotificacionUC.resources
 C:\Users\lucas\source\repos\Facultad\Hay Cancha\HayCancha\HayCancha\obj\Debug\HayCancha.Properties.Resources.resources
+C:\Users\lucas\source\repos\Facultad\Hay Cancha\HayCancha\HayCancha\obj\Debug\HayCancha.Vistas.PantallaCarga.resources
 C:\Users\lucas\source\repos\Facultad\Hay Cancha\HayCancha\HayCancha\obj\Debug\HayCancha.Vistas.PartidosUI.resources
 C:\Users\lucas\source\repos\Facultad\Hay Cancha\HayCancha\HayCancha\obj\Debug\HayCancha.Vistas.ReservasUI.resources
 C:\Users\lucas\source\repos\Facultad\Hay Cancha\HayCancha\HayCancha\obj\Debug\HayCancha.PermisosUI.resources
+C:\Users\lucas\source\repos\Facultad\Hay Cancha\HayCancha\HayCancha\obj\Debug\HayCancha.Vistas.ControlCambios.resources
 C:\Users\lucas\source\repos\Facultad\Hay Cancha\HayCancha\HayCancha\obj\Debug\HayCancha.UI.csproj.GenerateResource.cache
 C:\Users\lucas\source\repos\Facultad\Hay Cancha\HayCancha\HayCancha\obj\Debug\HayCancha.UI.csproj.CoreCompileInputs.cache
 C:\Users\lucas\source\repos\Facultad\Hay Cancha\HayCancha\HayCancha\obj\Debug\HayCancha.UI.csproj.CopyComplete
 C:\Users\lucas\source\repos\Facultad\Hay Cancha\HayCancha\HayCancha\obj\Debug\HayCancha.exe
 C:\Users\lucas\source\repos\Facultad\Hay Cancha\HayCancha\HayCancha\obj\Debug\HayCancha.pdb
-C:\Users\lucas\source\repos\Facultad\Hay Cancha\HayCancha\HayCancha\obj\Debug\HayCancha.Vistas.ControlCambios.resources
-C:\Users\lucas\source\repos\Facultad\Hay Cancha\HayCancha\HayCancha\obj\Debug\HayCancha.Vistas.PantallaCarga.resources

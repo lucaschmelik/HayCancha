@@ -118,8 +118,7 @@ namespace HayCancha
             {
                 ValidarNombreContraseña();
 
-                //VER SI ESTO FUNCIONA PORQUE VA A BUSCAR EL ROL Y QUIZÁS NECESITE QUE EL USUARIO PASADO POR PARAMETRO SEA REAL
-                EncriptadorService.CorroborarDigitosVerificadores(new Usuario());
+                EncriptadorService.VerificarHashVerticalUsuario();
 
                 UsuarioBLL.CargarUsuario(txtUsuario.Text, txtContraseña.Text);
 

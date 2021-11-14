@@ -49,7 +49,7 @@ namespace HayCancha.Servicios
             RecalcularHashTablaUsuario();
         }
 
-        private static void VerificarHashVerticalUsuario()
+        public static void VerificarHashVerticalUsuario()
         {
             var hashtabla = string.Empty;
 
