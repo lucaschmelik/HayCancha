@@ -11,19 +11,9 @@ namespace HayCancha.Servicios
 {
     public static class BitacoraService
     {
-        public static void Escribir(TipoEventoBitacoraEnum tipo, string mensaje)
-        {
-            var bitacora = new Bitacora(DateTime.Now, tipo, mensaje, SessionService.Session.UsuarioLogueado == null ? "Intento de acceso" : SessionService.Session.UsuarioLogueado.Nombre);
-
-            BitacoraDAL.Instancia.Guardar(bitacora);
-        }
-
-        public static void EscribirArchivo()
-        {
-            var bitacoraRestore = new Bitacora(DateTime.Now, TipoEventoBitacoraEnum.SISTEMA, "Se realizó restore de la base de datos.", SessionService.Session.UsuarioLogueado.Nombre);
-
-            SerializacionService.SerializarBitacoraRestore(bitacoraRestore);
-        }
+        public static void Escribir(TipoEventoBitacoraEnum tipo, string mensaje) => BitacoraDAL.Instancia.Guardar(new Bitacora(DateTime.Now, tipo, mensaje, SessionService.Session.UsuarioLogueado == null ? "Intento de acceso" : SessionService.Session.UsuarioLogueado.Nombre));
+        
+        public static void EscribirArchivo() => SerializacionService.SerializarBitacoraRestore(new Bitacora(DateTime.Now, TipoEventoBitacoraEnum.SISTEMA, "Se realizó restore de la base de datos.", SessionService.Session.UsuarioLogueado.Nombre));
 
         public static void EscribirRestore() => BitacoraDAL.Instancia.Guardar(SerializacionService.Deserializar());
         

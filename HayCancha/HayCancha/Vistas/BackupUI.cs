@@ -29,15 +29,9 @@ namespace HayCancha.Vistas
             }
         }
 
-        public new void Update()
-        {
-            ActualizarControles(this.Controls);
-        }
-
-        private void BackupUI_Load(object sender, System.EventArgs e)
-        {
-            CargarBackups();
-        }
+        public new void Update() => ActualizarControles(this.Controls);
+        
+        private void BackupUI_Load(object sender, System.EventArgs e) => CargarBackups();
 
         private void CargarBackups()
         {
@@ -61,12 +55,10 @@ namespace HayCancha.Vistas
 
         private void btnRestore_Click(object sender, System.EventArgs e)
         {
-            if(Interaction.MsgBox("Luego de ejecutar el restore se cerrará la sesión. ¿Desea continuar?", MsgBoxStyle.OkCancel ,"Restore") == MsgBoxResult.Cancel) return;
+            if (Interaction.MsgBox("Luego de ejecutar el restore se cerrará la sesión. ¿Desea continuar?", MsgBoxStyle.OkCancel ,"Restore") == MsgBoxResult.Cancel) return;
 
             BitacoraService.EscribirArchivo();
-
             BackupRestoreService.HacerRestore(dgvBackup.SelectedRows[0].Cells[1].Value.ToString());
-
             BitacoraService.EscribirRestore();
 
             ((MenuUI) Parent.Parent).CerrarSesion();
