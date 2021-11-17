@@ -6,34 +6,22 @@ using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
 using HayCancha.BE;
+using HayCancha.BE.Clases;
 
 namespace HayCancha.Servicios
 { 
     public static class SerializacionService
     {
-        //public static object Serializar(object objetoASerializar)
-        //{
-        //    var miStream = new MemoryStream();
+        public static void SerializarBitacoraRestore(Bitacora objetoASerializar)
+        {
+            var archivo = File.Create("bitacoraRestore.bin");
 
-        //    new BinaryFormatter().Serialize(miStream, objetoASerializar);
+            new BinaryFormatter().Serialize(archivo, objetoASerializar);
 
-        //    var captura = new UsuarioSerializado()
-        //    {
-        //        objetoSerializacion = miStream.ToArray(),
-        //        FechaModificacion = DateTime.Now,
-        //        usuarioModificacion = SessionService.Session.ObtenerNombreUsuario()
-        //    };
+            archivo.Close();
+        }
 
-        //    miStream.Close();
-
-        //    return captura;
-        //}
-
-        //public static Usuario Deserializar(Usuario captura)
-        //{
-        //    var memoryStream = new MemoryStream(captura.objetoSerializacion);
-
-        //    return (Usuario)(new BinaryFormatter().Deserialize(memoryStream));
-        //}
+        public static Bitacora Deserializar() => (Bitacora) new BinaryFormatter().Deserialize(File.Open("bitacoraRestore.bin", FileMode.Open));
+        
     }
 }

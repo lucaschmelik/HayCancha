@@ -3,6 +3,7 @@ using HayCancha.BE.Enumerables;
 
 namespace HayCancha.BE.Clases
 {
+    [Serializable]
     public class Bitacora
     {
         public Bitacora() { }

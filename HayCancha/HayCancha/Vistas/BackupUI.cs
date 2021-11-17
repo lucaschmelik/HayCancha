@@ -2,6 +2,7 @@
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
+using HayCancha.BE.Enumerables;
 using HayCancha.BE.Interfaces;
 using HayCancha.Servicios;
 using Microsoft.VisualBasic;
@@ -52,6 +53,7 @@ namespace HayCancha.Vistas
 
         private void btnBackup_Click(object sender, System.EventArgs e)
         {
+            BitacoraService.Escribir(TipoEventoBitacoraEnum.SISTEMA, "Se realizó backup de la base de datos.");
             BackupRestoreService.HacerBackUp();
             CargarBackups();
             MessageBox.Show("El backup se realizó correctamente!", "ALERTA", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -59,8 +61,14 @@ namespace HayCancha.Vistas
 
         private void btnRestore_Click(object sender, System.EventArgs e)
         {
-            if(Interaction.MsgBox("Luego de ejecutar el restore se cerrará la sesión. ¿Desea continuar?", MsgBoxStyle.OkCancel ,"Restore") == MsgBoxResult.Cancel) return; 
+            if(Interaction.MsgBox("Luego de ejecutar el restore se cerrará la sesión. ¿Desea continuar?", MsgBoxStyle.OkCancel ,"Restore") == MsgBoxResult.Cancel) return;
+
+            BitacoraService.EscribirArchivo();
+
             BackupRestoreService.HacerRestore(dgvBackup.SelectedRows[0].Cells[1].Value.ToString());
+
+            BitacoraService.EscribirRestore();
+
             ((MenuUI) Parent.Parent).CerrarSesion();
             Close();
         }
