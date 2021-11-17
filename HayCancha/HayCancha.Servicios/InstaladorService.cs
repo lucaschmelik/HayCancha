@@ -57,13 +57,11 @@ namespace HayCancha.Servicios
             process.WaitForExit();
         }
 
-
         private static void DescomprimirZip()
         {
             if (File.Exists($"{Environment.CurrentDirectory}\\SQL\\SETUP.EXE")) return;
             ZipFile.ExtractToDirectory($"{Environment.CurrentDirectory}\\SQL.zip", $"{Environment.CurrentDirectory}");
         }
-        
 
         private static void CreaArchivo()
         {

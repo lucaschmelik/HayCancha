@@ -129,7 +129,7 @@ namespace HayCancha.Vistas
             this.dtFechaHasta.Location = new System.Drawing.Point(66, 367);
             this.dtFechaHasta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dtFechaHasta.Name = "dtFechaHasta";
-            this.dtFechaHasta.Size = new System.Drawing.Size(145, 31);
+            this.dtFechaHasta.Size = new System.Drawing.Size(153, 31);
             this.dtFechaHasta.TabIndex = 28;
             this.dtFechaHasta.Value = new System.DateTime(2021, 9, 6, 0, 0, 0, 0);
             // 
@@ -257,7 +257,7 @@ namespace HayCancha.Vistas
             this.dtFechaDesde.Location = new System.Drawing.Point(66, 328);
             this.dtFechaDesde.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dtFechaDesde.Name = "dtFechaDesde";
-            this.dtFechaDesde.Size = new System.Drawing.Size(145, 31);
+            this.dtFechaDesde.Size = new System.Drawing.Size(153, 31);
             this.dtFechaDesde.TabIndex = 38;
             this.dtFechaDesde.Value = new System.DateTime(2021, 9, 7, 0, 0, 0, 0);
             // 
