@@ -3,3 +3,16 @@ indexLayout.xml
 vcs.xml
 *.cache
 *.suo
+/HayCancha/HayCancha/bin/Debug/Bunifu_UI_v1.52.dll
+/HayCancha/HayCancha/bin/Debug/HayCancha.BE.dll
+/HayCancha/HayCancha/bin/Debug/HayCancha.BE.pdb
+/HayCancha/HayCancha/bin/Debug/HayCancha.BLL.dll
+/HayCancha/HayCancha/bin/Debug/HayCancha.BLL.dll.config
+/HayCancha/HayCancha/bin/Debug/HayCancha.BLL.pdb
+/HayCancha/HayCancha/bin/Debug/HayCancha.DAL.dll
+/HayCancha/HayCancha/bin/Debug/HayCancha.DAL.pdb
+/HayCancha/HayCancha/bin/Debug/HayCancha.Servicios.dll
+/HayCancha/HayCancha/bin/Debug/HayCancha.Servicios.pdb
+/HayCancha/HayCancha/bin/Debug/HayCancha.exe
+/HayCancha/HayCancha/bin/Debug/HayCancha.exe.config
+/HayCancha/HayCancha/bin/Debug/HayCancha.pdb

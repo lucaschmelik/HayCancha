@@ -51,6 +51,7 @@
     <Compile Include="InstaladorService.cs" />
     <Compile Include="PermisoService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SerializacionService.cs" />
     <Compile Include="SessionService.cs" />
     <Compile Include="TraductorService.cs" />
     <Compile Include="VistaService.cs" />
