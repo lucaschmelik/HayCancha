@@ -31,3 +31,4 @@ C:\Users\lucas\source\repos\Facultad\Hay Cancha\HayCancha\HayCancha\obj\Release\
 C:\Users\lucas\source\repos\Facultad\Hay Cancha\HayCancha\HayCancha\obj\Release\HayCancha.exe
 C:\Users\lucas\source\repos\Facultad\Hay Cancha\HayCancha\HayCancha\obj\Release\HayCancha.pdb
 C:\Users\lucas\source\repos\Facultad\Hay Cancha\HayCancha\HayCancha\obj\Release\HayCancha.Vistas.PantallaCarga.resources
+C:\Users\lucas\source\repos\Facultad\Hay Cancha\HayCancha\HayCancha\obj\Release\HayCancha.Vistas.ReporteUI.resources
