@@ -45,26 +45,14 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_0C75E0692B5F4C40BAC35BCDFB40BE97"
-        "OwnerKey" = "8:_0CD378AAD0114A05A37CD58C365E88A7"
+        "MsmKey" = "8:_07E4E7A6056D4CADBA5C2ED2F7BCB7B9"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_0C75E0692B5F4C40BAC35BCDFB40BE97"
-        "OwnerKey" = "8:_F5A4A71D819745C396C123FA3F1A6167"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_0C75E0692B5F4C40BAC35BCDFB40BE97"
-        "OwnerKey" = "8:_A3EF6065D5C6805D7A1701CE81537CE5"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_0C75E0692B5F4C40BAC35BCDFB40BE97"
-        "OwnerKey" = "8:_C4CFF9F4AEE3862B8A57C871B9F65FAB"
+        "MsmKey" = "8:_088000361F6A8A94985ACDD9F8800D59"
+        "OwnerKey" = "8:_2AAA335BAAA04DD2B7DA4B86C4E3C1BD"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -106,7 +94,7 @@
         "Entry"
         {
         "MsmKey" = "8:_1F63267BE9947A129C8B152E06994F99"
-        "OwnerKey" = "8:_C4CFF9F4AEE3862B8A57C871B9F65FAB"
+        "OwnerKey" = "8:_2FAD92FA22B2C7AD15E4EBB78C8A6D12"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -117,50 +105,20 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_2F7F6B57517D596CC3908AA6A8019B08"
+        "MsmKey" = "8:_2FAD92FA22B2C7AD15E4EBB78C8A6D12"
         "OwnerKey" = "8:_0CD378AAD0114A05A37CD58C365E88A7"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_2F7F6B57517D596CC3908AA6A8019B08"
-        "OwnerKey" = "8:_F5A4A71D819745C396C123FA3F1A6167"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_2F7F6B57517D596CC3908AA6A8019B08"
-        "OwnerKey" = "8:_4A4614A25CBD444C8877CDE6600C6B56"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_2F7F6B57517D596CC3908AA6A8019B08"
-        "OwnerKey" = "8:_A9B3591D2D64A0F1F1C055F5987935FE"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_2F7F6B57517D596CC3908AA6A8019B08"
-        "OwnerKey" = "8:_A3EF6065D5C6805D7A1701CE81537CE5"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_2F7F6B57517D596CC3908AA6A8019B08"
+        "MsmKey" = "8:_2FAD92FA22B2C7AD15E4EBB78C8A6D12"
         "OwnerKey" = "8:_2AAA335BAAA04DD2B7DA4B86C4E3C1BD"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_2F7F6B57517D596CC3908AA6A8019B08"
-        "OwnerKey" = "8:_C4CFF9F4AEE3862B8A57C871B9F65FAB"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_2F7F6B57517D596CC3908AA6A8019B08"
-        "OwnerKey" = "8:_0C75E0692B5F4C40BAC35BCDFB40BE97"
+        "MsmKey" = "8:_2FAD92FA22B2C7AD15E4EBB78C8A6D12"
+        "OwnerKey" = "8:_088000361F6A8A94985ACDD9F8800D59"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -195,31 +153,13 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_8534E46491A2488191841ACA82EC296D"
+        "MsmKey" = "8:_9136CF0BA6924A28BB63084A4DF01E9C"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_906AFBE219234FF484973A35C8AFA251"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_920FA646E2A942FF8DC91B17C0C32CDA"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_A3EF6065D5C6805D7A1701CE81537CE5"
-        "OwnerKey" = "8:_2AAA335BAAA04DD2B7DA4B86C4E3C1BD"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_A9B3591D2D64A0F1F1C055F5987935FE"
+        "MsmKey" = "8:_A0323A6F7754EEE1566086E7BD179956"
         "OwnerKey" = "8:_2AAA335BAAA04DD2B7DA4B86C4E3C1BD"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -231,20 +171,50 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_C4CFF9F4AEE3862B8A57C871B9F65FAB"
+        "MsmKey" = "8:_B9D570851658A351208D98AFF9799EC0"
         "OwnerKey" = "8:_0CD378AAD0114A05A37CD58C365E88A7"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_C4CFF9F4AEE3862B8A57C871B9F65FAB"
+        "MsmKey" = "8:_B9D570851658A351208D98AFF9799EC0"
+        "OwnerKey" = "8:_F5A4A71D819745C396C123FA3F1A6167"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_B9D570851658A351208D98AFF9799EC0"
+        "OwnerKey" = "8:_4A4614A25CBD444C8877CDE6600C6B56"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_B9D570851658A351208D98AFF9799EC0"
+        "OwnerKey" = "8:_A0323A6F7754EEE1566086E7BD179956"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_B9D570851658A351208D98AFF9799EC0"
+        "OwnerKey" = "8:_088000361F6A8A94985ACDD9F8800D59"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_B9D570851658A351208D98AFF9799EC0"
         "OwnerKey" = "8:_2AAA335BAAA04DD2B7DA4B86C4E3C1BD"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_C4CFF9F4AEE3862B8A57C871B9F65FAB"
-        "OwnerKey" = "8:_A3EF6065D5C6805D7A1701CE81537CE5"
+        "MsmKey" = "8:_B9D570851658A351208D98AFF9799EC0"
+        "OwnerKey" = "8:_2FAD92FA22B2C7AD15E4EBB78C8A6D12"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_B9D570851658A351208D98AFF9799EC0"
+        "OwnerKey" = "8:_E96ABCEE87AF670902B67DB1C3A1DD44"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -263,6 +233,36 @@
         {
         "MsmKey" = "8:_D25B0809C90B3941F89D6370129F2FB4"
         "OwnerKey" = "8:_2AAA335BAAA04DD2B7DA4B86C4E3C1BD"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_E96ABCEE87AF670902B67DB1C3A1DD44"
+        "OwnerKey" = "8:_0CD378AAD0114A05A37CD58C365E88A7"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_E96ABCEE87AF670902B67DB1C3A1DD44"
+        "OwnerKey" = "8:_F5A4A71D819745C396C123FA3F1A6167"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_E96ABCEE87AF670902B67DB1C3A1DD44"
+        "OwnerKey" = "8:_088000361F6A8A94985ACDD9F8800D59"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_E96ABCEE87AF670902B67DB1C3A1DD44"
+        "OwnerKey" = "8:_2FAD92FA22B2C7AD15E4EBB78C8A6D12"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_EC74ED52ED704F028671ABC340352265"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -316,13 +316,13 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_A9B3591D2D64A0F1F1C055F5987935FE"
+        "OwnerKey" = "8:_A0323A6F7754EEE1566086E7BD179956"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_A3EF6065D5C6805D7A1701CE81537CE5"
+        "OwnerKey" = "8:_088000361F6A8A94985ACDD9F8800D59"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -340,19 +340,19 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_C4CFF9F4AEE3862B8A57C871B9F65FAB"
+        "OwnerKey" = "8:_2FAD92FA22B2C7AD15E4EBB78C8A6D12"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_0C75E0692B5F4C40BAC35BCDFB40BE97"
+        "OwnerKey" = "8:_E96ABCEE87AF670902B67DB1C3A1DD44"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_2F7F6B57517D596CC3908AA6A8019B08"
+        "OwnerKey" = "8:_B9D570851658A351208D98AFF9799EC0"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -499,20 +499,40 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_0C75E0692B5F4C40BAC35BCDFB40BE97"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_07E4E7A6056D4CADBA5C2ED2F7BCB7B9"
+            {
+            "SourcePath" = "8:..\\..\\..\\..\\..\\..\\Desktop\\Nueva carpeta\\base.sql"
+            "TargetName" = "8:base.sql"
+            "Tag" = "8:"
+            "Folder" = "8:_229C11CD31A54208A4F931F4F786C1CA"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_088000361F6A8A94985ACDD9F8800D59"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:HayCancha.DAL, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:HayCancha.BLL, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_0C75E0692B5F4C40BAC35BCDFB40BE97"
+                    "_088000361F6A8A94985ACDD9F8800D59"
                     {
-                    "Name" = "8:HayCancha.DAL.dll"
+                    "Name" = "8:HayCancha.BLL.dll"
                     "Attributes" = "3:512"
                     }
                 }
-            "SourcePath" = "8:HayCancha.DAL.dll"
+            "SourcePath" = "8:HayCancha.BLL.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_229C11CD31A54208A4F931F4F786C1CA"
@@ -561,20 +581,20 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_2F7F6B57517D596CC3908AA6A8019B08"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_2FAD92FA22B2C7AD15E4EBB78C8A6D12"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:HayCancha.BE, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:HayCancha.Servicios, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_2F7F6B57517D596CC3908AA6A8019B08"
+                    "_2FAD92FA22B2C7AD15E4EBB78C8A6D12"
                     {
-                    "Name" = "8:HayCancha.BE.dll"
+                    "Name" = "8:HayCancha.Servicios.dll"
                     "Attributes" = "3:512"
                     }
                 }
-            "SourcePath" = "8:HayCancha.BE.dll"
+            "SourcePath" = "8:HayCancha.Servicios.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_229C11CD31A54208A4F931F4F786C1CA"
@@ -694,49 +714,9 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_8534E46491A2488191841ACA82EC296D"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_9136CF0BA6924A28BB63084A4DF01E9C"
             {
-            "SourcePath" = "8:..\\..\\..\\..\\..\\..\\OneDrive - UNIVERSIDAD ABIERTA INTERAMERICANA\\Lucas\\FACULTAD\\4° Año\\2do Cuatrimestre\\DIPLOMA\\TP\\Archivos\\data.sql"
-            "TargetName" = "8:data.sql"
-            "Tag" = "8:"
-            "Folder" = "8:_229C11CD31A54208A4F931F4F786C1CA"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_906AFBE219234FF484973A35C8AFA251"
-            {
-            "SourcePath" = "8:..\\..\\..\\..\\..\\..\\OneDrive - UNIVERSIDAD ABIERTA INTERAMERICANA\\Lucas\\FACULTAD\\4° Año\\2do Cuatrimestre\\DIPLOMA\\TP\\Archivos\\base.sql"
-            "TargetName" = "8:base.sql"
-            "Tag" = "8:"
-            "Folder" = "8:_229C11CD31A54208A4F931F4F786C1CA"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_920FA646E2A942FF8DC91B17C0C32CDA"
-            {
-            "SourcePath" = "8:..\\..\\..\\..\\..\\..\\OneDrive - UNIVERSIDAD ABIERTA INTERAMERICANA\\Lucas\\FACULTAD\\4° Año\\2do Cuatrimestre\\DIPLOMA\\TP\\Archivos\\SQL.zip"
+            "SourcePath" = "8:..\\..\\..\\..\\..\\..\\Desktop\\Nueva carpeta (2)\\SQL.zip"
             "TargetName" = "8:SQL.zip"
             "Tag" = "8:"
             "Folder" = "8:_229C11CD31A54208A4F931F4F786C1CA"
@@ -754,45 +734,14 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_A3EF6065D5C6805D7A1701CE81537CE5"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:HayCancha.BLL, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_A3EF6065D5C6805D7A1701CE81537CE5"
-                    {
-                    "Name" = "8:HayCancha.BLL.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:HayCancha.BLL.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_229C11CD31A54208A4F931F4F786C1CA"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_A9B3591D2D64A0F1F1C055F5987935FE"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_A0323A6F7754EEE1566086E7BD179956"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
             "AssemblyAsmDisplayName" = "8:HayCancha.DAL, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_A9B3591D2D64A0F1F1C055F5987935FE"
+                    "_A0323A6F7754EEE1566086E7BD179956"
                     {
                     "Name" = "8:HayCancha.DAL.dll"
                     "Attributes" = "3:512"
@@ -816,20 +765,20 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_C4CFF9F4AEE3862B8A57C871B9F65FAB"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_B9D570851658A351208D98AFF9799EC0"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:HayCancha.Servicios, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:HayCancha.BE, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_C4CFF9F4AEE3862B8A57C871B9F65FAB"
+                    "_B9D570851658A351208D98AFF9799EC0"
                     {
-                    "Name" = "8:HayCancha.Servicios.dll"
+                    "Name" = "8:HayCancha.BE.dll"
                     "Attributes" = "3:512"
                     }
                 }
-            "SourcePath" = "8:HayCancha.Servicios.dll"
+            "SourcePath" = "8:HayCancha.BE.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_229C11CD31A54208A4F931F4F786C1CA"
@@ -940,6 +889,57 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_E96ABCEE87AF670902B67DB1C3A1DD44"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:HayCancha.DAL, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_E96ABCEE87AF670902B67DB1C3A1DD44"
+                    {
+                    "Name" = "8:HayCancha.DAL.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:HayCancha.DAL.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_229C11CD31A54208A4F931F4F786C1CA"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_EC74ED52ED704F028671ABC340352265"
+            {
+            "SourcePath" = "8:..\\..\\..\\..\\..\\..\\Desktop\\Nueva carpeta\\data.sql"
+            "TargetName" = "8:data.sql"
+            "Tag" = "8:"
+            "Folder" = "8:_229C11CD31A54208A4F931F4F786C1CA"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
         }
         "FileType"
         {
@@ -1008,7 +1008,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:HayCancha"
         "ProductCode" = "8:{8EC99F23-5D2B-4ECB-AB55-655A8622FE97}"
-        "PackageCode" = "8:{D2A0046A-A1EC-463F-9BC8-6AA6C0E35B8C}"
+        "PackageCode" = "8:{F10D713E-B534-4F81-9498-E2FFE1FFD5B4}"
         "UpgradeCode" = "8:{9BF810E1-680A-4C31-BA14-9FE33E45A058}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -1641,7 +1641,7 @@
             }
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_AB2CC397D2F64B5F879C6C99AD50FDB3"
             {
-            "SourcePath" = "8:"
+            "SourcePath" = "8:..\\HayCancha.BE\\obj\\Release\\HayCancha.BE.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_229C11CD31A54208A4F931F4F786C1CA"

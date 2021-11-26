@@ -12,7 +12,7 @@ namespace HayCancha.BE
         {
             try
             {
-                var connection = new SqlConnection($"Data Source={ RetornaNombrePC() };Initial Catalog=HayCancha;Integrated Security=True");
+                var connection = new SqlConnection($"Data Source={ RetornaNombrePC() }\\SQLEXPRESS;Initial Catalog=HayCancha;Integrated Security=True");
 
                 connection.Open();
 
