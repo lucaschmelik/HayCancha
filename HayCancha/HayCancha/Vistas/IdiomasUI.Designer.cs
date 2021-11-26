@@ -30,9 +30,9 @@ namespace HayCancha.Vistas
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblIdioma = new System.Windows.Forms.Label();
             this.lblIngresarIdioma = new System.Windows.Forms.Label();
             this.txtIngresarIdioma = new System.Windows.Forms.TextBox();
@@ -46,6 +46,7 @@ namespace HayCancha.Vistas
             this.bunifuElipse4 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuElipse5 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.imgOk = new System.Windows.Forms.PictureBox();
+            this.helpProvider1 = new System.Windows.Forms.HelpProvider();
             ((System.ComponentModel.ISupportInitialize)(this.dgvIdiomas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgOk)).BeginInit();
             this.SuspendLayout();
@@ -92,8 +93,10 @@ namespace HayCancha.Vistas
             this.btnRegistrarIdioma.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRegistrarIdioma.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegistrarIdioma.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.helpProvider1.SetHelpString(this.btnRegistrarIdioma, "Botón para registrar el idoma cargado");
             this.btnRegistrarIdioma.Location = new System.Drawing.Point(453, 341);
             this.btnRegistrarIdioma.Name = "btnRegistrarIdioma";
+            this.helpProvider1.SetShowHelp(this.btnRegistrarIdioma, true);
             this.btnRegistrarIdioma.Size = new System.Drawing.Size(92, 42);
             this.btnRegistrarIdioma.TabIndex = 18;
             this.btnRegistrarIdioma.Text = "REGISTRAR";
@@ -111,36 +114,36 @@ namespace HayCancha.Vistas
             this.dgvIdiomas.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvIdiomas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvIdiomas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.DarkGreen;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Menu;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DarkGreen;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.Menu;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvIdiomas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.DarkGreen;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11F);
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.Menu;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.DarkGreen;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.Menu;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvIdiomas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
             this.dgvIdiomas.ColumnHeadersHeight = 30;
             this.dgvIdiomas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(254)))), ((int)(((byte)(221)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.Desktop;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvIdiomas.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(254)))), ((int)(((byte)(221)))));
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvIdiomas.DefaultCellStyle = dataGridViewCellStyle11;
             this.dgvIdiomas.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnF2;
             this.dgvIdiomas.EnableHeadersVisualStyles = false;
             this.dgvIdiomas.Location = new System.Drawing.Point(12, 134);
             this.dgvIdiomas.Name = "dgvIdiomas";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(254)))), ((int)(((byte)(221)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvIdiomas.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(254)))), ((int)(((byte)(221)))));
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvIdiomas.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
             this.dgvIdiomas.RowHeadersVisible = false;
             this.dgvIdiomas.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvIdiomas.RowTemplate.Height = 30;
@@ -183,8 +186,10 @@ namespace HayCancha.Vistas
             this.btnActualizarIdioma.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnActualizarIdioma.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnActualizarIdioma.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.helpProvider1.SetHelpString(this.btnActualizarIdioma, "Botón para actualizar los controles al idioma seleccionado");
             this.btnActualizarIdioma.Location = new System.Drawing.Point(343, 341);
             this.btnActualizarIdioma.Name = "btnActualizarIdioma";
+            this.helpProvider1.SetShowHelp(this.btnActualizarIdioma, true);
             this.btnActualizarIdioma.Size = new System.Drawing.Size(92, 42);
             this.btnActualizarIdioma.TabIndex = 29;
             this.btnActualizarIdioma.Text = "ACTUALIZAR";
@@ -204,9 +209,11 @@ namespace HayCancha.Vistas
             // imgOk
             // 
             this.imgOk.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.helpProvider1.SetHelpString(this.imgOk, "Botón para seleccionar el idioma");
             this.imgOk.Image = global::HayCancha.Properties.Resources.ok;
             this.imgOk.Location = new System.Drawing.Point(245, 345);
             this.imgOk.Name = "imgOk";
+            this.helpProvider1.SetShowHelp(this.imgOk, true);
             this.imgOk.Size = new System.Drawing.Size(32, 35);
             this.imgOk.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.imgOk.TabIndex = 30;
@@ -253,5 +260,6 @@ namespace HayCancha.Vistas
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse4;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse5;
         private System.Windows.Forms.PictureBox imgOk;
+        private System.Windows.Forms.HelpProvider helpProvider1;
     }
 }

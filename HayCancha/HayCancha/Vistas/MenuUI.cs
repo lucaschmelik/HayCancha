@@ -234,5 +234,20 @@ namespace HayCancha
 
             MessageBox.Show($"La contraseña del usuario {SessionService.Session.ObtenerNombreUsuario()} fue cambiada exitosamente!", "ALERTA", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
+        private void imgAyuda_Click(object sender, EventArgs e)
+        {
+            if (imgSalir.Visible)
+            {
+                FormBorderStyle = FormBorderStyle.Sizable;
+                imgSalir.Visible = false;
+                imgAyuda.Location = imgSalir.Location;
+                return;
+            }
+
+            imgAyuda.Location = new Point(750, 3);
+            FormBorderStyle = FormBorderStyle.None;
+            imgSalir.Visible = true;
+        }
     }
 }

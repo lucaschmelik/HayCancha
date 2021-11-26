@@ -44,14 +44,17 @@ namespace HayCancha
             this.lblUsuario = new System.Windows.Forms.Label();
             this.lblContraseña = new System.Windows.Forms.Label();
             this.btnRegistrar = new System.Windows.Forms.Button();
+            this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.helpProvider1 = new System.Windows.Forms.HelpProvider();
+            this.imgAyuda = new System.Windows.Forms.PictureBox();
             this.imgSalir = new System.Windows.Forms.PictureBox();
             this.imgPelota = new System.Windows.Forms.PictureBox();
-            this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgIdiomaChino)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgIdiomaIngles)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgIdiomaEspañol)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgAyuda)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgSalir)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgPelota)).BeginInit();
             this.SuspendLayout();
@@ -89,9 +92,11 @@ namespace HayCancha
             // 
             // imgIdiomaChino
             // 
+            this.helpProvider1.SetHelpString(this.imgIdiomaChino, "Presionar para traducir los controles al chino");
             this.imgIdiomaChino.Image = ((System.Drawing.Image)(resources.GetObject("imgIdiomaChino.Image")));
             this.imgIdiomaChino.Location = new System.Drawing.Point(145, 310);
             this.imgIdiomaChino.Name = "imgIdiomaChino";
+            this.helpProvider1.SetShowHelp(this.imgIdiomaChino, true);
             this.imgIdiomaChino.Size = new System.Drawing.Size(49, 50);
             this.imgIdiomaChino.TabIndex = 5;
             this.imgIdiomaChino.TabStop = false;
@@ -99,9 +104,11 @@ namespace HayCancha
             // 
             // imgIdiomaIngles
             // 
+            this.helpProvider1.SetHelpString(this.imgIdiomaIngles, "Presionar para traducir los controles al inglés");
             this.imgIdiomaIngles.Image = ((System.Drawing.Image)(resources.GetObject("imgIdiomaIngles.Image")));
             this.imgIdiomaIngles.Location = new System.Drawing.Point(90, 310);
             this.imgIdiomaIngles.Name = "imgIdiomaIngles";
+            this.helpProvider1.SetShowHelp(this.imgIdiomaIngles, true);
             this.imgIdiomaIngles.Size = new System.Drawing.Size(49, 50);
             this.imgIdiomaIngles.TabIndex = 4;
             this.imgIdiomaIngles.TabStop = false;
@@ -109,9 +116,11 @@ namespace HayCancha
             // 
             // imgIdiomaEspañol
             // 
+            this.helpProvider1.SetHelpString(this.imgIdiomaEspañol, "Presionar para traducir los controles al español");
             this.imgIdiomaEspañol.Image = ((System.Drawing.Image)(resources.GetObject("imgIdiomaEspañol.Image")));
             this.imgIdiomaEspañol.Location = new System.Drawing.Point(34, 310);
             this.imgIdiomaEspañol.Name = "imgIdiomaEspañol";
+            this.helpProvider1.SetShowHelp(this.imgIdiomaEspañol, true);
             this.imgIdiomaEspañol.Size = new System.Drawing.Size(49, 50);
             this.imgIdiomaEspañol.TabIndex = 3;
             this.imgIdiomaEspañol.TabStop = false;
@@ -154,8 +163,10 @@ namespace HayCancha
             // 
             this.btnIngresar.BackColor = System.Drawing.Color.Silver;
             this.btnIngresar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.helpProvider1.SetHelpString(this.btnIngresar, "Botón que se utiliza para ingresar al sistema");
             this.btnIngresar.Location = new System.Drawing.Point(335, 297);
             this.btnIngresar.Name = "btnIngresar";
+            this.helpProvider1.SetShowHelp(this.btnIngresar, true);
             this.btnIngresar.Size = new System.Drawing.Size(107, 33);
             this.btnIngresar.TabIndex = 3;
             this.btnIngresar.Text = "INGRESAR";
@@ -188,19 +199,42 @@ namespace HayCancha
             // 
             this.btnRegistrar.BackColor = System.Drawing.Color.Silver;
             this.btnRegistrar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.helpProvider1.SetHelpString(this.btnRegistrar, "Botón que se utiliza para registrar un usuario a partir de la información cargada" +
+        " en Usuario y Contraseña");
             this.btnRegistrar.Location = new System.Drawing.Point(335, 346);
             this.btnRegistrar.Name = "btnRegistrar";
+            this.helpProvider1.SetShowHelp(this.btnRegistrar, true);
             this.btnRegistrar.Size = new System.Drawing.Size(107, 33);
             this.btnRegistrar.TabIndex = 8;
             this.btnRegistrar.Text = "REGISTRAR";
             this.btnRegistrar.UseVisualStyleBackColor = false;
             this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
             // 
+            // bunifuElipse1
+            // 
+            this.bunifuElipse1.ElipseRadius = 10;
+            this.bunifuElipse1.TargetControl = this;
+            // 
+            // imgAyuda
+            // 
+            this.helpProvider1.SetHelpString(this.imgAyuda, "Presionar para activar/desactivar el modo ayuda");
+            this.imgAyuda.Image = global::HayCancha.Properties.Resources.icons8_help_321;
+            this.imgAyuda.Location = new System.Drawing.Point(479, 4);
+            this.imgAyuda.Name = "imgAyuda";
+            this.helpProvider1.SetShowHelp(this.imgAyuda, true);
+            this.imgAyuda.Size = new System.Drawing.Size(29, 28);
+            this.imgAyuda.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.imgAyuda.TabIndex = 9;
+            this.imgAyuda.TabStop = false;
+            this.imgAyuda.Click += new System.EventHandler(this.imgAyuda_Click);
+            // 
             // imgSalir
             // 
+            this.helpProvider1.SetHelpString(this.imgSalir, "Presionar para salir de la aplicación");
             this.imgSalir.Image = ((System.Drawing.Image)(resources.GetObject("imgSalir.Image")));
             this.imgSalir.Location = new System.Drawing.Point(514, 4);
             this.imgSalir.Name = "imgSalir";
+            this.helpProvider1.SetShowHelp(this.imgSalir, true);
             this.imgSalir.Size = new System.Drawing.Size(30, 28);
             this.imgSalir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.imgSalir.TabIndex = 7;
@@ -217,17 +251,13 @@ namespace HayCancha
             this.imgPelota.TabIndex = 4;
             this.imgPelota.TabStop = false;
             // 
-            // bunifuElipse1
-            // 
-            this.bunifuElipse1.ElipseRadius = 10;
-            this.bunifuElipse1.TargetControl = this;
-            // 
             // LoginUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.ForestGreen;
             this.ClientSize = new System.Drawing.Size(549, 408);
+            this.Controls.Add(this.imgAyuda);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnRegistrar);
             this.Controls.Add(this.imgSalir);
@@ -238,9 +268,13 @@ namespace HayCancha
             this.Controls.Add(this.txtContraseña);
             this.Controls.Add(this.txtUsuario);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.HelpButton = true;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "LoginUI";
             this.Opacity = 0.1D;
-            this.Text = "Login";
+            this.Text = "Hay Cancha";
             this.Load += new System.EventHandler(this.Login_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Login_MouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Login_MouseMove);
@@ -251,6 +285,7 @@ namespace HayCancha
             ((System.ComponentModel.ISupportInitialize)(this.imgIdiomaIngles)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgIdiomaEspañol)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgAyuda)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgSalir)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgPelota)).EndInit();
             this.ResumeLayout(false);
@@ -276,5 +311,7 @@ namespace HayCancha
         private System.Windows.Forms.PictureBox imgIdiomaIngles;
         private System.Windows.Forms.PictureBox imgIdiomaChino;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
+        private System.Windows.Forms.HelpProvider helpProvider1;
+        private System.Windows.Forms.PictureBox imgAyuda;
     }
 }

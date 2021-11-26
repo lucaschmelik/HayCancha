@@ -30,9 +30,9 @@ namespace HayCancha
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AlquilerEtapaUnoUI));
             this.dtpFecha = new Bunifu.Framework.UI.BunifuDatepicker();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
@@ -45,6 +45,7 @@ namespace HayCancha
             this.imgBuscarCancha = new Bunifu.Framework.UI.BunifuImageButton();
             this.ddHora = new Bunifu.Framework.UI.BunifuDropdown();
             this.bunifuElipse4 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.helpProvider1 = new System.Windows.Forms.HelpProvider();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCancha)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgBuscarCancha)).BeginInit();
             this.SuspendLayout();
@@ -57,9 +58,11 @@ namespace HayCancha
             this.dtpFecha.ForeColor = System.Drawing.Color.Black;
             this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFecha.FormatCustom = null;
+            this.helpProvider1.SetHelpString(this.dtpFecha, "Calendario para filtrar por fecha");
             this.dtpFecha.Location = new System.Drawing.Point(314, 141);
             this.dtpFecha.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dtpFecha.Name = "dtpFecha";
+            this.helpProvider1.SetShowHelp(this.dtpFecha, true);
             this.dtpFecha.Size = new System.Drawing.Size(209, 31);
             this.dtpFecha.TabIndex = 0;
             this.dtpFecha.Value = new System.DateTime(2021, 7, 11, 0, 0, 0, 0);
@@ -80,37 +83,37 @@ namespace HayCancha
             this.dgvCancha.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvCancha.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvCancha.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.DarkGreen;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Menu;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DarkGreen;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.Menu;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCancha.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.DarkGreen;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11F);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.Menu;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.DarkGreen;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.Menu;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCancha.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvCancha.ColumnHeadersHeight = 30;
             this.dgvCancha.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(254)))), ((int)(((byte)(221)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.Desktop;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvCancha.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(254)))), ((int)(((byte)(221)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvCancha.DefaultCellStyle = dataGridViewCellStyle5;
             this.dgvCancha.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnF2;
             this.dgvCancha.EnableHeadersVisualStyles = false;
             this.dgvCancha.Location = new System.Drawing.Point(46, 99);
             this.dgvCancha.Name = "dgvCancha";
             this.dgvCancha.ReadOnly = true;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(254)))), ((int)(((byte)(221)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCancha.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(254)))), ((int)(((byte)(221)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCancha.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvCancha.RowHeadersVisible = false;
             this.dgvCancha.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvCancha.RowTemplate.Height = 30;
@@ -124,6 +127,7 @@ namespace HayCancha
             this.ddTipoCancha.BorderRadius = 10;
             this.ddTipoCancha.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F);
             this.ddTipoCancha.ForeColor = System.Drawing.Color.Black;
+            this.helpProvider1.SetHelpString(this.ddTipoCancha, "Control para filtrar por tipo de cancha");
             this.ddTipoCancha.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.ddTipoCancha.Items = new string[0];
             this.ddTipoCancha.Location = new System.Drawing.Point(314, 187);
@@ -132,6 +136,7 @@ namespace HayCancha
             this.ddTipoCancha.NomalColor = System.Drawing.Color.Gainsboro;
             this.ddTipoCancha.onHoverColor = System.Drawing.Color.Gainsboro;
             this.ddTipoCancha.selectedIndex = -1;
+            this.helpProvider1.SetShowHelp(this.ddTipoCancha, true);
             this.ddTipoCancha.Size = new System.Drawing.Size(209, 31);
             this.ddTipoCancha.TabIndex = 4;
             // 
@@ -158,8 +163,10 @@ namespace HayCancha
             this.btnSiguienteEtapaUno.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSiguienteEtapaUno.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSiguienteEtapaUno.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.helpProvider1.SetHelpString(this.btnSiguienteEtapaUno, "Botón para ir a la siguiente pantalla donde se cargarán los jugadores");
             this.btnSiguienteEtapaUno.Location = new System.Drawing.Point(432, 351);
             this.btnSiguienteEtapaUno.Name = "btnSiguienteEtapaUno";
+            this.helpProvider1.SetShowHelp(this.btnSiguienteEtapaUno, true);
             this.btnSiguienteEtapaUno.Size = new System.Drawing.Size(91, 33);
             this.btnSiguienteEtapaUno.TabIndex = 7;
             this.btnSiguienteEtapaUno.Text = "SIGUIENTE";
@@ -175,10 +182,12 @@ namespace HayCancha
             // 
             this.imgBuscarCancha.BackColor = System.Drawing.Color.Transparent;
             this.imgBuscarCancha.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.helpProvider1.SetHelpString(this.imgBuscarCancha, "Botón para realizar la busqueda de reservas libres");
             this.imgBuscarCancha.Image = ((System.Drawing.Image)(resources.GetObject("imgBuscarCancha.Image")));
             this.imgBuscarCancha.ImageActive = null;
             this.imgBuscarCancha.Location = new System.Drawing.Point(398, 288);
             this.imgBuscarCancha.Name = "imgBuscarCancha";
+            this.helpProvider1.SetShowHelp(this.imgBuscarCancha, true);
             this.imgBuscarCancha.Size = new System.Drawing.Size(49, 40);
             this.imgBuscarCancha.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.imgBuscarCancha.TabIndex = 1;
@@ -192,6 +201,7 @@ namespace HayCancha
             this.ddHora.BorderRadius = 10;
             this.ddHora.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F);
             this.ddHora.ForeColor = System.Drawing.Color.Black;
+            this.helpProvider1.SetHelpString(this.ddHora, "Control para filtrar por hora");
             this.ddHora.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.ddHora.Items = new string[0];
             this.ddHora.Location = new System.Drawing.Point(314, 232);
@@ -200,6 +210,7 @@ namespace HayCancha
             this.ddHora.NomalColor = System.Drawing.Color.Gainsboro;
             this.ddHora.onHoverColor = System.Drawing.Color.Gainsboro;
             this.ddHora.selectedIndex = -1;
+            this.helpProvider1.SetShowHelp(this.ddHora, true);
             this.ddHora.Size = new System.Drawing.Size(209, 31);
             this.ddHora.TabIndex = 8;
             // 
@@ -246,5 +257,6 @@ namespace HayCancha
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse3;
         private Bunifu.Framework.UI.BunifuDropdown ddHora;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse4;
+        private System.Windows.Forms.HelpProvider helpProvider1;
     }
 }

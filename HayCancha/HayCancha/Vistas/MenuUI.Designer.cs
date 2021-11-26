@@ -64,6 +64,8 @@ namespace HayCancha
             this.bunifuElipse3 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.panelMenus = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.imgAyuda = new System.Windows.Forms.PictureBox();
+            this.helpProvider1 = new System.Windows.Forms.HelpProvider();
             this.ucNotificacion = new HayCancha.NotificacionUC();
             this.msMenu.SuspendLayout();
             this.panelPerfil.SuspendLayout();
@@ -74,6 +76,7 @@ namespace HayCancha
             ((System.ComponentModel.ISupportInitialize)(this.imgSalir)).BeginInit();
             this.panelMenus.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgAyuda)).BeginInit();
             this.SuspendLayout();
             // 
             // msMenu
@@ -242,7 +245,7 @@ namespace HayCancha
             this.panelPerfil.Controls.Add(this.lblNombreMenu);
             this.panelPerfil.Controls.Add(this.pictureBox1);
             this.panelPerfil.Controls.Add(this.imgPerfil);
-            this.panelPerfil.Location = new System.Drawing.Point(574, 22);
+            this.panelPerfil.Location = new System.Drawing.Point(575, 22);
             this.panelPerfil.Name = "panelPerfil";
             this.panelPerfil.Size = new System.Drawing.Size(225, 429);
             this.panelPerfil.TabIndex = 11;
@@ -255,8 +258,10 @@ namespace HayCancha
             this.btnCambiarContraseña.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCambiarContraseña.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Bold);
             this.btnCambiarContraseña.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.helpProvider1.SetHelpString(this.btnCambiarContraseña, "Presionar para cambiar la contraseña del usuario logueado");
             this.btnCambiarContraseña.Location = new System.Drawing.Point(56, 362);
             this.btnCambiarContraseña.Name = "btnCambiarContraseña";
+            this.helpProvider1.SetShowHelp(this.btnCambiarContraseña, true);
             this.btnCambiarContraseña.Size = new System.Drawing.Size(125, 39);
             this.btnCambiarContraseña.TabIndex = 44;
             this.btnCambiarContraseña.Text = "CAMBIAR CONTRASEÑA";
@@ -276,9 +281,11 @@ namespace HayCancha
             // 
             // imgNotificacion
             // 
+            this.helpProvider1.SetHelpString(this.imgNotificacion, "Presionar para mostrar las notificaciones");
             this.imgNotificacion.Image = global::HayCancha.Properties.Resources.notification;
             this.imgNotificacion.Location = new System.Drawing.Point(193, 18);
             this.imgNotificacion.Name = "imgNotificacion";
+            this.helpProvider1.SetShowHelp(this.imgNotificacion, true);
             this.imgNotificacion.Size = new System.Drawing.Size(31, 29);
             this.imgNotificacion.TabIndex = 14;
             this.imgNotificacion.TabStop = false;
@@ -311,8 +318,10 @@ namespace HayCancha
             // 
             // imgPerfil
             // 
+            this.helpProvider1.SetHelpString(this.imgPerfil, "Presionar para cambiar la foto de perfil");
             this.imgPerfil.Location = new System.Drawing.Point(40, 42);
             this.imgPerfil.Name = "imgPerfil";
+            this.helpProvider1.SetShowHelp(this.imgPerfil, true);
             this.imgPerfil.Size = new System.Drawing.Size(154, 145);
             this.imgPerfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.imgPerfil.TabIndex = 10;
@@ -332,9 +341,11 @@ namespace HayCancha
             // imgSalir
             // 
             this.imgSalir.BackColor = System.Drawing.Color.White;
+            this.helpProvider1.SetHelpString(this.imgSalir, "Presionar para salir de la aplicación");
             this.imgSalir.Image = ((System.Drawing.Image)(resources.GetObject("imgSalir.Image")));
             this.imgSalir.Location = new System.Drawing.Point(772, 3);
             this.imgSalir.Name = "imgSalir";
+            this.helpProvider1.SetShowHelp(this.imgSalir, true);
             this.imgSalir.Size = new System.Drawing.Size(18, 18);
             this.imgSalir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.imgSalir.TabIndex = 8;
@@ -364,6 +375,20 @@ namespace HayCancha
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
             // 
+            // imgAyuda
+            // 
+            this.imgAyuda.BackColor = System.Drawing.Color.White;
+            this.helpProvider1.SetHelpString(this.imgAyuda, "Presionar para activar/desactivar el modo ayuda");
+            this.imgAyuda.Image = global::HayCancha.Properties.Resources.icons8_help_321;
+            this.imgAyuda.Location = new System.Drawing.Point(750, 3);
+            this.imgAyuda.Name = "imgAyuda";
+            this.helpProvider1.SetShowHelp(this.imgAyuda, true);
+            this.imgAyuda.Size = new System.Drawing.Size(18, 18);
+            this.imgAyuda.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.imgAyuda.TabIndex = 10;
+            this.imgAyuda.TabStop = false;
+            this.imgAyuda.Click += new System.EventHandler(this.imgAyuda_Click);
+            // 
             // ucNotificacion
             // 
             this.ucNotificacion.BackColor = System.Drawing.Color.DarkGreen;
@@ -381,15 +406,20 @@ namespace HayCancha
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.ForestGreen;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.imgAyuda);
             this.Controls.Add(this.ucNotificacion);
             this.Controls.Add(this.panelMenus);
             this.Controls.Add(this.panelPerfil);
             this.Controls.Add(this.imgSalir);
             this.Controls.Add(this.msMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.HelpButton = true;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "MenuUI";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "Hay Cancha";
             this.Load += new System.EventHandler(this.Menu_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Menu_MouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Menu_MouseMove);
@@ -405,6 +435,7 @@ namespace HayCancha
             ((System.ComponentModel.ISupportInitialize)(this.imgSalir)).EndInit();
             this.panelMenus.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgAyuda)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -443,5 +474,7 @@ namespace HayCancha
         private System.Windows.Forms.Panel panelMenus;
         private System.Windows.Forms.PictureBox pictureBox2;
         private NotificacionUC ucNotificacion;
+        private System.Windows.Forms.PictureBox imgAyuda;
+        private System.Windows.Forms.HelpProvider helpProvider1;
     }
 }

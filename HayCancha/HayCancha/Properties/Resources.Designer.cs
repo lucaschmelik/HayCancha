@@ -123,6 +123,26 @@ namespace HayCancha.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_help_32 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_help_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_help_321 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_help_321", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap IdiomaChino {
             get {
                 object obj = ResourceManager.GetObject("IdiomaChino", resourceCulture);

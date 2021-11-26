@@ -30,9 +30,9 @@ namespace HayCancha.Vistas
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblBitacora = new System.Windows.Forms.Label();
             this.dgvBitacora = new System.Windows.Forms.DataGridView();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
@@ -51,6 +51,7 @@ namespace HayCancha.Vistas
             this.dtFechaDesde = new Bunifu.Framework.UI.BunifuDatepicker();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.helpProvider1 = new System.Windows.Forms.HelpProvider();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBitacora)).BeginInit();
             this.SuspendLayout();
             // 
@@ -76,36 +77,36 @@ namespace HayCancha.Vistas
             this.dgvBitacora.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvBitacora.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvBitacora.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.DarkGreen;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Menu;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DarkGreen;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.Menu;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvBitacora.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle31.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle31.BackColor = System.Drawing.Color.DarkGreen;
+            dataGridViewCellStyle31.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11F);
+            dataGridViewCellStyle31.ForeColor = System.Drawing.SystemColors.Menu;
+            dataGridViewCellStyle31.SelectionBackColor = System.Drawing.Color.DarkGreen;
+            dataGridViewCellStyle31.SelectionForeColor = System.Drawing.SystemColors.Menu;
+            dataGridViewCellStyle31.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvBitacora.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle31;
             this.dgvBitacora.ColumnHeadersHeight = 30;
             this.dgvBitacora.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(254)))), ((int)(((byte)(221)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.Desktop;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvBitacora.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle32.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle32.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle32.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle32.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle32.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(254)))), ((int)(((byte)(221)))));
+            dataGridViewCellStyle32.SelectionForeColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle32.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvBitacora.DefaultCellStyle = dataGridViewCellStyle32;
             this.dgvBitacora.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnF2;
             this.dgvBitacora.EnableHeadersVisualStyles = false;
             this.dgvBitacora.Location = new System.Drawing.Point(15, 110);
             this.dgvBitacora.Name = "dgvBitacora";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(254)))), ((int)(((byte)(221)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvBitacora.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle33.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle33.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle33.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle33.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle33.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(254)))), ((int)(((byte)(221)))));
+            dataGridViewCellStyle33.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle33.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvBitacora.RowHeadersDefaultCellStyle = dataGridViewCellStyle33;
             this.dgvBitacora.RowHeadersVisible = false;
             this.dgvBitacora.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvBitacora.RowTemplate.Height = 30;
@@ -126,9 +127,11 @@ namespace HayCancha.Vistas
             this.dtFechaHasta.ForeColor = System.Drawing.Color.Black;
             this.dtFechaHasta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtFechaHasta.FormatCustom = null;
+            this.helpProvider1.SetHelpString(this.dtFechaHasta, "Calendario para filtrar por fecha hasta");
             this.dtFechaHasta.Location = new System.Drawing.Point(66, 367);
             this.dtFechaHasta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dtFechaHasta.Name = "dtFechaHasta";
+            this.helpProvider1.SetShowHelp(this.dtFechaHasta, true);
             this.dtFechaHasta.Size = new System.Drawing.Size(153, 31);
             this.dtFechaHasta.TabIndex = 28;
             this.dtFechaHasta.Value = new System.DateTime(2021, 9, 6, 0, 0, 0, 0);
@@ -157,8 +160,10 @@ namespace HayCancha.Vistas
             this.lblIngresarMensaje.BackColor = System.Drawing.Color.Gainsboro;
             this.lblIngresarMensaje.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblIngresarMensaje.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.helpProvider1.SetHelpString(this.lblIngresarMensaje, "Control para filtrar por mensaje");
             this.lblIngresarMensaje.Location = new System.Drawing.Point(254, 374);
             this.lblIngresarMensaje.Name = "lblIngresarMensaje";
+            this.helpProvider1.SetShowHelp(this.lblIngresarMensaje, true);
             this.lblIngresarMensaje.Size = new System.Drawing.Size(130, 14);
             this.lblIngresarMensaje.TabIndex = 33;
             this.lblIngresarMensaje.Text = "          输入消息               ";
@@ -182,8 +187,10 @@ namespace HayCancha.Vistas
             this.lblIngresarUsuario.BackColor = System.Drawing.Color.Gainsboro;
             this.lblIngresarUsuario.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblIngresarUsuario.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.helpProvider1.SetHelpString(this.lblIngresarUsuario, "Control para filtrar por usuario");
             this.lblIngresarUsuario.Location = new System.Drawing.Point(423, 335);
             this.lblIngresarUsuario.Name = "lblIngresarUsuario";
+            this.helpProvider1.SetShowHelp(this.lblIngresarUsuario, true);
             this.lblIngresarUsuario.Size = new System.Drawing.Size(120, 14);
             this.lblIngresarUsuario.TabIndex = 35;
             this.lblIngresarUsuario.Text = "           Set user             ";
@@ -206,8 +213,10 @@ namespace HayCancha.Vistas
             this.btnFiltrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnFiltrar.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFiltrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.helpProvider1.SetHelpString(this.btnFiltrar, "Botón para realizar una búsqueda por filtro");
             this.btnFiltrar.Location = new System.Drawing.Point(417, 367);
             this.btnFiltrar.Name = "btnFiltrar";
+            this.helpProvider1.SetShowHelp(this.btnFiltrar, true);
             this.btnFiltrar.Size = new System.Drawing.Size(132, 31);
             this.btnFiltrar.TabIndex = 36;
             this.btnFiltrar.Text = "FILTRAR";
@@ -220,8 +229,10 @@ namespace HayCancha.Vistas
             this.lblTipoEvento.BackColor = System.Drawing.Color.Gainsboro;
             this.lblTipoEvento.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTipoEvento.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.helpProvider1.SetHelpString(this.lblTipoEvento, "Control para filtrar por tipo de evento");
             this.lblTipoEvento.Location = new System.Drawing.Point(283, 335);
             this.lblTipoEvento.Name = "lblTipoEvento";
+            this.helpProvider1.SetShowHelp(this.lblTipoEvento, true);
             this.lblTipoEvento.Size = new System.Drawing.Size(64, 14);
             this.lblTipoEvento.TabIndex = 37;
             this.lblTipoEvento.Text = "Tipo evento";
@@ -254,9 +265,11 @@ namespace HayCancha.Vistas
             this.dtFechaDesde.ForeColor = System.Drawing.Color.Black;
             this.dtFechaDesde.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtFechaDesde.FormatCustom = null;
+            this.helpProvider1.SetHelpString(this.dtFechaDesde, "Calendario para filtrar por fecha desde");
             this.dtFechaDesde.Location = new System.Drawing.Point(66, 328);
             this.dtFechaDesde.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dtFechaDesde.Name = "dtFechaDesde";
+            this.helpProvider1.SetShowHelp(this.dtFechaDesde, true);
             this.dtFechaDesde.Size = new System.Drawing.Size(153, 31);
             this.dtFechaDesde.TabIndex = 38;
             this.dtFechaDesde.Value = new System.DateTime(2021, 9, 7, 0, 0, 0, 0);
@@ -333,5 +346,6 @@ namespace HayCancha.Vistas
         private Bunifu.Framework.UI.BunifuDatepicker dtFechaDesde;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.HelpProvider helpProvider1;
     }
 }

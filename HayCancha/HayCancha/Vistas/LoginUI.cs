@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Drawing;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using HayCancha.BE;
@@ -177,6 +178,21 @@ namespace HayCancha
 
                 ((Control) oComponente).Text = TraductorService.RetornaTraduccion(((Control) oComponente).Text);
             }
+        }
+
+        private void imgAyuda_Click(object sender, EventArgs e)
+        {
+            if (imgSalir.Visible)
+            {
+                FormBorderStyle = FormBorderStyle.Sizable;
+                imgSalir.Visible = false;
+                imgAyuda.Location = imgSalir.Location;
+                return;
+            }
+
+            imgAyuda.Location = new Point(479,4);
+            FormBorderStyle = FormBorderStyle.None;
+            imgSalir.Visible = true;
         }
     }
 }
