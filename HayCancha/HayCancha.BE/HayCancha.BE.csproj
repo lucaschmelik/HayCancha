@@ -79,6 +79,7 @@
     <Compile Include="Enumerables\EstadoReservaEnum.cs" />
     <Compile Include="Enumerables\IdiomaEnum.cs" />
     <Compile Include="Enumerables\PermisoEnum.cs" />
+    <Compile Include="Enumerables\ReportesEnum.cs" />
     <Compile Include="Enumerables\TipoCanchaEnum.cs" />
     <Compile Include="Abstractas\AbstractObserver.cs" />
     <Compile Include="Enumerables\TipoEventoBitacoraEnum.cs" />

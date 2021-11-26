@@ -123,6 +123,12 @@
     <Compile Include="Vistas\PartidosUI.Designer.cs">
       <DependentUpon>PartidosUI.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vistas\ReporteUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\ReporteUI.Designer.cs">
+      <DependentUpon>ReporteUI.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\ReservasUI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -177,6 +183,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\PartidosUI.resx">
       <DependentUpon>PartidosUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\ReporteUI.resx">
+      <DependentUpon>ReporteUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\ReservasUI.resx">
       <DependentUpon>ReservasUI.cs</DependentUpon>
@@ -253,6 +262,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\question.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pelota.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_soccer_ball.ico" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8_help_32.png" />

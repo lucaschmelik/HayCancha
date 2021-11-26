@@ -34,16 +34,17 @@ namespace HayCancha
             this.txtUsuario = new System.Windows.Forms.TextBox();
             this.txtContraseña = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.imgIdiomaChino = new System.Windows.Forms.PictureBox();
-            this.imgIdiomaIngles = new System.Windows.Forms.PictureBox();
-            this.imgIdiomaEspañol = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblMensaje = new System.Windows.Forms.Label();
             this.lblBienvenida = new System.Windows.Forms.Label();
             this.btnIngresar = new System.Windows.Forms.Button();
             this.lblUsuario = new System.Windows.Forms.Label();
             this.lblContraseña = new System.Windows.Forms.Label();
             this.btnRegistrar = new System.Windows.Forms.Button();
+            this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.imgIdiomaChino = new System.Windows.Forms.PictureBox();
+            this.imgIdiomaIngles = new System.Windows.Forms.PictureBox();
+            this.imgIdiomaEspañol = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.helpProvider1 = new System.Windows.Forms.HelpProvider();
             this.imgAyuda = new System.Windows.Forms.PictureBox();
@@ -209,6 +210,51 @@ namespace HayCancha
             this.btnRegistrar.Text = "REGISTRAR";
             this.btnRegistrar.UseVisualStyleBackColor = false;
             this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
+            // 
+            // bunifuElipse1
+            // 
+            this.bunifuElipse1.ElipseRadius = 10;
+            this.bunifuElipse1.TargetControl = this;
+            // 
+            // imgIdiomaChino
+            // 
+            this.imgIdiomaChino.Image = global::HayCancha.Properties.Resources.IdiomaChino;
+            this.imgIdiomaChino.Location = new System.Drawing.Point(145, 310);
+            this.imgIdiomaChino.Name = "imgIdiomaChino";
+            this.imgIdiomaChino.Size = new System.Drawing.Size(49, 50);
+            this.imgIdiomaChino.TabIndex = 5;
+            this.imgIdiomaChino.TabStop = false;
+            this.imgIdiomaChino.Click += new System.EventHandler(this.imgIdiomaChino_Click);
+            // 
+            // imgIdiomaIngles
+            // 
+            this.imgIdiomaIngles.Image = ((System.Drawing.Image)(resources.GetObject("imgIdiomaIngles.Image")));
+            this.imgIdiomaIngles.Location = new System.Drawing.Point(90, 310);
+            this.imgIdiomaIngles.Name = "imgIdiomaIngles";
+            this.imgIdiomaIngles.Size = new System.Drawing.Size(49, 50);
+            this.imgIdiomaIngles.TabIndex = 4;
+            this.imgIdiomaIngles.TabStop = false;
+            this.imgIdiomaIngles.Click += new System.EventHandler(this.imgIdiomaIngles_Click);
+            // 
+            // imgIdiomaEspañol
+            // 
+            this.imgIdiomaEspañol.Image = ((System.Drawing.Image)(resources.GetObject("imgIdiomaEspañol.Image")));
+            this.imgIdiomaEspañol.Location = new System.Drawing.Point(34, 310);
+            this.imgIdiomaEspañol.Name = "imgIdiomaEspañol";
+            this.imgIdiomaEspañol.Size = new System.Drawing.Size(49, 50);
+            this.imgIdiomaEspañol.TabIndex = 3;
+            this.imgIdiomaEspañol.TabStop = false;
+            this.imgIdiomaEspañol.Click += new System.EventHandler(this.imgIdiomaEspañol_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(12, 201);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(196, 10);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
             // 
             // bunifuElipse1
             // 

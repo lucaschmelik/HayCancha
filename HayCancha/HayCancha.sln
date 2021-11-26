@@ -22,7 +22,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Recursos", "Recursos", "{75
 		Recursos\pelota.png = Recursos\pelota.png
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "HayCancha", "HayCancha", "{09739B5C-E058-4894-9C39-AD568F9B9CF3}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Instalador", "Instalador", "{09739B5C-E058-4894-9C39-AD568F9B9CF3}"
 EndProject
 Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "HayCancha", "HayCancha\HayCancha.vdproj", "{7B622980-CD68-4D9F-9570-0D8B4D759339}"
 EndProject

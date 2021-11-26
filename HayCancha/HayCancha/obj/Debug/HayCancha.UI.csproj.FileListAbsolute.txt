@@ -110,3 +110,4 @@ C:\Users\lucas\source\repos\Facultad\Hay Cancha\HayCancha\HayCancha\obj\Debug\Ha
 C:\Users\lucas\source\repos\Facultad\Hay Cancha\HayCancha\HayCancha\obj\Debug\HayCancha.UI.csproj.CopyComplete
 C:\Users\lucas\source\repos\Facultad\Hay Cancha\HayCancha\HayCancha\obj\Debug\HayCancha.exe
 C:\Users\lucas\source\repos\Facultad\Hay Cancha\HayCancha\HayCancha\obj\Debug\HayCancha.pdb
+C:\Users\lucas\source\repos\Facultad\Hay Cancha\HayCancha\HayCancha\obj\Debug\HayCancha.Vistas.ReporteUI.resources

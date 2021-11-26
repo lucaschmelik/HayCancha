@@ -157,6 +157,11 @@ namespace HayCancha
             VistaService.AbrirFormEnPanel(panelMenus, new ControlCambios());
         }
 
+        private void tsmReportes_Click(object sender, EventArgs e)
+        {
+            VistaService.AbrirFormEnPanel(panelMenus, new ReporteUI());
+        }
+
         private void imgNotificacion_Click(object sender, EventArgs e)
         {
             if (ucNotificacion.Visible)

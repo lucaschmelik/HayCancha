@@ -161,6 +161,7 @@ namespace HayCancha
             this.tsmReportes.Size = new System.Drawing.Size(72, 20);
             this.tsmReportes.Tag = "9";
             this.tsmReportes.Text = "REPORTES";
+            this.tsmReportes.Click += new System.EventHandler(this.tsmReportes_Click);
             // 
             // tsmOpciones
             // 
