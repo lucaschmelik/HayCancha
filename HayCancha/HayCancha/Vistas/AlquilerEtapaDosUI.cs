@@ -126,7 +126,7 @@ namespace HayCancha
                         Nombre = usuario["Nombre"].ToString()
                     });
                 }
-
+                    
                 _oReserva.Id = AlquilerBLL.GuardarReserva(_oReserva);
                 AlquilerBLL.CambiarEstadoReserva(_oReserva, EstadoReservaEnum.PendienteAutorizacion);
                 MessageBox.Show("La reserva se generó correctamente, se envió a autorizar!", "ALERTA", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -161,6 +161,7 @@ namespace HayCancha
             {
                 if (VistaService.GetDatatableFromDatagridView(dgvSeleccionado).AsEnumerable().Any(x => int.Parse(x["Id"].ToString()) == usuario.Id)) continue;
                 oDt.Rows.Add(usuario.Id, usuario.Nombre.ToUpper());
+                VistaService.EnableControl(btnAgregar);
             }
 
             VistaService.LoadDatagripView(dgvEncontrado, oDt);
