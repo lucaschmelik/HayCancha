@@ -1,6 +1,5 @@
 C:\Users\lucas\source\repos\Facultad\Hay Cancha\HayCancha\HayCancha.BE\bin\Release\HayCancha.BE.dll
 C:\Users\lucas\source\repos\Facultad\Hay Cancha\HayCancha\HayCancha.BE\bin\Release\HayCancha.BE.pdb
-C:\Users\lucas\source\repos\Facultad\Hay Cancha\HayCancha\HayCancha.BE\obj\Release\HayCancha.BE.csprojAssemblyReference.cache
 C:\Users\lucas\source\repos\Facultad\Hay Cancha\HayCancha\HayCancha.BE\obj\Release\HayCancha.BE.csproj.CoreCompileInputs.cache
 C:\Users\lucas\source\repos\Facultad\Hay Cancha\HayCancha\HayCancha.BE\obj\Release\HayCancha.BE.dll
 C:\Users\lucas\source\repos\Facultad\Hay Cancha\HayCancha\HayCancha.BE\obj\Release\HayCancha.BE.pdb

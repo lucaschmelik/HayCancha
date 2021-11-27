@@ -21,7 +21,9 @@ C:\Users\lucas\source\repos\Facultad\Hay Cancha\HayCancha\HayCancha\obj\Release\
 C:\Users\lucas\source\repos\Facultad\Hay Cancha\HayCancha\HayCancha\obj\Release\HayCancha.LoginUI.resources
 C:\Users\lucas\source\repos\Facultad\Hay Cancha\HayCancha\HayCancha\obj\Release\HayCancha.NotificacionUC.resources
 C:\Users\lucas\source\repos\Facultad\Hay Cancha\HayCancha\HayCancha\obj\Release\HayCancha.Properties.Resources.resources
+C:\Users\lucas\source\repos\Facultad\Hay Cancha\HayCancha\HayCancha\obj\Release\HayCancha.Vistas.PantallaCarga.resources
 C:\Users\lucas\source\repos\Facultad\Hay Cancha\HayCancha\HayCancha\obj\Release\HayCancha.Vistas.PartidosUI.resources
+C:\Users\lucas\source\repos\Facultad\Hay Cancha\HayCancha\HayCancha\obj\Release\HayCancha.Vistas.ReporteUI.resources
 C:\Users\lucas\source\repos\Facultad\Hay Cancha\HayCancha\HayCancha\obj\Release\HayCancha.Vistas.ReservasUI.resources
 C:\Users\lucas\source\repos\Facultad\Hay Cancha\HayCancha\HayCancha\obj\Release\HayCancha.PermisosUI.resources
 C:\Users\lucas\source\repos\Facultad\Hay Cancha\HayCancha\HayCancha\obj\Release\HayCancha.Vistas.ControlCambios.resources
@@ -30,5 +32,3 @@ C:\Users\lucas\source\repos\Facultad\Hay Cancha\HayCancha\HayCancha\obj\Release\
 C:\Users\lucas\source\repos\Facultad\Hay Cancha\HayCancha\HayCancha\obj\Release\HayCancha.UI.csproj.CopyComplete
 C:\Users\lucas\source\repos\Facultad\Hay Cancha\HayCancha\HayCancha\obj\Release\HayCancha.exe
 C:\Users\lucas\source\repos\Facultad\Hay Cancha\HayCancha\HayCancha\obj\Release\HayCancha.pdb
-C:\Users\lucas\source\repos\Facultad\Hay Cancha\HayCancha\HayCancha\obj\Release\HayCancha.Vistas.PantallaCarga.resources
-C:\Users\lucas\source\repos\Facultad\Hay Cancha\HayCancha\HayCancha\obj\Release\HayCancha.Vistas.ReporteUI.resources
